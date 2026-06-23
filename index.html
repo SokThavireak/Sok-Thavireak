@@ -271,7 +271,7 @@
             <h2 class="text-3xl font-bold mb-16 text-center text-white reveal"><span class="text-blue-500">/</span>
                 Featured Engineering</h2>
 
-            <div class="grid lg:grid-cols-3 gap-8">
+            <div class="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
                 <div
                     class="tilt-card bg-slate-900 p-8 rounded-2xl border border-slate-700 shadow-xl reveal relative overflow-hidden group cursor-pointer">
                     <div
@@ -307,41 +307,72 @@
                 </div>
 
                 <div
-                    class="tilt-card bg-slate-900 p-8 rounded-2xl border border-slate-700 shadow-xl reveal relative overflow-hidden group cursor-pointer delay-100">
+                    class="tilt-card bg-slate-900 p-8 rounded-2xl border border-slate-700 shadow-xl reveal relative overflow-hidden group cursor-pointer delay-75">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-br from-amber-600/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                    </div>
+                    <div class="tilt-content">
+                        <div class="flex justify-between items-start gap-4 mb-4">
+                            <h3 class="text-xl font-bold text-white leading-tight">Sushi Store (EJS Monolith)</h3>
+                            <span
+                                class="whitespace-nowrap shrink-0 bg-amber-500/10 text-amber-400 border border-amber-500/20 px-2 py-0.5 rounded-full text-[10px] font-mono uppercase tracking-wider mt-0.5">
+                                📦 Monolith
+                            </span>
+                        </div>
+                        <p class="text-slate-400 mb-6 text-sm leading-relaxed">
+                            A classic server-side rendered e-commerce platform built as an EJS monolith. Features a fully-integrated database schema, Passport.js (Local & Google OAuth) authentication, shopping cart system, dynamic product catalogs, and an administrative dashboard for handling menu operations.
+                        </p>
+                        <div class="flex gap-3 mb-6 relative z-20">
+                            <a href="https://sushi-backend-2xy5.onrender.com/" target="_blank"
+                                class="inline-flex items-center gap-1 bg-amber-500/10 hover:bg-amber-500/20 text-amber-400 border border-amber-500/20 px-3 py-1.5 rounded-full text-xs font-mono transition-all duration-300 hover:scale-105">
+                                🔗 Live Demo
+                            </a>
+                            <a href="https://github.com/SokThavireak/sushi-ejs" target="_blank"
+                                class="inline-flex items-center gap-1 bg-slate-800/80 hover:bg-slate-800 text-slate-300 border border-slate-700/80 px-3 py-1.5 rounded-full text-xs font-mono transition-all duration-300 hover:scale-105">
+                                💻 GitHub
+                            </a>
+                        </div>
+                        <div class="flex flex-wrap gap-2 text-xs font-mono text-slate-300">
+                            <span class="bg-amber-500/10 text-amber-400 px-2 py-1 rounded">EJS</span>
+                            <span class="bg-blue-500/10 text-blue-400 px-2 py-1 rounded">Node.js</span>
+                            <span class="bg-slate-800 px-2 py-1 rounded">Express.js</span>
+                            <span class="bg-slate-800 px-2 py-1 rounded">Passport.js</span>
+                            <span class="bg-slate-800 px-2 py-1 rounded">PostgreSQL</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div
+                    class="tilt-card bg-slate-900 p-8 rounded-2xl border border-slate-700 shadow-xl reveal relative overflow-hidden group cursor-pointer delay-150">
                     <div
                         class="absolute inset-0 bg-gradient-to-br from-purple-600/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500">
                     </div>
                     <div class="tilt-content">
                         <div class="flex justify-between items-start gap-4 mb-4">
-                            <h3 class="text-xl font-bold text-white leading-tight">Sushi Store & POS System</h3>
+                            <h3 class="text-xl font-bold text-white leading-tight">Sushi Store (React & REST API)</h3>
                             <span
-                                class="whitespace-nowrap shrink-0 bg-amber-500/10 text-amber-400 border border-amber-500/20 px-2 py-0.5 rounded-full text-[10px] font-mono uppercase tracking-wider mt-0.5">
-                                🚧 In Progress
+                                class="whitespace-nowrap shrink-0 bg-purple-500/10 text-purple-400 border border-purple-500/20 px-2 py-0.5 rounded-full text-[10px] font-mono uppercase tracking-wider mt-0.5">
+                                ⚡ React SPA
                             </span>
                         </div>
-
                         <p class="text-slate-400 mb-6 text-sm leading-relaxed">
-                            A comprehensive e-commerce platform <strong>currently transitioning</strong> from an EJS
-                            monolith to a decoupled RESTful API with React. Features include advanced authentication
-                            (Passport.js local & Google
-                            OAuth2), Cloudinary media management, and a multi-role dashboard (Admin/Manager/Cashier) for
-                            handling CRUD operations and POS checkouts via the ABA PayWay API.
+                            A fully renovated and modernized edition of the sushi store. Decoupled into a lightning-fast React frontend (Vite) and an Express REST API backend. Implements Tailwind CSS, mobile-responsive layout, secure role-based dashboard navigation, and advanced POS operations.
                         </p>
                         <div class="flex gap-3 mb-6 relative z-20">
                             <a href="https://sushi-frontend.onrender.com" target="_blank"
                                 class="inline-flex items-center gap-1 bg-purple-500/10 hover:bg-purple-500/20 text-purple-400 border border-purple-500/20 px-3 py-1.5 rounded-full text-xs font-mono transition-all duration-300 hover:scale-105">
                                 🔗 Live Demo
                             </a>
-                            <a href="https://github.com/anhahseven/sushi-store" target="_blank"
+                            <a href="https://github.com/SokThavireak/sushi_store" target="_blank"
                                 class="inline-flex items-center gap-1 bg-slate-800/80 hover:bg-slate-800 text-slate-300 border border-slate-700/80 px-3 py-1.5 rounded-full text-xs font-mono transition-all duration-300 hover:scale-105">
                                 💻 GitHub
                             </a>
                         </div>
                         <div class="flex flex-wrap gap-2 text-xs font-mono text-slate-300">
                             <span class="bg-blue-500/10 text-blue-400 px-2 py-1 rounded">React.js</span>
+                            <span class="bg-purple-500/10 text-purple-400 px-2 py-1 rounded">Vite</span>
                             <span class="bg-purple-500/10 text-purple-400 px-2 py-1 rounded">Node.js</span>
-                            <span class="bg-purple-500/10 text-purple-400 px-2 py-1 rounded">OAuth2</span>
-                            <span class="bg-slate-800 px-2 py-1 rounded">Express</span>
+                            <span class="bg-slate-800 px-2 py-1 rounded">REST API</span>
                             <span class="bg-slate-800 px-2 py-1 rounded">PostgreSQL</span>
                         </div>
                     </div>
