@@ -101,9 +101,13 @@
 
         .gallery-thumb.active {
             opacity: 1;
-            border-color: #a855f7;
-            box-shadow: 0 0 14px rgba(168, 85, 247, 0.45);
+            border-color: var(--gallery-accent, #a855f7);
+            box-shadow: 0 0 14px var(--gallery-accent-glow, rgba(168, 85, 247, 0.45));
             transform: scale(1.04);
+        }
+
+        .gallery-nav-btn:hover {
+            background-color: var(--gallery-accent, #a855f7) !important;
         }
 
         .modal-scroll::-webkit-scrollbar {
@@ -707,7 +711,7 @@
 
                         <!-- Navigation Arrows -->
                         <button type="button" onclick="prevGalleryImage()"
-                            class="absolute left-3 top-1/2 -translate-y-1/2 w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-slate-900/85 hover:bg-purple-600 text-white flex items-center justify-center border border-slate-700 backdrop-blur-md transition-all duration-200 hover:scale-110 shadow-lg cursor-pointer z-10"
+                            class="gallery-nav-btn absolute left-3 top-1/2 -translate-y-1/2 w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-slate-900/85 text-white flex items-center justify-center border border-slate-700 backdrop-blur-md transition-all duration-200 hover:scale-110 shadow-lg cursor-pointer z-10"
                             aria-label="Previous Image">
                             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -715,7 +719,7 @@
                             </svg>
                         </button>
                         <button type="button" onclick="nextGalleryImage()"
-                            class="absolute right-3 top-1/2 -translate-y-1/2 w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-slate-900/85 hover:bg-purple-600 text-white flex items-center justify-center border border-slate-700 backdrop-blur-md transition-all duration-200 hover:scale-110 shadow-lg cursor-pointer z-10"
+                            class="gallery-nav-btn absolute right-3 top-1/2 -translate-y-1/2 w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-slate-900/85 text-white flex items-center justify-center border border-slate-700 backdrop-blur-md transition-all duration-200 hover:scale-110 shadow-lg cursor-pointer z-10"
                             aria-label="Next Image">
                             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7">
@@ -725,7 +729,7 @@
 
                         <!-- Expand / Zoom Button -->
                         <button type="button" onclick="openLightbox()"
-                            class="absolute bottom-3 right-3 px-3 py-1.5 rounded-lg bg-slate-900/85 hover:bg-purple-600 text-white text-xs font-mono border border-slate-700 backdrop-blur-md transition-all opacity-80 sm:opacity-0 sm:group-hover:opacity-100 flex items-center gap-1.5 shadow-lg cursor-pointer">
+                            class="gallery-nav-btn absolute bottom-3 right-3 px-3 py-1.5 rounded-lg bg-slate-900/85 text-white text-xs font-mono border border-slate-700 backdrop-blur-md transition-all opacity-80 sm:opacity-0 sm:group-hover:opacity-100 flex items-center gap-1.5 shadow-lg cursor-pointer">
                             <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                     d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7"></path>
@@ -937,6 +941,9 @@
                 badge: 'Full-Stack E-Commerce & POS',
                 accentGradient: 'from-purple-500 via-pink-500 to-indigo-500',
                 badgeClass: 'bg-purple-100 text-purple-700 border border-purple-200 font-semibold',
+                counterClass: 'bg-purple-100 text-purple-700 border border-purple-200',
+                themeAccent: '#a855f7',
+                themeGlow: 'rgba(168, 85, 247, 0.45)',
                 liveBtnClass: 'bg-purple-600 hover:bg-purple-700 text-white',
                 liveUrl: 'https://sushi-store-mzcy.onrender.com',
                 githubUrl: 'https://github.com/anhahseven/sushi-store',
@@ -998,6 +1005,9 @@
                 badge: 'Enterprise Human Resource Management',
                 accentGradient: 'from-blue-500 via-cyan-500 to-indigo-500',
                 badgeClass: 'bg-blue-100 text-blue-700 border border-blue-200 font-semibold',
+                counterClass: 'bg-blue-100 text-blue-700 border border-blue-200',
+                themeAccent: '#2563eb',
+                themeGlow: 'rgba(37, 99, 235, 0.45)',
                 liveBtnClass: 'bg-blue-600 hover:bg-blue-700 text-white',
                 liveUrl: 'https://hrms-frontend-w6hf.onrender.com',
                 githubUrl: 'https://github.com/anhahseven/HR_System',
@@ -1009,13 +1019,82 @@
                     { icon: '⏱️', title: 'Real-Time Attendance Clock-In/Out', desc: 'Daily attendance time-logging system with punctuality tracking and exportable monthly compliance summaries.' }
                 ],
                 techStack: ['Java 17', 'Spring Boot 3', 'React.js', 'Tailwind CSS', 'Spring Security', 'JWT', 'PostgreSQL', 'REST API'],
-                images: []
+                images: [
+                    {
+                        src: 'img/HR/HR user/{A5523F21-E004-4C74-8803-5C5AF29BF1BE}.png',
+                        title: '01. Admin Portal — Executive Dashboard & Workforce Analytics',
+                        desc: 'Central administrative command center displaying workforce KPIs, live attendance rates, pending leaves, payroll totals, and real-time departmental distribution charts.'
+                    },
+                    {
+                        src: 'img/HR/HR user/{6E325F8D-0D7C-428D-8D5A-A857CC93854D}.png',
+                        title: '02. Admin Portal — Employee Directory & RBAC User Management',
+                        desc: 'Comprehensive employee roster with real-time search, department filters, role-based access control (Admin vs. Employee), salary figures, and leave balance tracking.'
+                    },
+                    {
+                        src: 'img/HR/HR user/{D0D9D99F-2E91-46C8-8F8C-99E4A31D2FD9}.png',
+                        title: '03. Admin Portal — Department & Position Architecture',
+                        desc: 'Organizational hierarchy manager configuring 9 organizational departments and 30 mapped job positions with functional role descriptions.'
+                    },
+                    {
+                        src: 'img/HR/HR user/{DB2E5D47-736C-4C98-8763-DDCD5E28B708}.png',
+                        title: '04. Admin Portal — Enterprise Attendance Tracking & Time Logs',
+                        desc: 'High-precision attendance tracking log monitoring clock-in/out timestamps, total hours worked, late arrival flags, and multi-parameter department filters.'
+                    },
+                    {
+                        src: 'img/HR/HR user/{A6922D9D-366D-440D-B956-03A4FA26A058}.png',
+                        title: '05. Admin Portal — Leave Request Review & Approval Workflow',
+                        desc: 'Supervisor authorization queue enabling fast-track review, approval, or rejection of employee time-off requests with leave type badges and justification details.'
+                    },
+                    {
+                        src: 'img/HR/HR user/{87FF108D-2117-416C-A6D8-B3838B4555B8}.png',
+                        title: '06. Admin Portal — Automated Payroll Calculation Engine',
+                        desc: 'Automated salary engine computing base wages, overtime compensation, bonuses, and tax deductions with real-time payment status flags (Paid, Processed, Draft).'
+                    },
+                    {
+                        src: 'img/HR/HR user/{D1D457F1-6D58-4D2C-9C66-C7587FF6CA13}.png',
+                        title: '07. Admin Portal — Employee Performance & Appraisal Reviews',
+                        desc: 'Biannual performance management grid evaluating employee quality, productivity, and overall rating metrics alongside customized development goals.'
+                    },
+                    {
+                        src: 'img/HR/user/{8168873A-2293-45D4-B9AD-B3DF777AE4DE}.png',
+                        title: '08. Authentication Portal — Multi-Role Login & Security Gateway',
+                        desc: 'Dual-panel authentication interface with Spring Security JWT integration, persistent session handling, and pre-configured demo credentials for HR Viewer and Employee roles.'
+                    },
+                    {
+                        src: 'img/HR/user/{BF90BB34-5D40-4A40-99E6-D31AE04FF661}.png',
+                        title: '09. Employee Portal — Self-Service Dashboard & Live Clock-In',
+                        desc: 'Interactive employee workspace featuring a digital clock-in punch module, real-time hours tracking, remaining leave balances, and personal appraisal scorecards.'
+                    },
+                    {
+                        src: 'img/HR/user/{BD97B17A-9626-4F1E-903C-2D8A08BF888F}.png',
+                        title: '10. Employee Portal — Personal Attendance History & Timestamps',
+                        desc: 'Transparent personal attendance history log allowing employees to inspect historical punch-in/out timestamps, daily accumulated hours, and monthly attendance tallies.'
+                    },
+                    {
+                        src: 'img/HR/user/{277D923F-1ED3-4CDC-A4BD-84E717E5A6C3}.png',
+                        title: '11. Employee Portal — Time-Off Request & Leave History Portal',
+                        desc: 'Intuitive self-service time-off application form with date pickers and category selection, alongside a live tracker displaying pending supervisor approvals.'
+                    },
+                    {
+                        src: 'img/HR/user/{136CA9B9-18C6-45ED-AF08-A61DBBC7CF4A}.png',
+                        title: '12. Employee Portal — Payslip Statements & Performance Reports',
+                        desc: 'Confidential employee hub for accessing generated salary payslips, compensation breakdown records, and historical appraisal evaluation summaries.'
+                    },
+                    {
+                        src: 'img/HR/user/{68031D0E-291A-4419-A4CD-BF204A98316C}.png',
+                        title: '13. Employee Portal — Employee Profile & Benefit Allocations',
+                        desc: 'Individual employee dossier displaying contract details, base compensation, standard work hours, and visual entitlement progress bars for annual, sick, and special leave.'
+                    }
+                ]
             },
             'sfl': {
                 title: 'SFL Cambodia Interface',
                 badge: 'Educational Institution Portal',
                 accentGradient: 'from-emerald-500 via-teal-500 to-cyan-500',
                 badgeClass: 'bg-emerald-100 text-emerald-700 border border-emerald-200 font-semibold',
+                counterClass: 'bg-emerald-100 text-emerald-700 border border-emerald-200',
+                themeAccent: '#059669',
+                themeGlow: 'rgba(5, 150, 105, 0.45)',
                 liveBtnClass: 'bg-emerald-600 hover:bg-emerald-700 text-white',
                 liveUrl: 'https://sflcambodia.com/',
                 githubUrl: null,
@@ -1047,6 +1126,18 @@
             const badgeEl = document.getElementById('modal-badge');
             badgeEl.className = `px-2.5 py-1 rounded-full text-xs font-mono font-medium ${project.badgeClass}`;
             badgeEl.textContent = project.badge;
+
+            // Dynamic theme accent & counter class
+            const modalBox = document.querySelector('.modal-content-box');
+            if (modalBox) {
+                modalBox.style.setProperty('--gallery-accent', project.themeAccent || '#a855f7');
+                modalBox.style.setProperty('--gallery-accent-glow', project.themeGlow || 'rgba(168, 85, 247, 0.45)');
+            }
+
+            const counterEl = document.getElementById('gallery-counter');
+            if (counterEl) {
+                counterEl.className = `text-xs font-mono px-2 py-0.5 rounded-full font-semibold ${project.counterClass || 'bg-purple-100 text-purple-700 border border-purple-200'}`;
+            }
 
             document.getElementById('modal-title').textContent = project.title;
             document.getElementById('modal-description').textContent = project.description;

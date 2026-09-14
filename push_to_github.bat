@@ -19,10 +19,10 @@ git remote add origin https://github.com/SokThavireak/Sok-Thavireak.git
 
 echo [3/4] Staging and committing files...
 git add .
-git commit -m "feat: portfolio with clean light theme, interactive image galleries, and responsive UI"
+git commit -m "feat: fix HRMS modal image gallery and add all 13 screenshots"
 
 echo [4/4] Pushing to GitHub (main branch)...
-git push -u origin main
+git push -u origin main --force
 
 echo.
 echo ===================================================
