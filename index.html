@@ -1,0 +1,1224 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sok Thavireak | Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @keyframes float {
+            0% {
+                transform: translateY(0px) rotate(0deg);
+            }
+
+            50% {
+                transform: translateY(-20px) rotate(10deg);
+            }
+
+            100% {
+                transform: translateY(0px) rotate(0deg);
+            }
+        }
+
+        .animate-float {
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .animate-float-delayed {
+            animation: float 8s ease-in-out infinite;
+            animation-delay: 2s;
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease-out;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .tilt-card {
+            transform-style: preserve-3d;
+            transition: transform 0.1s ease;
+        }
+
+        .tilt-content {
+            transform: translateZ(30px);
+        }
+
+        /* Custom scrollbar for a polished look */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #f1f5f9;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8;
+        }
+
+        /* Modal Transitions & Gallery */
+        .modal-backdrop {
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.3s;
+        }
+
+        .modal-backdrop.active-modal {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .modal-content-box {
+            transform: scale(0.96) translateY(16px);
+            transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .modal-backdrop.active-modal .modal-content-box {
+            transform: scale(1) translateY(0);
+        }
+
+        .gallery-thumb {
+            opacity: 0.55;
+            transition: all 0.2s ease;
+        }
+
+        .gallery-thumb:hover {
+            opacity: 0.9;
+            transform: translateY(-2px);
+        }
+
+        .gallery-thumb.active {
+            opacity: 1;
+            border-color: #a855f7;
+            box-shadow: 0 0 14px rgba(168, 85, 247, 0.45);
+            transform: scale(1.04);
+        }
+
+        .modal-scroll::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        .modal-scroll::-webkit-scrollbar-track {
+            background: #f8fafc;
+        }
+
+        .modal-scroll::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 3px;
+        }
+
+        .modal-scroll::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8;
+        }
+
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+
+<body class="bg-white text-slate-800 font-sans antialiased overflow-x-hidden selection:bg-blue-500/20">
+
+    <div class="fixed inset-0 z-0 pointer-events-none overflow-hidden">
+        <div class="absolute top-[8%] left-[5%] w-72 h-72 bg-blue-400/10 rounded-full blur-3xl animate-float"></div>
+        <div
+            class="absolute bottom-[20%] right-[10%] w-96 h-96 bg-purple-400/10 rounded-full blur-3xl animate-float-delayed">
+        </div>
+    </div>
+
+    <nav class="fixed w-full z-50 bg-white/85 backdrop-blur-md border-b border-slate-200/80 shadow-xs transition-all">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#"
+                class="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600 hover:scale-105 transition-transform duration-300">ST.</a>
+
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex space-x-8 text-sm font-medium tracking-wide">
+                <a href="#about"
+                    class="nav-link text-slate-600 hover:text-blue-600 transition-colors duration-300">About</a>
+                <a href="#skills"
+                    class="nav-link text-slate-600 hover:text-blue-600 transition-colors duration-300">Skills</a>
+                <a href="#projects"
+                    class="nav-link text-slate-600 hover:text-blue-600 transition-colors duration-300">Projects</a>
+                <a href="#experience"
+                    class="nav-link text-slate-600 hover:text-blue-600 transition-colors duration-300">Experience</a>
+                <a href="#contact"
+                    class="nav-link text-slate-600 hover:text-blue-600 transition-colors duration-300">Contact</a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-btn" class="md:hidden text-slate-700 hover:text-blue-600 focus:outline-none"
+                aria-label="Toggle Menu">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path id="menu-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white/95 border-b border-slate-200 backdrop-blur-md shadow-lg">
+            <div class="px-6 py-4 flex flex-col space-y-4 text-sm font-medium">
+                <a href="#about"
+                    class="mobile-nav-link text-slate-600 hover:text-blue-600 transition-colors duration-300">About</a>
+                <a href="#skills"
+                    class="mobile-nav-link text-slate-600 hover:text-blue-600 transition-colors duration-300">Skills</a>
+                <a href="#projects"
+                    class="mobile-nav-link text-slate-600 hover:text-blue-600 transition-colors duration-300">Projects</a>
+                <a href="#experience"
+                    class="mobile-nav-link text-slate-600 hover:text-blue-600 transition-colors duration-300">Experience</a>
+                <a href="#contact"
+                    class="mobile-nav-link text-slate-600 hover:text-blue-600 transition-colors duration-300">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="relative z-10 min-h-screen flex items-center justify-center px-6 pt-20">
+        <div class="max-w-7xl mx-auto grid md:grid-cols-12 gap-12 items-center reveal w-full">
+            <!-- Left Column: Text (Second in mobile, first in desktop) -->
+            <div class="md:col-span-7 text-center md:text-left order-2 md:order-1">
+                <h2 class="text-blue-600 font-mono mb-4 tracking-widest uppercase text-sm font-semibold">Hello, World. I am</h2>
+                <h1
+                    class="text-5xl md:text-6xl lg:text-7xl font-extrabold mb-6 tracking-tight text-slate-900 drop-shadow-xs">
+                    Sok Thavireak</h1>
+                <h3 class="text-xl md:text-2xl text-slate-600 mb-8 font-normal">Full-Stack Website Developer <span
+                        class="text-blue-600 mx-2">&bull;</span> IT Administrator</h3>
+                <p class="text-lg text-slate-600 mb-10 max-w-2xl mx-auto md:mx-0 leading-relaxed">
+                    Combining a deep understanding of enterprise-level architecture with hands-on networking expertise.
+                    Dedicated to building decoupled, secure, and scalable web solutions.
+                </p>
+                <div class="flex flex-col sm:flex-row justify-center md:justify-start gap-4">
+                    <a href="#projects"
+                        class="px-8 py-3 bg-blue-600 text-white rounded-full font-semibold text-center hover:bg-blue-700 hover:-translate-y-1 hover:shadow-lg hover:shadow-blue-500/25 transition-all duration-300">Explore
+                        Projects</a>
+                    <a href="#contact"
+                        class="px-8 py-3 border border-slate-300 text-slate-700 rounded-full font-semibold text-center hover:border-blue-600 hover:text-blue-600 hover:bg-blue-50/50 hover:-translate-y-1 transition-all duration-300">Get
+                        In Touch</a>
+                </div>
+            </div>
+
+            <!-- Right Column: Photo with premium effects (First in mobile, second in desktop) -->
+            <div class="md:col-span-5 flex justify-center items-center order-1 md:order-2">
+                <div
+                    class="relative w-64 h-64 sm:w-80 sm:h-80 md:w-72 md:h-72 lg:w-96 lg:h-96 rounded-full overflow-hidden bg-gradient-to-br from-blue-100 via-indigo-50 to-purple-100 border border-slate-200 p-2 shadow-xl group transition-all duration-500 hover:border-blue-400">
+                    <!-- Glow effect layers -->
+                    <div
+                        class="absolute inset-0 bg-gradient-to-tr from-blue-400/20 via-purple-400/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700">
+                    </div>
+                    <div
+                        class="absolute -inset-0.5 bg-gradient-to-r from-blue-400 to-purple-500 rounded-full blur opacity-25 group-hover:opacity-45 transition duration-1000 group-hover:duration-200">
+                    </div>
+
+                    <!-- Circular photo wrapper -->
+                    <div
+                        class="relative w-full h-full rounded-full overflow-hidden bg-slate-100 flex items-center justify-center border border-slate-200/60">
+                        <img src="img/developer_photo.png?v=1" alt="Sok Thavireak"
+                            class="w-full h-full object-cover object-top scale-[1.05] hover:scale-110 transition-transform duration-500">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="relative z-10 py-24 bg-slate-50 border-y border-slate-200/80">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid md:grid-cols-2 gap-16 items-center">
+                <div class="reveal">
+                    <h2 class="text-3xl font-bold mb-6 flex items-center gap-3 text-slate-900"><span
+                            class="w-8 h-[2px] bg-blue-600 inline-block"></span> My Philosophy</h2>
+                    <p class="text-slate-600 mb-4 leading-relaxed">
+                        As a Computer Science student at Western University, I have learned that the correct answer in
+                        development isn't always immediately apparent. I pride myself on my persistence—I do not give up
+                        easily, and I am committed to researching, testing, and debugging until a solution is found.
+                    </p>
+                    <p class="text-slate-600 mb-4 leading-relaxed">
+                        My technical foundation is balanced by real-world service experience. Working in fast-paced
+                        environments has sharpened my soft skills, teaching me how to collaborate effectively, manage
+                        time under pressure, and maintain a positive attitude while resolving complex user issues.
+                    </p>
+                </div>
+
+                <div class="reveal grid gap-4">
+                    <div
+                        class="bg-white p-6 rounded-xl border border-slate-200 shadow-xs hover:border-blue-400 hover:shadow-md transition-all">
+                        <h4 class="text-slate-900 font-semibold mb-2 flex justify-between">
+                            <span>The Complete Full-Stack Web Development Bootcamp</span>
+                            <span class="text-blue-600 text-sm font-mono font-medium">Udemy</span>
+                        </h4>
+                        <p class="text-sm text-slate-500">Instructor: Dr. Angela Yu | 62 Total Hours | Completed March
+                            2026</p>
+                    </div>
+                    <div
+                        class="bg-white p-6 rounded-xl border border-slate-200 shadow-xs hover:border-purple-400 hover:shadow-md transition-all">
+                        <h4 class="text-slate-900 font-semibold mb-2">Education</h4>
+                        <p class="text-sm text-slate-500">Continuing Bachelor Degree of Computer Science at Western
+                            University.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills" class="relative z-10 py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <h2 class="text-3xl font-bold mb-16 text-center text-slate-900 reveal"><span class="text-blue-600">/</span>
+                Technical Expertise</h2>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <div
+                    class="bg-slate-50/80 p-8 rounded-2xl border border-slate-200 hover:-translate-y-2 hover:shadow-[0_15px_30px_-15px_rgba(59,130,246,0.2)] hover:border-blue-300 transition-all duration-300 reveal group shadow-xs">
+                    <h3 class="text-xl font-bold text-slate-900 mb-6 group-hover:text-blue-600 transition-colors">Web
+                        Development</h3>
+                    <ul class="space-y-3 text-slate-600">
+                        <li class="flex items-center gap-2"><span class="text-blue-600 font-bold">▹</span> Java & Spring Boot</li>
+                        <li class="flex items-center gap-2"><span class="text-blue-600 font-bold">▹</span> Node.js & Express.js
+                        </li>
+                        <li class="flex items-center gap-2"><span class="text-blue-600 font-bold">▹</span> React.js & JavaScript
+                        </li>
+                        <li class="flex items-center gap-2"><span class="text-blue-600 font-bold">▹</span> PostgreSQL & EJS</li>
+                        <li class="flex items-center gap-2"><span class="text-blue-600 font-bold">▹</span> HTML5, CSS3, Tailwind
+                        </li>
+                    </ul>
+                </div>
+
+                <div
+                    class="bg-slate-50/80 p-8 rounded-2xl border border-slate-200 hover:-translate-y-2 hover:shadow-[0_15px_30px_-15px_rgba(168,85,247,0.2)] hover:border-purple-300 transition-all duration-300 reveal group delay-100 shadow-xs">
+                    <h3 class="text-xl font-bold text-slate-900 mb-6 group-hover:text-purple-600 transition-colors">IT &
+                        Systems Admin</h3>
+                    <ul class="space-y-3 text-slate-600">
+                        <li class="flex items-center gap-2"><span class="text-purple-600 font-bold">▹</span> Local & Hosting
+                            Server Mgmt</li>
+                        <li class="flex items-center gap-2"><span class="text-purple-600 font-bold">▹</span> Network Configuration
+                        </li>
+                        <li class="flex items-center gap-2"><span class="text-purple-600 font-bold">▹</span> Hardware & Software
+                            Diagnostics</li>
+                        <li class="flex items-center gap-2"><span class="text-purple-600 font-bold">▹</span> Remote User Support
+                        </li>
+                        <li class="flex items-center gap-2"><span class="text-purple-600 font-bold">▹</span> Patch Management</li>
+                    </ul>
+                </div>
+
+                <div
+                    class="bg-slate-50/80 p-8 rounded-2xl border border-slate-200 hover:-translate-y-2 hover:shadow-[0_15px_30px_-15px_rgba(34,197,94,0.2)] hover:border-green-300 transition-all duration-300 reveal group delay-200 shadow-xs">
+                    <h3 class="text-xl font-bold text-slate-900 mb-6 group-hover:text-green-600 transition-colors">Security
+                        & Multimedia</h3>
+                    <ul class="space-y-3 text-slate-600">
+                        <li class="flex items-center gap-2"><span class="text-green-600 font-bold">▹</span> CCTV Inst. &
+                            Configuration (Certified)</li>
+                        <li class="flex items-center gap-2"><span class="text-green-600 font-bold">▹</span> IP/Analog Camera Setup
+                        </li>
+                        <li class="flex items-center gap-2"><span class="text-green-600 font-bold">▹</span> DVR/NVR
+                            Troubleshooting</li>
+                        <li class="flex items-center gap-2"><span class="text-green-600 font-bold">▹</span> Video Editing &
+                            Videography</li>
+                        <li class="flex items-center gap-2"><span class="text-green-600 font-bold">▹</span> Adobe Photoshop</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="relative z-10 py-24 bg-slate-50 border-y border-slate-200/80">
+        <div class="max-w-7xl mx-auto px-6">
+            <h2 class="text-3xl font-bold mb-16 text-center text-slate-900 reveal"><span class="text-blue-600">/</span>
+                Featured Engineering</h2>
+
+            <div class="grid lg:grid-cols-3 gap-8">
+                <!-- Project 1: Full-Stack HRMS -->
+                <div onclick="openProjectModal('hrms')"
+                    class="tilt-card bg-white p-7 rounded-2xl border border-slate-200 hover:border-blue-400 shadow-md hover:shadow-xl reveal relative overflow-hidden group cursor-pointer transition-all duration-300 flex flex-col justify-between">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-br from-blue-50/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none">
+                    </div>
+                    <div class="tilt-content flex flex-col h-full">
+                        <!-- Top Real Image Preview Banner -->
+                        <div
+                            class="relative w-full h-44 rounded-xl overflow-hidden mb-5 border border-slate-200 group/img bg-slate-950">
+                            <img src="img/HR/HR user/{A5523F21-E004-4C74-8803-5C5AF29BF1BE}.png" alt="Full-Stack HRMS Admin Dashboard Preview"
+                                class="w-full h-full object-cover object-top group-hover/img:scale-105 transition-transform duration-500">
+                            <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/30 to-transparent"></div>
+                            <div class="absolute bottom-3 left-3 right-3 flex justify-between items-center text-xs">
+                                <span
+                                    class="bg-blue-600 text-white font-mono px-2.5 py-1 rounded-md font-semibold backdrop-blur-sm shadow-md flex items-center gap-1.5">
+                                    <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z">
+                                        </path>
+                                    </svg>
+                                    13 Screenshots
+                                </span>
+                                <span
+                                    class="text-blue-200 bg-slate-900/85 px-2 py-0.5 rounded backdrop-blur-sm font-mono text-[11px] border border-blue-400/40">
+                                    Click to View Gallery
+                                </span>
+                            </div>
+                        </div>
+
+                        <div class="flex justify-between items-start mb-3">
+                            <h3 class="text-xl font-bold text-slate-900 group-hover:text-blue-600 transition-colors">
+                                Full-Stack HRMS</h3>
+                        </div>
+                        <p class="text-slate-600 mb-6 text-sm leading-relaxed flex-grow">
+                            An enterprise-grade, decoupled application featuring a scalable Spring Boot backend and
+                            React SPA. Managed complex business logic including dynamic payroll processing, leave
+                            request workflows, and performance evaluations. Implemented robust RBAC using Spring
+                            Security and JWTs for restricted dashboard environments.
+                        </p>
+                        <div class="flex flex-wrap gap-2.5 mb-6 relative z-20">
+                            <button type="button" onclick="event.stopPropagation(); openProjectModal('hrms')"
+                                class="inline-flex items-center gap-1.5 bg-blue-50 hover:bg-blue-600 text-blue-700 hover:text-white border border-blue-200 hover:border-blue-600 px-3.5 py-1.5 rounded-full text-xs font-mono transition-all duration-300 hover:scale-105 cursor-pointer shadow-xs font-medium">
+                                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z">
+                                    </path>
+                                </svg>
+                                View Images & Details
+                            </button>
+                            <a href="https://github.com/anhahseven/HR_System" target="_blank"
+                                onclick="event.stopPropagation()"
+                                class="inline-flex items-center gap-1 bg-slate-100 hover:bg-slate-200 text-slate-700 border border-slate-200 px-3 py-1.5 rounded-full text-xs font-mono transition-all duration-300 hover:scale-105">
+                                💻 GitHub
+                            </a>
+                            <a href="https://hrms-frontend-w6hf.onrender.com" target="_blank"
+                                onclick="event.stopPropagation()"
+                                class="inline-flex items-center gap-1 bg-slate-50 hover:bg-slate-100 text-slate-600 hover:text-slate-900 border border-slate-200 px-2.5 py-1.5 rounded-full text-xs font-mono transition-all duration-300 hover:scale-105"
+                                title="Open Live Demo">
+                                🔗 Live
+                            </a>
+                        </div>
+                        <div
+                            class="flex flex-wrap gap-2 text-xs font-mono text-slate-600 mt-auto pt-3 border-t border-slate-100">
+                            <span class="bg-blue-50 text-blue-700 border border-blue-100 px-2 py-1 rounded">Java 17</span>
+                            <span class="bg-blue-50 text-blue-700 border border-blue-100 px-2 py-1 rounded">Spring Boot</span>
+                            <span class="bg-slate-100 text-slate-700 border border-slate-200/60 px-2 py-1 rounded">React.js</span>
+                            <span class="bg-slate-100 text-slate-700 border border-slate-200/60 px-2 py-1 rounded">JWT</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2: Sushi Store & POS System -->
+                <div onclick="openProjectModal('sushi-store')"
+                    class="tilt-card bg-white p-7 rounded-2xl border border-slate-200 hover:border-purple-400 shadow-md hover:shadow-xl reveal relative overflow-hidden group cursor-pointer delay-100 transition-all duration-300 flex flex-col justify-between">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-br from-purple-50/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none">
+                    </div>
+                    <div class="tilt-content flex flex-col h-full">
+                        <!-- Top Real Image Preview Banner -->
+                        <div
+                            class="relative w-full h-44 rounded-xl overflow-hidden mb-5 border border-slate-200 group/img bg-slate-950">
+                            <img src="img/Screenshot 2026-09-14 134028.png" alt="Murakami Sushi Store Preview"
+                                class="w-full h-full object-cover object-top group-hover/img:scale-105 transition-transform duration-500">
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/30 to-transparent">
+                            </div>
+                            <div class="absolute bottom-3 left-3 right-3 flex justify-between items-center text-xs">
+                                <span
+                                    class="bg-purple-600 text-white font-mono px-2.5 py-1 rounded-md font-semibold backdrop-blur-sm shadow-md flex items-center gap-1.5">
+                                    <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z">
+                                        </path>
+                                    </svg>
+                                    8 Screenshots
+                                </span>
+                                <span
+                                    class="text-purple-200 bg-slate-900/85 px-2 py-0.5 rounded backdrop-blur-sm font-mono text-[11px] border border-purple-400/40">
+                                    Click to View Gallery
+                                </span>
+                            </div>
+                        </div>
+
+                        <div class="flex justify-between items-start mb-3">
+                            <h3 class="text-xl font-bold text-slate-900 group-hover:text-purple-600 transition-colors">Sushi
+                                Store & POS System</h3>
+                        </div>
+                        <p class="text-slate-600 mb-6 text-sm leading-relaxed flex-grow">
+                            A comprehensive e-commerce platform transitioning from an EJS monolith to a decoupled
+                            RESTful API with React. Features include advanced authentication (Passport.js local & Google
+                            OAuth2), Cloudinary media management, and a multi-role dashboard (Admin/Manager/Cashier) for
+                            handling CRUD operations and POS checkouts via the ABA PayWay API.
+                        </p>
+                        <div class="flex flex-wrap gap-2.5 mb-6 relative z-20">
+                            <button type="button" onclick="event.stopPropagation(); openProjectModal('sushi-store')"
+                                class="inline-flex items-center gap-1.5 bg-purple-50 hover:bg-purple-600 text-purple-700 hover:text-white border border-purple-200 hover:border-purple-600 px-3.5 py-1.5 rounded-full text-xs font-mono transition-all duration-300 hover:scale-105 cursor-pointer shadow-xs font-medium">
+                                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z">
+                                    </path>
+                                </svg>
+                                View Images & Details
+                            </button>
+                            <a href="https://github.com/anhahseven/sushi-store" target="_blank"
+                                onclick="event.stopPropagation()"
+                                class="inline-flex items-center gap-1 bg-slate-100 hover:bg-slate-200 text-slate-700 border border-slate-200 px-3 py-1.5 rounded-full text-xs font-mono transition-all duration-300 hover:scale-105">
+                                💻 GitHub
+                            </a>
+                            <a href="https://sushi-store-mzcy.onrender.com" target="_blank"
+                                onclick="event.stopPropagation()"
+                                class="inline-flex items-center gap-1 bg-slate-50 hover:bg-slate-100 text-slate-600 hover:text-slate-900 border border-slate-200 px-2.5 py-1.5 rounded-full text-xs font-mono transition-all duration-300 hover:scale-105"
+                                title="Open Live Demo">
+                                🔗 Live
+                            </a>
+                        </div>
+                        <div
+                            class="flex flex-wrap gap-2 text-xs font-mono text-slate-600 mt-auto pt-3 border-t border-slate-100">
+                            <span class="bg-purple-50 text-purple-700 border border-purple-100 px-2 py-1 rounded">Node.js</span>
+                            <span class="bg-purple-50 text-purple-700 border border-purple-100 px-2 py-1 rounded">OAuth2</span>
+                            <span class="bg-slate-100 text-slate-700 border border-slate-200/60 px-2 py-1 rounded">Express</span>
+                            <span class="bg-slate-100 text-slate-700 border border-slate-200/60 px-2 py-1 rounded">PostgreSQL</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3: SFL Cambodia Interface -->
+                <div onclick="openProjectModal('sfl')"
+                    class="tilt-card bg-white p-7 rounded-2xl border border-slate-200 hover:border-green-400 shadow-md hover:shadow-xl reveal relative overflow-hidden group cursor-pointer delay-200 transition-all duration-300 flex flex-col justify-between">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-br from-green-50/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none">
+                    </div>
+                    <div class="tilt-content flex flex-col h-full">
+                        <!-- Visual Header -->
+                        <div
+                            class="relative w-full h-44 rounded-xl overflow-hidden mb-5 border border-slate-200 bg-gradient-to-br from-emerald-50 via-teal-50 to-emerald-100/60 flex flex-col justify-between p-4 group/hdr">
+                            <div class="flex justify-between items-start">
+                                <span
+                                    class="bg-emerald-100 text-emerald-800 border border-emerald-200 text-xs px-2.5 py-1 rounded-md font-mono font-semibold">Institutional
+                                    UI</span>
+                                <span
+                                    class="text-xs text-emerald-700 font-mono bg-white px-2 py-0.5 rounded border border-emerald-200">SFL
+                                    Cambodia</span>
+                            </div>
+                            <div class="space-y-1.5">
+                                <div class="flex items-center gap-2 text-xs text-slate-800 font-mono font-medium">
+                                    <span class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
+                                    <span>Mobile-First Responsive Design</span>
+                                </div>
+                                <p class="text-[11px] text-slate-600">High-DPI Optimization • Clean Semantic HTML5 •
+                                    Rapid Load Speed</p>
+                            </div>
+                            <div class="flex justify-between items-center text-xs pt-2 border-t border-emerald-200/60">
+                                <span class="text-emerald-700 font-mono text-[11px] flex items-center gap-1.5">
+                                    <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14">
+                                        </path>
+                                    </svg>
+                                    Live Site
+                                </span>
+                                <span
+                                    class="text-slate-500 text-[11px] font-mono group-hover/hdr:text-emerald-700 transition-colors">Click
+                                    to Inspect →</span>
+                            </div>
+                        </div>
+
+                        <div class="flex justify-between items-start mb-3">
+                            <h3 class="text-xl font-bold text-slate-900 group-hover:text-green-600 transition-colors">SFL
+                                Cambodia Interface</h3>
+                        </div>
+                        <p class="text-slate-600 mb-6 text-sm leading-relaxed flex-grow">
+                            Architected a fully responsive static landing page for an educational institution.
+                            Emphasized modern UI/UX design principles ensuring cross-browser compatibility and mobile
+                            optimization. Focused on semantic HTML and optimized CSS for rapid loading times.
+                        </p>
+                        <div class="flex flex-wrap gap-2.5 mb-6 relative z-20">
+                            <button type="button" onclick="event.stopPropagation(); openProjectModal('sfl')"
+                                class="inline-flex items-center gap-1.5 bg-green-50 hover:bg-green-600 text-green-700 hover:text-white border border-green-200 hover:border-green-600 px-3.5 py-1.5 rounded-full text-xs font-mono transition-all duration-300 hover:scale-105 cursor-pointer shadow-xs font-medium">
+                                <svg class="w-3.5 h-3.5 text-green-600" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z">
+                                    </path>
+                                </svg>
+                                View Project Details
+                            </button>
+                            <a href="https://sflcambodia.com/" target="_blank" onclick="event.stopPropagation()"
+                                class="inline-flex items-center gap-1 bg-slate-100 hover:bg-slate-200 text-slate-700 border border-slate-200 px-3 py-1.5 rounded-full text-xs font-mono transition-all duration-300 hover:scale-105">
+                                🔗 Live Site
+                            </a>
+                        </div>
+                        <div
+                            class="flex flex-wrap gap-2 text-xs font-mono text-slate-600 mt-auto pt-3 border-t border-slate-100">
+                            <span class="bg-green-50 text-green-700 border border-green-100 px-2 py-1 rounded">HTML5</span>
+                            <span class="bg-green-50 text-green-700 border border-green-100 px-2 py-1 rounded">CSS3</span>
+                            <span class="bg-slate-100 text-slate-700 border border-slate-200/60 px-2 py-1 rounded">JavaScript</span>
+                            <span class="bg-slate-100 text-slate-700 border border-slate-200/60 px-2 py-1 rounded">Bootstrap 5</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="experience" class="relative z-10 py-24 bg-white">
+        <div class="max-w-4xl mx-auto px-6">
+            <h2 class="text-3xl font-bold mb-16 text-center text-slate-900 reveal"><span class="text-blue-600">/</span>
+                Professional Journey</h2>
+
+            <div class="relative border-l-2 border-slate-200 ml-6 md:ml-12 pl-0">
+
+                <div class="mb-12 pl-8 reveal relative">
+                    <span
+                        class="absolute flex items-center justify-center w-6 h-6 bg-blue-100 rounded-full -left-[13px] top-1.5 ring-4 ring-white shadow-xs">
+                        <div class="w-2.5 h-2.5 bg-blue-600 rounded-full"></div>
+                    </span>
+                    <h3 class="flex items-center mb-1 text-xl font-bold text-slate-900">IT Administrator</h3>
+                    <time class="block mb-3 text-sm font-mono text-blue-600 font-semibold">Present (1 Year) | AetherFlow Global
+                        Customs Clearance</time>
+                    <ul class="text-base font-normal text-slate-600 space-y-2 list-disc ml-4 marker:text-blue-500">
+                        <li>Administer corporate hosting servers, email systems, and company website updates.</li>
+                        <li>Manage local network infrastructure (routers/switches) via web-based UIs for secure
+                            connectivity.</li>
+                        <li>Provide comprehensive IT hardware/software support and office equipment maintenance.</li>
+                        <li>Configure and maintain CCTV security infrastructure for continuous system reliability.</li>
+                    </ul>
+                </div>
+
+                <div class="mb-12 pl-8 reveal relative">
+                    <span
+                        class="absolute flex items-center justify-center w-6 h-6 bg-slate-100 rounded-full -left-[13px] top-1.5 ring-4 ring-white shadow-xs">
+                        <div class="w-2.5 h-2.5 bg-slate-400 rounded-full"></div>
+                    </span>
+                    <h3 class="flex items-center mb-1 text-xl font-bold text-slate-900">IT Officer</h3>
+                    <time class="block mb-3 text-sm font-mono text-slate-500">Jul 2024 - Jul 2025 | SFL International
+                        School</time>
+                    <ul class="text-base font-normal text-slate-600 space-y-2 list-disc ml-4 marker:text-slate-400">
+                        <li>Supported faculty and students with technical issues and maintained computer lab
+                            environments.</li>
+                        <li>Assisted in campus-wide network administration for secure internet connectivity.</li>
+                        <li>Maintained IT inventory records, managed hardware lifecycles, and drafted technical
+                            documentation.</li>
+                    </ul>
+                </div>
+
+                <div class="mb-12 pl-8 reveal relative">
+                    <span
+                        class="absolute flex items-center justify-center w-6 h-6 bg-slate-100 rounded-full -left-[13px] top-1.5 ring-4 ring-white shadow-xs">
+                        <div class="w-2.5 h-2.5 bg-slate-400 rounded-full"></div>
+                    </span>
+                    <h3 class="flex items-center mb-1 text-xl font-bold text-slate-900">Barista</h3>
+                    <time class="block mb-3 text-sm font-mono text-slate-500">Jan 2023 - Jul 2024 | Amazon Café</time>
+                    <p class="text-base font-normal text-slate-600">Worked in a fast-paced service environment. Mastered
+                        time management under pressure, maintained positive team collaboration, and efficiently resolved
+                        customer issues.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <footer id="contact" class="relative z-10 py-12 text-center border-t border-slate-200 bg-slate-50">
+        <div class="max-w-4xl mx-auto px-6 reveal">
+            <h2 class="text-2xl font-bold mb-8 text-slate-900">Let's Connect</h2>
+            <div
+                class="flex flex-col md:flex-row justify-center items-center gap-4 md:gap-8 mb-8 text-slate-600 font-mono text-sm">
+                <a href="mailto:thavireaksok@gmail.com"
+                    class="hover:text-blue-600 hover:-translate-y-1 transition-all duration-300 flex items-center gap-2">
+                    ✉ thavireaksok@gmail.com
+                </a>
+                <span class="hidden md:inline text-slate-300">|</span>
+                <span
+                    class="hover:text-blue-600 hover:-translate-y-1 transition-all duration-300 cursor-default flex items-center gap-2">
+                    ☎ 097 631 1421
+                </span>
+                <span class="hidden md:inline text-slate-300">|</span>
+                <span
+                    class="hover:text-blue-600 hover:-translate-y-1 transition-all duration-300 cursor-default flex items-center gap-2">
+                    ⚲ Phnom Penh, Cambodia
+                </span>
+            </div>
+            <p class="text-slate-500 text-sm">© 2026 Sok Thavireak. Crafted with code and creativity.</p>
+        </div>
+    </footer>
+
+    <!-- Project Details & Image Gallery Modal -->
+    <div id="project-modal"
+        class="modal-backdrop fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6 bg-slate-950/75 backdrop-blur-md overflow-y-auto"
+        onclick="handleBackdropClick(event)">
+        <div class="modal-content-box bg-white border border-slate-200/90 rounded-2xl sm:rounded-3xl shadow-2xl w-full max-w-5xl my-auto overflow-hidden flex flex-col max-h-[92vh] relative text-slate-900"
+            onclick="event.stopPropagation()">
+
+            <!-- Top Gradient Accent Line -->
+            <div id="modal-accent-bar" class="h-1.5 w-full bg-gradient-to-r from-purple-500 via-pink-500 to-indigo-500">
+            </div>
+
+            <!-- Modal Header -->
+            <div
+                class="px-5 sm:px-8 py-4 border-b border-slate-200/90 flex justify-between items-center bg-white sticky top-0 z-30">
+                <div class="flex items-center gap-3">
+                    <span id="modal-badge"
+                        class="px-2.5 py-1 rounded-full text-xs font-mono font-medium">Category</span>
+                    <h3 id="modal-title" class="text-xl sm:text-2xl font-bold text-slate-900 tracking-tight">Project
+                        Title</h3>
+                </div>
+                <button type="button" onclick="closeProjectModal()"
+                    class="w-9 h-9 rounded-full bg-slate-100 hover:bg-slate-200 text-slate-500 hover:text-slate-800 flex items-center justify-center transition-all duration-200 focus:outline-none cursor-pointer"
+                    aria-label="Close Modal">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12">
+                        </path>
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Modal Scrollable Content -->
+            <div class="p-5 sm:p-8 overflow-y-auto modal-scroll space-y-6">
+
+                <!-- Gallery Section (Visible when project has screenshots) -->
+                <div id="gallery-container" class="space-y-3">
+                    <div class="flex justify-between items-center">
+                        <div class="flex items-center gap-2">
+                            <span class="text-sm font-semibold text-slate-900 flex items-center gap-1.5 font-mono">
+                                <span>📸</span> Project Gallery
+                            </span>
+                            <span id="gallery-counter"
+                                class="text-xs font-mono text-purple-700 bg-purple-100 border border-purple-200 px-2 py-0.5 rounded-full font-semibold">1
+                                / 8</span>
+                        </div>
+                        <span class="text-xs text-slate-500 hidden sm:inline font-mono">Click preview to enlarge • Arrow
+                            keys to navigate</span>
+                    </div>
+
+                    <!-- Main Image Preview Card -->
+                    <div
+                        class="relative w-full h-[320px] sm:h-[420px] md:h-[500px] bg-slate-950 rounded-xl sm:rounded-2xl border border-slate-300/80 overflow-hidden flex items-center justify-center group select-none shadow-md p-2 sm:p-4">
+                        <img id="gallery-main-img" src="" alt="Project Screenshot"
+                            class="max-w-full max-h-full object-contain transition-opacity duration-200 cursor-zoom-in rounded-lg shadow-sm"
+                            onclick="openLightbox()">
+
+                        <!-- Navigation Arrows -->
+                        <button type="button" onclick="prevGalleryImage()"
+                            class="absolute left-3 top-1/2 -translate-y-1/2 w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-slate-900/85 hover:bg-purple-600 text-white flex items-center justify-center border border-slate-700 backdrop-blur-md transition-all duration-200 hover:scale-110 shadow-lg cursor-pointer z-10"
+                            aria-label="Previous Image">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M15 19l-7-7 7-7"></path>
+                            </svg>
+                        </button>
+                        <button type="button" onclick="nextGalleryImage()"
+                            class="absolute right-3 top-1/2 -translate-y-1/2 w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-slate-900/85 hover:bg-purple-600 text-white flex items-center justify-center border border-slate-700 backdrop-blur-md transition-all duration-200 hover:scale-110 shadow-lg cursor-pointer z-10"
+                            aria-label="Next Image">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7">
+                                </path>
+                            </svg>
+                        </button>
+
+                        <!-- Expand / Zoom Button -->
+                        <button type="button" onclick="openLightbox()"
+                            class="absolute bottom-3 right-3 px-3 py-1.5 rounded-lg bg-slate-900/85 hover:bg-purple-600 text-white text-xs font-mono border border-slate-700 backdrop-blur-md transition-all opacity-80 sm:opacity-0 sm:group-hover:opacity-100 flex items-center gap-1.5 shadow-lg cursor-pointer">
+                            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7"></path>
+                            </svg>
+                            <span>Enlarge</span>
+                        </button>
+                    </div>
+
+                    <!-- Caption & Description -->
+                    <div class="bg-slate-50 p-4 rounded-xl border border-slate-200">
+                        <h4 id="gallery-img-title" class="text-sm sm:text-base font-bold text-slate-900 mb-1">Screenshot
+                            Title</h4>
+                        <p id="gallery-img-desc" class="text-xs sm:text-sm text-slate-600 leading-relaxed">Screenshot
+                            description details...</p>
+                    </div>
+
+                    <!-- Thumbnails Strip -->
+                    <div id="gallery-thumbnails"
+                        class="flex gap-2.5 overflow-x-auto pb-2 pt-1 scroll-smooth no-scrollbar">
+                        <!-- Populated dynamically via JS -->
+                    </div>
+                </div>
+
+                <!-- Project Overview & Details -->
+                <div class="space-y-5">
+                    <div>
+                        <h4
+                            class="text-sm sm:text-base font-bold text-slate-900 mb-2 flex items-center gap-2 font-mono">
+                            <span class="text-blue-600">/</span> Project Summary & Scope
+                        </h4>
+                        <p id="modal-description"
+                            class="text-sm text-slate-700 leading-relaxed bg-slate-50 p-4 rounded-xl border border-slate-200">
+                            Project summary...
+                        </p>
+                    </div>
+
+                    <!-- Key Features Grid -->
+                    <div>
+                        <h4
+                            class="text-sm sm:text-base font-bold text-slate-900 mb-3 flex items-center gap-2 font-mono">
+                            <span class="text-purple-600">/</span> Key Architectural Highlights
+                        </h4>
+                        <div id="modal-features" class="grid sm:grid-cols-2 gap-3">
+                            <!-- Feature cards populated via JS -->
+                        </div>
+                    </div>
+
+                    <!-- Tech Stack Tags -->
+                    <div>
+                        <h4
+                            class="text-sm sm:text-base font-bold text-slate-900 mb-2 flex items-center gap-2 font-mono">
+                            <span class="text-green-600">/</span> Technical Stack
+                        </h4>
+                        <div id="modal-tech-stack" class="flex flex-wrap gap-2">
+                            <!-- Tech tags populated via JS -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Modal Footer -->
+            <div
+                class="px-6 py-4 border-t border-slate-200 bg-slate-50 flex flex-wrap justify-between items-center gap-3">
+                <div class="flex flex-wrap items-center gap-3">
+                    <a id="modal-live-btn" href="#" target="_blank"
+                        class="inline-flex items-center gap-1.5 bg-purple-600 hover:bg-purple-700 text-white font-mono text-xs px-4 py-2 rounded-full transition-all duration-200 hover:scale-105 shadow-sm">
+                        🔗 Visit Live Demo
+                    </a>
+                    <a id="modal-github-btn" href="#" target="_blank"
+                        class="inline-flex items-center gap-1.5 bg-white hover:bg-slate-100 text-slate-700 border border-slate-300 font-mono text-xs px-4 py-2 rounded-full transition-all duration-200 hover:scale-105 shadow-xs">
+                        💻 GitHub Repo
+                    </a>
+                </div>
+                <button type="button" onclick="closeProjectModal()"
+                    class="px-4 py-2 text-xs font-mono text-slate-600 hover:text-slate-900 bg-slate-200/80 hover:bg-slate-300 rounded-full transition-colors cursor-pointer">
+                    Close [ESC]
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Fullscreen Lightbox Overlay for Image Zoom -->
+    <div id="lightbox-overlay"
+        class="fixed inset-0 z-50 hidden bg-slate-950/95 backdrop-blur-xl flex items-center justify-center p-4 select-none cursor-zoom-out"
+        onclick="closeLightbox()">
+        <button type="button" onclick="closeLightbox()"
+            class="absolute top-5 right-5 w-11 h-11 rounded-full bg-slate-800/80 hover:bg-slate-700 text-white flex items-center justify-center transition-all z-10 border border-slate-600 cursor-pointer"
+            aria-label="Close Lightbox">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+            </svg>
+        </button>
+        <div class="max-w-6xl max-h-[92vh] flex flex-col items-center justify-center p-2"
+            onclick="event.stopPropagation()">
+            <img id="lightbox-img" src="" alt="Zoomed Screenshot"
+                class="max-w-full max-h-[85vh] object-contain rounded-xl border border-slate-800 shadow-2xl">
+            <p id="lightbox-caption"
+                class="text-center text-xs font-mono text-slate-300 mt-3 bg-slate-900/80 px-4 py-1.5 rounded-full border border-slate-700/80">
+                Caption</p>
+        </div>
+    </div>
+
+    <script>
+        // 1. Scroll Reveal
+        const revealElements = document.querySelectorAll('.reveal');
+        const revealObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1, rootMargin: "0px 0px -50px 0px" });
+        revealElements.forEach(el => revealObserver.observe(el));
+
+        // 2. 3D Tilt Effect
+        const tiltCards = document.querySelectorAll('.tilt-card');
+        tiltCards.forEach(card => {
+            card.addEventListener('mousemove', (e) => {
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                const centerX = rect.width / 2;
+                const centerY = rect.height / 2;
+                const rotateX = ((y - centerY) / centerY) * -8;
+                const rotateY = ((x - centerX) / centerX) * 8;
+
+                // Temporarily disable transition delay during hover to prevent lag from delay-100/delay-200 reveal classes
+                card.style.transitionDelay = '0s';
+
+                card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02, 1.02, 1.02)`;
+            });
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = `perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)`;
+                // Restore transition delay after animation completes
+                setTimeout(() => {
+                    card.style.transitionDelay = '';
+                }, 150);
+            });
+        });
+
+        // 3. Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuIcon = document.getElementById('menu-icon');
+        const mobileLinks = document.querySelectorAll('.mobile-nav-link');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            const isHidden = mobileMenu.classList.toggle('hidden');
+            if (isHidden) {
+                menuIcon.setAttribute('d', 'M4 6h16M4 12h16M4 18h16');
+            } else {
+                menuIcon.setAttribute('d', 'M6 18L18 6M6 6l12 12');
+            }
+        });
+
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                menuIcon.setAttribute('d', 'M4 6h16M4 12h16M4 18h16');
+            });
+        });
+
+        // 4. Scroll Spy Active Links
+        const sections = document.querySelectorAll('section, footer');
+        const navLinks = document.querySelectorAll('.nav-link');
+        const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+
+        function activateNavLinks() {
+            let currentSectionId = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - 120;
+                const sectionHeight = section.offsetHeight;
+                if (window.scrollY >= sectionTop && window.scrollY < sectionTop + sectionHeight) {
+                    currentSectionId = section.getAttribute('id');
+                }
+            });
+
+            if (window.scrollY < 200) {
+                currentSectionId = '';
+            }
+
+            navLinks.forEach(link => {
+                link.classList.remove('text-blue-600', 'font-semibold');
+                link.classList.add('text-slate-600');
+                if (link.getAttribute('href') === `#${currentSectionId}`) {
+                    link.classList.add('text-blue-600', 'font-semibold');
+                    link.classList.remove('text-slate-600');
+                }
+            });
+
+            mobileNavLinks.forEach(link => {
+                link.classList.remove('text-blue-600', 'font-semibold');
+                link.classList.add('text-slate-600');
+                if (link.getAttribute('href') === `#${currentSectionId}`) {
+                    link.classList.add('text-blue-600', 'font-semibold');
+                    link.classList.remove('text-slate-600');
+                }
+            });
+        }
+
+        window.addEventListener('scroll', activateNavLinks);
+        window.addEventListener('load', activateNavLinks);
+
+        // 5. Project Details & Interactive Gallery Modal
+        const projectsData = {
+            'sushi-store': {
+                title: 'Sushi Store & POS System',
+                badge: 'Full-Stack E-Commerce & POS',
+                accentGradient: 'from-purple-500 via-pink-500 to-indigo-500',
+                badgeClass: 'bg-purple-100 text-purple-700 border border-purple-200 font-semibold',
+                liveBtnClass: 'bg-purple-600 hover:bg-purple-700 text-white',
+                liveUrl: 'https://sushi-store-mzcy.onrender.com',
+                githubUrl: 'https://github.com/anhahseven/sushi-store',
+                description: 'A comprehensive e-commerce and point-of-sale platform developed to solve end-to-end restaurant management. Features a modern decoupled RESTful architecture with React, advanced authentication (Passport.js local & Google OAuth2), Cloudinary media management, multi-role access (Admin/Manager/Cashier), real-time inventory tracking, and POS checkouts with ABA PayWay integration.',
+                features: [
+                    { icon: '💳', title: 'Cashier POS & PayWay Integration', desc: 'Dedicated point-of-sale interface featuring operator tracking, instant dish search, cart calculation, and ABA PayWay checkout integration.' },
+                    { icon: '📊', title: 'Real-Time Admin Operations Dashboard', desc: 'Central analytics panel tracking live revenue metrics, total orders, registered user trends, and active inventory levels.' },
+                    { icon: '🔐', title: 'Multi-Role Authentication & Security', desc: 'Stateless session security with Google OAuth2 single sign-on and bcrypt local credentials, enforcing RBAC across Admin, Manager, and Cashier.' },
+                    { icon: '🍣', title: 'Interactive Customer Menu Catalog', desc: 'Filterable product showcase with real-time text query, category pills (Nigiri, Sashimi, Special Rolls), discount badges, and responsive cart.' },
+                    { icon: '☁️', title: 'Cloudinary Asset Pipeline', desc: 'Optimized cloud image hosting, transformation, and automated CDN caching for high-definition culinary photography.' },
+                    { icon: '📍', title: 'Multi-Branch Restaurant Locator', desc: 'Interactive location cards with operational schedules, branch status indicators, and integrated Google Maps directions.' }
+                ],
+                techStack: ['Node.js', 'Express.js', 'PostgreSQL', 'React.js', 'Tailwind CSS', 'OAuth 2.0', 'Cloudinary CDN', 'ABA PayWay', 'RESTful API'],
+                images: [
+                    {
+                        src: 'img/Screenshot 2026-09-14 134028.png',
+                        title: '01. Storefront Landing & Brand Hero',
+                        desc: 'Hero introduction featuring high-resolution photography, brand tagline "ALWAYS FRESH", quick navigation bar, and instant theme toggling.'
+                    },
+                    {
+                        src: 'img/Screenshot 2026-09-14 134038.png',
+                        title: '02. Interactive Menu & Nigiri Catalog',
+                        desc: 'Dynamic catalog with real-time search, category filter pills (Nigiri, Sashimi, Special Rolls, Appetizers), and one-click add-to-cart functionality.'
+                    },
+                    {
+                        src: 'img/Screenshot 2026-09-14 134048.png',
+                        title: '03. Brand Story & Executive Chef Showcase',
+                        desc: 'Engaging "Experience the Soul of Japan" section highlighting 5-star Hotel Executive Chef Kenji Nakamura and verified customer satisfaction ratings.'
+                    },
+                    {
+                        src: 'img/Screenshot 2026-09-14 134058.png',
+                        title: '04. Weekly Deals & Promotional Offers',
+                        desc: 'Promotional marketing module showing "50% OFF Second Set" offers, hot deals, and automatic percentage discount tags.'
+                    },
+                    {
+                        src: 'img/Screenshot 2026-09-14 134109.png',
+                        title: '05. Multi-Branch Store Locator',
+                        desc: 'Branch directory highlighting Murakami Central, Riverside, and BKK1 Flagship locations with real-time open/closed status and driving directions.'
+                    },
+                    {
+                        src: 'img/Screenshot 2026-09-14 134122.png',
+                        title: '06. Split Authentication & Google OAuth Portal',
+                        desc: 'Dual-column login and registration experience featuring Google OAuth 2.0 single sign-on and credential recovery.'
+                    },
+                    {
+                        src: 'img/Screenshot 2026-09-14 134145.png',
+                        title: '07. Admin Operations & Analytics Dashboard',
+                        desc: 'Real-time administrative control panel monitoring total revenue ($27.50), orders, registered user counts, and visual sales analytics.'
+                    },
+                    {
+                        src: 'img/Screenshot 2026-09-14 134155.png',
+                        title: '08. Cashier & Staff POS Terminal',
+                        desc: 'High-speed Point-of-Sale interface designed for staff with operator identification, SKU/item search, dish cards, and ABA PayWay checkout.'
+                    }
+                ]
+            },
+            'hrms': {
+                title: 'Full-Stack HRMS',
+                badge: 'Enterprise Human Resource Management',
+                accentGradient: 'from-blue-500 via-cyan-500 to-indigo-500',
+                badgeClass: 'bg-blue-100 text-blue-700 border border-blue-200 font-semibold',
+                liveBtnClass: 'bg-blue-600 hover:bg-blue-700 text-white',
+                liveUrl: 'https://hrms-frontend-w6hf.onrender.com',
+                githubUrl: 'https://github.com/anhahseven/HR_System',
+                description: 'An enterprise-grade, decoupled application featuring a scalable Spring Boot backend and React SPA. Managed complex business logic including dynamic payroll processing, leave request workflows, and performance evaluations. Implemented robust RBAC using Spring Security and JWTs for restricted dashboard environments.',
+                features: [
+                    { icon: '🛡️', title: 'Spring Security & Stateless JWT', desc: 'Cryptographically signed JWT token authentication with role-based route guarding for Admin, HR Viewer, and Employee.' },
+                    { icon: '💰', title: 'Dynamic Payroll Calculation Engine', desc: 'Automated salary engine factoring in overtime, tax deductions, performance bonuses, and customizable pay periods.' },
+                    { icon: '📅', title: 'Leave Management Lifecycle', desc: 'End-to-end leave request lifecycle (submission, supervisor review, instant approval/rejection) with status alerts.' },
+                    { icon: '⏱️', title: 'Real-Time Attendance Clock-In/Out', desc: 'Daily attendance time-logging system with punctuality tracking and exportable monthly compliance summaries.' }
+                ],
+                techStack: ['Java 17', 'Spring Boot 3', 'React.js', 'Tailwind CSS', 'Spring Security', 'JWT', 'PostgreSQL', 'REST API'],
+                images: []
+            },
+            'sfl': {
+                title: 'SFL Cambodia Interface',
+                badge: 'Educational Institution Portal',
+                accentGradient: 'from-emerald-500 via-teal-500 to-cyan-500',
+                badgeClass: 'bg-emerald-100 text-emerald-700 border border-emerald-200 font-semibold',
+                liveBtnClass: 'bg-emerald-600 hover:bg-emerald-700 text-white',
+                liveUrl: 'https://sflcambodia.com/',
+                githubUrl: null,
+                description: 'Architected a fully responsive static landing page for an educational institution. Emphasized modern UI/UX design principles ensuring cross-browser compatibility and mobile optimization. Focused on semantic HTML and optimized CSS for rapid loading times.',
+                features: [
+                    { icon: '📱', title: 'Mobile-First Responsive Layout', desc: 'Fluid layout tested across diverse mobile, tablet, and high-DPI desktop viewports for optimal readability.' },
+                    { icon: '⚡', title: 'Zero-Bloat Performance', desc: 'Near-instant page load times achieved through lightweight vanilla scripting and streamlined CSS.' },
+                    { icon: '🎨', title: 'Accessible Educational Branding', desc: 'Clear academic navigation, accessible typography hierarchy, and intuitive inquiry forms for prospective students.' }
+                ],
+                techStack: ['HTML5', 'CSS3', 'JavaScript', 'Bootstrap 5', 'Responsive Design', 'SEO Optimization'],
+                images: []
+            }
+        };
+
+        let currentModalProject = null;
+        let currentGalleryIndex = 0;
+
+        function openProjectModal(projectId) {
+            const project = projectsData[projectId];
+            if (!project) return;
+
+            currentModalProject = project;
+            currentGalleryIndex = 0;
+
+            // Accent bar & badges
+            const accentBar = document.getElementById('modal-accent-bar');
+            accentBar.className = `h-1.5 w-full bg-gradient-to-r ${project.accentGradient}`;
+
+            const badgeEl = document.getElementById('modal-badge');
+            badgeEl.className = `px-2.5 py-1 rounded-full text-xs font-mono font-medium ${project.badgeClass}`;
+            badgeEl.textContent = project.badge;
+
+            document.getElementById('modal-title').textContent = project.title;
+            document.getElementById('modal-description').textContent = project.description;
+
+            // Render features
+            const featuresContainer = document.getElementById('modal-features');
+            featuresContainer.innerHTML = project.features.map(f => `
+                <div class="bg-slate-50 p-3.5 rounded-xl border border-slate-200 hover:border-purple-300 hover:shadow-xs transition-all">
+                    <div class="flex items-center gap-2 font-bold text-slate-900 text-sm mb-1">
+                        <span class="text-base">${f.icon}</span>
+                        <span>${f.title}</span>
+                    </div>
+                    <p class="text-xs text-slate-600 leading-relaxed">${f.desc}</p>
+                </div>
+            `).join('');
+
+            // Render tech stack
+            const techContainer = document.getElementById('modal-tech-stack');
+            techContainer.innerHTML = project.techStack.map(t => `
+                <span class="bg-slate-100 text-slate-700 px-2.5 py-1 rounded-md text-xs font-mono border border-slate-200 font-medium">${t}</span>
+            `).join('');
+
+            // Action buttons
+            const liveBtn = document.getElementById('modal-live-btn');
+            if (project.liveUrl) {
+                liveBtn.href = project.liveUrl;
+                liveBtn.className = `inline-flex items-center gap-1.5 font-mono text-xs px-4 py-2 rounded-full transition-all duration-200 hover:scale-105 shadow-md ${project.liveBtnClass}`;
+                liveBtn.style.display = 'inline-flex';
+            } else {
+                liveBtn.style.display = 'none';
+            }
+
+            const githubBtn = document.getElementById('modal-github-btn');
+            if (project.githubUrl) {
+                githubBtn.href = project.githubUrl;
+                githubBtn.style.display = 'inline-flex';
+            } else {
+                githubBtn.style.display = 'none';
+            }
+
+            // Gallery handling
+            const galleryContainer = document.getElementById('gallery-container');
+            if (project.images && project.images.length > 0) {
+                galleryContainer.style.display = 'block';
+                renderGalleryThumbnails(project.images);
+                setGalleryImage(0);
+            } else {
+                galleryContainer.style.display = 'none';
+            }
+
+            // Show modal & disable background scroll
+            const modal = document.getElementById('project-modal');
+            modal.classList.add('active-modal');
+            document.body.classList.add('overflow-hidden');
+            const scrollContainer = modal.querySelector('.modal-scroll');
+            if (scrollContainer) scrollContainer.scrollTop = 0;
+        }
+
+        function closeProjectModal() {
+            const modal = document.getElementById('project-modal');
+            modal.classList.remove('active-modal');
+            document.body.classList.remove('overflow-hidden');
+            currentModalProject = null;
+        }
+
+        function handleBackdropClick(e) {
+            if (e.target.id === 'project-modal') {
+                closeProjectModal();
+            }
+        }
+
+        function renderGalleryThumbnails(images) {
+            const thumbsContainer = document.getElementById('gallery-thumbnails');
+            thumbsContainer.innerHTML = images.map((img, idx) => `
+                <button type="button" onclick="setGalleryImage(${idx})"
+                    class="gallery-thumb flex-shrink-0 w-20 h-14 sm:w-24 sm:h-16 rounded-lg overflow-hidden border-2 border-slate-200 bg-slate-100 cursor-pointer focus:outline-none ${idx === 0 ? 'active' : ''}"
+                    data-index="${idx}" title="${img.title}">
+                    <img src="${img.src}" alt="${img.title}" class="w-full h-full object-cover pointer-events-none">
+                </button>
+            `).join('');
+        }
+
+        function setGalleryImage(index) {
+            if (!currentModalProject || !currentModalProject.images || currentModalProject.images.length === 0) return;
+            const images = currentModalProject.images;
+            currentGalleryIndex = (index + images.length) % images.length;
+            const imgData = images[currentGalleryIndex];
+
+            const mainImg = document.getElementById('gallery-main-img');
+            mainImg.style.opacity = '0.3';
+            setTimeout(() => {
+                mainImg.src = imgData.src;
+                mainImg.alt = imgData.title;
+                mainImg.style.opacity = '1';
+            }, 100);
+
+            document.getElementById('gallery-counter').textContent = `${currentGalleryIndex + 1} / ${images.length}`;
+            document.getElementById('gallery-img-title').textContent = imgData.title;
+            document.getElementById('gallery-img-desc').textContent = imgData.desc;
+
+            // Update active thumbnail horizontally without scrolling the modal parent
+            const thumbs = document.querySelectorAll('.gallery-thumb');
+            const thumbsContainer = document.getElementById('gallery-thumbnails');
+            thumbs.forEach((thumb, idx) => {
+                if (idx === currentGalleryIndex) {
+                    thumb.classList.add('active');
+                    if (thumbsContainer) {
+                        const thumbLeft = thumb.offsetLeft - thumbsContainer.offsetLeft;
+                        const targetScroll = thumbLeft - (thumbsContainer.clientWidth / 2) + (thumb.clientWidth / 2);
+                        thumbsContainer.scrollTo({ left: targetScroll, behavior: 'smooth' });
+                    }
+                } else {
+                    thumb.classList.remove('active');
+                }
+            });
+        }
+
+        function prevGalleryImage() {
+            setGalleryImage(currentGalleryIndex - 1);
+        }
+
+        function nextGalleryImage() {
+            setGalleryImage(currentGalleryIndex + 1);
+        }
+
+        function openLightbox() {
+            if (!currentModalProject || !currentModalProject.images || currentModalProject.images.length === 0) return;
+            const imgData = currentModalProject.images[currentGalleryIndex];
+            const lightbox = document.getElementById('lightbox-overlay');
+            const lightboxImg = document.getElementById('lightbox-img');
+            const lightboxCap = document.getElementById('lightbox-caption');
+
+            lightboxImg.src = imgData.src;
+            lightboxImg.alt = imgData.title;
+            lightboxCap.textContent = `${imgData.title} — ${imgData.desc}`;
+            lightbox.classList.remove('hidden');
+        }
+
+        function closeLightbox() {
+            const lightbox = document.getElementById('lightbox-overlay');
+            lightbox.classList.add('hidden');
+        }
+
+        // Keyboard Controls
+        window.addEventListener('keydown', (e) => {
+            const lightbox = document.getElementById('lightbox-overlay');
+            const modal = document.getElementById('project-modal');
+
+            if (!lightbox.classList.contains('hidden')) {
+                if (e.key === 'Escape') {
+                    closeLightbox();
+                } else if (e.key === 'ArrowLeft') {
+                    prevGalleryImage();
+                    openLightbox();
+                } else if (e.key === 'ArrowRight') {
+                    nextGalleryImage();
+                    openLightbox();
+                }
+                return;
+            }
+
+            if (modal.classList.contains('active-modal')) {
+                if (e.key === 'Escape') {
+                    closeProjectModal();
+                } else if (e.key === 'ArrowLeft') {
+                    prevGalleryImage();
+                } else if (e.key === 'ArrowRight') {
+                    nextGalleryImage();
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>

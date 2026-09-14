@@ -1,0 +1,31 @@
+@echo off
+echo ===================================================
+echo   Pushing Portfolio to GitHub: Sok-Thavireak
+echo ===================================================
+echo.
+
+REM Check if git is initialized
+if not exist ".git" (
+    echo [1/4] Initializing Git repository...
+    git init
+    git branch -M main
+) else (
+    echo [1/4] Git repository already initialized.
+)
+
+echo [2/4] Setting remote origin...
+git remote remove origin 2>nul
+git remote add origin https://github.com/SokThavireak/Sok-Thavireak.git
+
+echo [3/4] Staging and committing files...
+git add .
+git commit -m "feat: portfolio with clean light theme, interactive image galleries, and responsive UI"
+
+echo [4/4] Pushing to GitHub (main branch)...
+git push -u origin main
+
+echo.
+echo ===================================================
+echo   Finished! Check https://github.com/SokThavireak/Sok-Thavireak
+echo ===================================================
+pause
