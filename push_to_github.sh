@@ -19,7 +19,7 @@ git remote add origin https://github.com/SokThavireak/Sok-Thavireak.git
 
 echo "[3/4] Staging and committing files..."
 git add .
-git commit -m "feat: fix HRMS modal image gallery and add all 13 screenshots"
+git commit -m "feat: elevate portfolio to senior full-stack software engineer design system"
 
 echo "[4/4] Pushing to GitHub (main branch)..."
 git push -u origin main --force
