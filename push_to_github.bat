@@ -19,7 +19,7 @@ git remote add origin https://github.com/SokThavireak/Sok-Thavireak.git
 
 echo [3/4] Staging and committing files...
 git add .
-git commit -m "feat: elevate portfolio to senior full-stack software engineer design system"
+git commit -m "feat: add Pidan Khmer Silk Shop Inventory project & refine core skill matrix"
 
 echo [4/4] Pushing to GitHub (main branch)...
 git push -u origin main --force
