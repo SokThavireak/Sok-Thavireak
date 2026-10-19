@@ -5,6 +5,7 @@ Personal portfolio website for **Sok Thavireak**, Full-Stack Website Developer &
 ## 🚀 Key Highlights
 - **Modern Clean Light Theme**: Elegant white aesthetic with balanced typography, subtle shadows, and glassmorphic navigation.
 - **Interactive Project Galleries**:
+  - **Omnichannel POS & E-Commerce (New Release)**: 19-screenshot interactive gallery modal showcasing customer web storefront pages (catalog, shopping bag, order tracking, retail locations), cashier point-of-sale terminals, real-time inventory synchronization, immutable restock ledgers, and 4-tier JWT RBAC ([GitHub](https://github.com/SokThavireak/pos-and-ecommerce)).
   - **Full-Stack HRMS**: 13-screenshot interactive gallery modal showcasing Spring Boot + React admin workflows, payroll, leave management, and dashboard architecture.
   - **Murakami Sushi Store & POS**: 8-screenshot modal showcasing multi-role dashboard and e-commerce workflows.
   - **SFL Cambodia Landing Page**: Institutional UI optimization and mobile-first responsive design.

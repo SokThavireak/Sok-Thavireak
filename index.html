@@ -394,7 +394,7 @@
                 <!-- Metrics Row -->
                 <div class="grid grid-cols-3 gap-3 max-w-xl mx-auto lg:mx-0 pt-6 border-t border-slate-200/80">
                     <div class="glass-panel p-3.5 rounded-xl text-center lg:text-left">
-                        <div class="text-xl sm:text-2xl font-bold text-blue-600 font-mono">4+</div>
+                        <div class="text-xl sm:text-2xl font-bold text-blue-600 font-mono">5+</div>
                         <div class="text-[11px] font-mono text-slate-600 font-medium">Production & Active Projects</div>
                     </div>
                     <div class="glass-panel p-3.5 rounded-xl text-center lg:text-left">
@@ -629,7 +629,7 @@
                 <!-- Slide Navigation Arrows & Counter -->
                 <div class="flex items-center gap-3">
                     <span id="slider-counter" class="text-xs font-mono font-bold text-slate-600 bg-white px-3 py-1.5 rounded-full border border-slate-200 shadow-2xs">
-                        01 / 04
+                        01 / 05
                     </span>
                     <button type="button" onclick="prevProjectSlide()"
                         class="w-10 h-10 rounded-full bg-white hover:bg-slate-100 text-slate-700 border border-slate-300 flex items-center justify-center transition-all hover:scale-105 shadow-2xs cursor-pointer"
@@ -655,16 +655,16 @@
                         <span id="window-frame-url" class="ml-2 text-slate-400 text-[11px] hidden sm:inline">hrms.internal.app — Executive Admin Console</span>
                     </div>
                     <div class="flex items-center gap-2">
-                        <span id="window-frame-badge" class="text-xs font-mono text-blue-400 bg-blue-950/80 px-2.5 py-0.5 rounded border border-blue-800/60 font-semibold">Project 01 / 04</span>
+                        <span id="window-frame-badge" class="text-xs font-mono text-blue-400 bg-blue-950/80 px-2.5 py-0.5 rounded border border-blue-800/60 font-semibold">Project 01 / 05</span>
                         <span id="window-frame-status" class="text-emerald-400 text-xs flex items-center gap-1 font-mono"><span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>Live</span>
                     </div>
                 </div>
 
                 <!-- In-Card Project Navigation Tabs Sub-Header -->
                 <div class="bg-[#0b101b] border-b border-slate-800/90 px-3 sm:px-6 py-2 overflow-x-auto no-scrollbar">
-                    <div class="grid grid-cols-2 lg:grid-cols-4 gap-2 sm:gap-3 min-w-[560px] lg:min-w-0">
+                    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-2 sm:gap-2.5 min-w-[700px] lg:min-w-0">
                         <button type="button" onclick="goToProjectSlide(0)" data-tab-index="0"
-                            class="slide-tab-item tab-active text-left px-3.5 py-2 rounded-lg cursor-pointer overflow-hidden group">
+                            class="slide-tab-item tab-active text-left px-3 py-2 rounded-lg cursor-pointer overflow-hidden group">
                             <div class="flex items-center justify-between mb-0.5">
                                 <span class="tab-index-badge text-[10px] font-mono font-bold px-1.5 py-0.5 rounded bg-slate-800 text-slate-300">01</span>
                                 <span class="text-[10px] font-mono text-blue-400 font-semibold tracking-wider">PROD</span>
@@ -676,7 +676,7 @@
                             </div>
                         </button>
                         <button type="button" onclick="goToProjectSlide(1)" data-tab-index="1"
-                            class="slide-tab-item text-left px-3.5 py-2 rounded-lg cursor-pointer overflow-hidden group">
+                            class="slide-tab-item text-left px-3 py-2 rounded-lg cursor-pointer overflow-hidden group">
                             <div class="flex items-center justify-between mb-0.5">
                                 <span class="tab-index-badge text-[10px] font-mono font-bold px-1.5 py-0.5 rounded bg-slate-800 text-slate-400">02</span>
                                 <span class="text-[10px] font-mono text-purple-400 font-semibold tracking-wider">STABLE</span>
@@ -688,7 +688,7 @@
                             </div>
                         </button>
                         <button type="button" onclick="goToProjectSlide(2)" data-tab-index="2"
-                            class="slide-tab-item text-left px-3.5 py-2 rounded-lg cursor-pointer overflow-hidden group">
+                            class="slide-tab-item text-left px-3 py-2 rounded-lg cursor-pointer overflow-hidden group">
                             <div class="flex items-center justify-between mb-0.5">
                                 <span class="tab-index-badge text-[10px] font-mono font-bold px-1.5 py-0.5 rounded bg-slate-800 text-slate-400">03</span>
                                 <span class="text-[10px] font-mono text-emerald-400 font-semibold tracking-wider">LIVE</span>
@@ -700,7 +700,7 @@
                             </div>
                         </button>
                         <button type="button" onclick="goToProjectSlide(3)" data-tab-index="3"
-                            class="slide-tab-item text-left px-3.5 py-2 rounded-lg cursor-pointer overflow-hidden group">
+                            class="slide-tab-item text-left px-3 py-2 rounded-lg cursor-pointer overflow-hidden group">
                             <div class="flex items-center justify-between mb-0.5">
                                 <span class="tab-index-badge text-[10px] font-mono font-bold px-1.5 py-0.5 rounded bg-slate-800 text-slate-400">04</span>
                                 <span class="text-[10px] font-mono text-amber-400 font-semibold tracking-wider">BUILD</span>
@@ -709,6 +709,18 @@
                             <div class="text-[10px] text-slate-500 font-mono truncate">Nuxt 3 • NestJS • Docker</div>
                             <div class="absolute bottom-0 left-0 right-0 h-[2px] bg-slate-800/50">
                                 <div class="tab-progress-bar h-full bg-amber-500 w-0"></div>
+                            </div>
+                        </button>
+                        <button type="button" onclick="goToProjectSlide(4)" data-tab-index="4"
+                            class="slide-tab-item text-left px-3 py-2 rounded-lg cursor-pointer overflow-hidden group">
+                            <div class="flex items-center justify-between mb-0.5">
+                                <span class="tab-index-badge text-[10px] font-mono font-bold px-1.5 py-0.5 rounded bg-slate-800 text-slate-400">05</span>
+                                <span class="text-[10px] font-mono text-rose-400 font-semibold tracking-wider">NEW</span>
+                            </div>
+                            <div class="font-bold text-xs truncate">Omnichannel POS &amp; E-C</div>
+                            <div class="text-[10px] text-slate-400 font-mono truncate">NestJS • React • RBAC</div>
+                            <div class="absolute bottom-0 left-0 right-0 h-[2px] bg-slate-800/50">
+                                <div class="tab-progress-bar h-full bg-rose-500 w-0"></div>
                             </div>
                         </button>
                     </div>
@@ -1032,6 +1044,84 @@
                                         <span class="w-2 h-2 rounded-full bg-amber-500 animate-ping"></span>
                                         Active Development
                                     </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- SLIDE 4: Omnichannel POS & E-Commerce Platform -->
+                    <div id="project-slide-4" class="project-slide">
+                        <div class="grid lg:grid-cols-12 gap-0">
+                            <!-- Left Column: Interactive Screenshot Preview with inspection trigger -->
+                            <div onclick="openProjectModal('pos-and-ecommerce')" class="lg:col-span-7 bg-slate-950 relative overflow-hidden group cursor-pointer min-h-[320px] sm:min-h-[440px] flex items-center justify-center p-4">
+                                <img src="img/POS and E-C/Screenshot 2026-10-17 010929.png" alt="Omnichannel POS and E-Commerce System Preview"
+                                    class="w-full h-full object-cover object-top rounded-xl border border-slate-800/80 group-hover:scale-[1.02] transition-transform duration-500 shadow-2xl">
+                                <div class="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-transparent to-transparent opacity-80 group-hover:opacity-60 transition-opacity"></div>
+                                
+                                <div class="absolute bottom-4 left-4 right-4 flex items-center justify-between">
+                                    <span class="bg-rose-600 text-white font-mono text-xs px-3 py-1.5 rounded-lg font-semibold flex items-center gap-2 shadow-lg backdrop-blur-md">
+                                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+                                        19 Production Screenshots Gallery
+                                    </span>
+                                    <span class="bg-slate-900/90 text-rose-300 border border-rose-400/40 text-xs font-mono px-3 py-1 rounded-lg backdrop-blur-md">
+                                        Click to Enlarge &amp; Inspect →
+                                    </span>
+                                </div>
+                            </div>
+
+                            <!-- Right Column: System Specs, Highlights, and CTAs -->
+                            <div class="lg:col-span-5 p-6 sm:p-8 flex flex-col justify-between bg-white border-t lg:border-t-0 lg:border-l border-slate-200">
+                                <div>
+                                    <div class="flex items-center justify-between gap-2 mb-3">
+                                        <span class="px-2.5 py-0.5 rounded-full text-xs font-mono font-medium bg-rose-100 text-rose-700 border border-rose-200">Omnichannel Retail &amp; POS</span>
+                                        <span class="text-xs font-mono text-slate-500">NestJS • React SPA • RBAC</span>
+                                    </div>
+                                    <h3 class="text-2xl font-extrabold text-slate-900 tracking-tight mb-3">
+                                        Omnichannel POS &amp; E-Commerce
+                                    </h3>
+                                    <p class="text-slate-600 text-sm leading-relaxed mb-6">
+                                        Unified enterprise retail platform synchronizing customer web storefront purchases with physical cashier point-of-sale checkout counters, live stock movement ledgers, and comprehensive role-based access control.
+                                    </p>
+
+                                    <!-- Architectural Highlights -->
+                                    <div class="space-y-3 mb-6 bg-slate-50 p-4 rounded-xl border border-slate-200 text-xs">
+                                        <div class="flex items-start gap-2.5 text-slate-700">
+                                            <span class="text-rose-600 font-bold mt-0.5">▹</span>
+                                            <span><strong>Unified Inventory Sync:</strong> Real-time inventory parity preventing overselling across online web storefronts and physical cashier POS terminals.</span>
+                                        </div>
+                                        <div class="flex items-start gap-2.5 text-slate-700">
+                                            <span class="text-rose-600 font-bold mt-0.5">▹</span>
+                                            <span><strong>Operations Hub &amp; Restock Ledger:</strong> Immutable inventory history ledger tracking restocks, counter sales, order pickups, and lot intakes in real time.</span>
+                                        </div>
+                                        <div class="flex items-start gap-2.5 text-slate-700">
+                                            <span class="text-rose-600 font-bold mt-0.5">▹</span>
+                                            <span><strong>4-Tier RBAC &amp; Audit Trail:</strong> Stateless JWT authentication enforcing distinct privilege boundaries across Owner, Admin, Cashier, and Customer roles.</span>
+                                        </div>
+                                    </div>
+
+                                    <!-- Tech Stack Chips -->
+                                    <div class="flex flex-wrap gap-1.5 mb-6 text-xs font-mono text-slate-600">
+                                        <span class="bg-rose-50 text-rose-700 border border-rose-100 px-2.5 py-1 rounded font-semibold">NestJS</span>
+                                        <span class="bg-slate-100 text-slate-700 border border-slate-200 px-2.5 py-1 rounded">TypeScript</span>
+                                        <span class="bg-blue-50 text-blue-700 border border-blue-100 px-2.5 py-1 rounded">React SPA</span>
+                                        <span class="bg-purple-50 text-purple-700 border border-purple-100 px-2.5 py-1 rounded">Tailwind CSS</span>
+                                        <span class="bg-emerald-50 text-emerald-700 border border-emerald-100 px-2.5 py-1 rounded">PostgreSQL</span>
+                                        <span class="bg-slate-100 text-slate-700 border border-slate-200 px-2.5 py-1 rounded">JWT &amp; RBAC</span>
+                                    </div>
+                                </div>
+
+                                <!-- Action CTAs -->
+                                <div class="flex flex-wrap items-center gap-3 pt-4 border-t border-slate-100 font-mono text-xs">
+                                    <button type="button" onclick="openProjectModal('pos-and-ecommerce')"
+                                        class="bg-rose-600 hover:bg-rose-700 text-white px-5 py-2.5 rounded-full font-medium transition-all hover:scale-105 shadow-sm flex items-center gap-2 cursor-pointer">
+                                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path></svg>
+                                        Inspect System (19 Screenshots)
+                                    </button>
+                                    <a href="https9://github.com/SokThavireak/pos-and-ecommerce" target="_blank"
+                                        class="bg-white hover:bg-slate-100 text-slate-700 border border-slate-300 px-4 py-2.5 rounded-full transition-all hover:scale-105 shadow-2xs flex items-center gap-1.5">
+                                        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"></path></svg>
+                                        GitHub
+                                    </a>
                                 </div>
                             </div>
                         </div>
@@ -1411,7 +1501,7 @@
         revealElements.forEach(el => revealObserver.observe(el));
         // Featured Projects Full-Page Slider Controller
         let currentProjectSlide = 0;
-        const totalProjectSlides = 4;
+        const totalProjectSlides = 5;
         let slideAutoTimer = null;
         let isSliderHovered = false;
 
@@ -1460,10 +1550,11 @@
 
             // Update macOS Frame Header Meta
             const frameMetadata = [
-                { url: 'hrms.internal.app — Executive Admin Console', badge: 'Project 01 / 04', status: '<span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>Live' },
-                { url: 'sushi-pos.production.app — Cashier & Kitchen Terminal', badge: 'Project 02 / 04', status: '<span class="w-2 h-2 rounded-full bg-purple-400 animate-pulse"></span>Stable' },
-                { url: 'sflcambodia.com — Official Brand & Logistics Portal', badge: 'Project 03 / 04', status: '<span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>Live' },
-                { url: 'pidan-inventory.internal.app — Silk Warehouse ERP', badge: 'Project 04 / 04', status: '<span class="w-2 h-2 rounded-full bg-amber-400 animate-pulse"></span>Active Dev' }
+                { url: 'hrms.internal.app — Executive Admin Console', badge: 'Project 01 / 05', status: '<span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>Live' },
+                { url: 'sushi-pos.production.app — Cashier & Kitchen Terminal', badge: 'Project 02 / 05', status: '<span class="w-2 h-2 rounded-full bg-purple-400 animate-pulse"></span>Stable' },
+                { url: 'sflcambodia.com — Official Brand & Logistics Portal', badge: 'Project 03 / 05', status: '<span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>Live' },
+                { url: 'pidan-inventory.internal.app — Silk Warehouse ERP', badge: 'Project 04 / 05', status: '<span class="w-2 h-2 rounded-full bg-amber-400 animate-pulse"></span>Active Dev' },
+                { url: 'biolabs-pos.internal.app — Omnichannel POS & Operations Hub', badge: 'Project 05 / 05', status: '<span class="w-2 h-2 rounded-full bg-rose-400 animate-pulse"></span>New Release' }
             ];
             const meta = frameMetadata[currentProjectSlide];
             if (meta) {
@@ -1898,6 +1989,147 @@
                     ]
                 },
                 images: []
+            },
+            'pos-and-ecommerce': {
+                title: 'Omnichannel POS & E-Commerce Platform',
+                badge: 'Unified Retail System • NestJS & React',
+                domain: 'biolabs-pos.internal.app',
+                accentGradient: 'from-rose-500 via-pink-600 to-indigo-600',
+                badgeClass: 'bg-rose-100 text-rose-700 border border-rose-200 font-semibold',
+                counterClass: 'bg-rose-100 text-rose-700 border border-rose-200',
+                themeAccent: '#e11d48',
+                themeGlow: 'rgba(225, 29, 72, 0.45)',
+                liveBtnClass: 'bg-rose-600 hover:bg-rose-700 text-white',
+                liveUrl: null,
+                githubUrl: 'https://github.com/SokThavireak/pos-and-ecommerce',
+                description: 'An omnichannel retail commerce engine and cashier point-of-sale system built with NestJS, React SPA, Tailwind CSS, and PostgreSQL. Features real-time multi-channel inventory synchronization between online customer storefronts and physical checkout counters, immutable stock movement audit ledgers, barcode scanning, order pickup workflows, and 4-tier role-based access control (Owner, Admin, Cashier, Customer).',
+                features: [
+                    { icon: '🏪', title: 'Omnichannel Cashier POS Terminal', desc: 'High-throughput counter checkout interface featuring barcode scanner lookup, live SKU availability indicators, item discounts, and split cash/card payments.' },
+                    { icon: '📊', title: 'Real-Time Sales & Revenue Analytics', desc: 'Executive dashboard tracking yearly gross sales ($184k+), channel volume distribution (POS vs. Web), client counts, and top-performing products.' },
+                    { icon: '📦', title: 'Operations Hub & Quick Replenishment', desc: 'Central dispatch center allowing one-click inventory increments (+10, +50, +100 units), low-stock warnings, and direct lot adjustment.' },
+                    { icon: '📜', title: 'Immutable Stock Movement Ledger', desc: 'Comprehensive transaction history ledger logging event types (Restock, POS Sale, Web Order), quantity deltas, initiating staff, and post-transaction balances.' },
+                    { icon: '🚚', title: 'Order Fulfillment & Counter Dispatch', desc: 'Active fulfillment queue to accept web storefront orders, prepare item lots, confirm walk-in customer pickups, and trigger status updates.' },
+                    { icon: '🔐', title: '4-Tier RBAC & Audit Trail Logging', desc: 'Strict JWT authorization separating Owner, Admin, Cashier, and Customer capabilities with timestamped operator activity logs.' }
+                ],
+                techStack: ['NestJS', 'TypeScript', 'React.js', 'Tailwind CSS', 'PostgreSQL', 'JWT RBAC', 'Barcode Scanner', 'RESTful API', 'Vite'],
+                arch: {
+                    headline: 'Unified Omnichannel Architecture with Multi-Channel Parity',
+                    subtext: 'High-concurrency retail system synchronizing online customer reservations and physical cashier checkouts with instantaneous stock reconciliation and audit verification.',
+                    pipeline: [
+                        { icon: '🖥️', step: '01. Dual Frontends', title: 'React Storefront & POS Terminal', desc: 'Tailwind-powered web e-commerce storefront for customers alongside an optimized high-speed POS counter for cashiers.' },
+                        { icon: '🛡️', step: '02. Security & RBAC', title: 'JWT Authentication & Guards', desc: 'NestJS AuthGuard interceptors validating stateless tokens and enforcing role policies across 4 user clearance tiers.' },
+                        { icon: '⚡', step: '03. API Gateway', title: 'Modular NestJS Controllers', desc: 'Strict TypeScript DTO validation pipes handling catalog taxonomy, order dispatch queues, and cashier sessions.' },
+                        { icon: '📦', step: '04. Inventory Engine', title: 'Real-Time Stock Reconciliation', desc: 'Atomic decrements preventing double-selling across web storefront reservations and physical POS counter transactions.' },
+                        { icon: '📜', step: '05. Audit Logger', title: 'Immutable Movement Ledger', desc: 'Every replenishment, sale, and stock intake is persisted to an immutable event ledger with operator tracking.' },
+                        { icon: '🗄️', step: '06. Relational Store', title: 'PostgreSQL Relational DB', desc: 'Structured transactional schema with foreign keys connecting products, categories, SKU barcodes, orders, and audit logs.' }
+                    ],
+                    specs: [
+                        { domain: 'System Topology', details: 'Unified Omnichannel NestJS Modular Backend + Decoupled React SPA' },
+                        { domain: 'Authentication & RBAC', details: 'Stateless JWT with 4-Tier Roles (Owner, Admin, Cashier, Customer)' },
+                        { domain: 'Inventory Parity', details: 'Atomic transaction locks guaranteeing synchronized stock between Web & POS' },
+                        { domain: 'Audit & Compliance', details: 'Immutable movement ledger recording user identity, IP, delta, and timestamps' },
+                        { domain: 'Data Architecture', details: 'PostgreSQL relational persistence with indexed barcode and order lookups' }
+                    ]
+                },
+                images: [
+                    // --- USER & CUSTOMER E-COMMERCE PAGES ---
+                    {
+                        src: 'img/POS and E-C/image.png',
+                        title: '01. User / Customer Storefront — Brand Landing & Hero',
+                        desc: 'Customer-facing modern storefront featuring precision research catalog banner, verified batch credentials, trust badges, and direct catalog exploration.'
+                    },
+                    {
+                        src: 'img/POS and E-C/image copy.png',
+                        title: '02. User / Customer Storefront — Shop Catalog & Category Filters',
+                        desc: 'Interactive shopping catalog with taxonomy sidebar (Precision Peptides, Editorial Apparel, Syringes), real-time price slider, size picker, and flash clearance banner.'
+                    },
+                    {
+                        src: 'img/POS and E-C/image copy 11.png',
+                        title: '03. User / Customer Storefront — Shopping Bag & Checkout Flow',
+                        desc: 'Responsive cart order summary with quantity accumulators, item removal, estimated taxes, cold-chain packaging guarantees, and secure 256-bit checkout.'
+                    },
+                    {
+                        src: 'img/POS and E-C/image copy 6.png',
+                        title: '04. User / Customer Portal — Order History & Live Tracking',
+                        desc: 'Customer self-service portal displaying active shipments with cold-chain tracking IDs (e.g. BIO-US-8923419), fulfillment status tags, and one-click reordering.'
+                    },
+                    {
+                        src: 'img/POS and E-C/image copy 3.png',
+                        title: '05. User / Customer Storefront — Retail & Experience Hub Locations',
+                        desc: 'Physical experience hub directory allowing customers to locate cold-chain pickup lockers, verified research counters, and flagship retail hubs across global regions.'
+                    },
+                    {
+                        src: 'img/POS and E-C/image copy 4.png',
+                        title: '06. User / Customer Storefront — Brand Story & Purity Mission',
+                        desc: 'Institutional transparency page detailing HPLC analytical testing, 99.4% batch purity metrics, and zero-latency retail inventory synchronization.'
+                    },
+                    {
+                        src: 'img/POS and E-C/image copy 5.png',
+                        title: '07. User / Authentication Gateway — 4-Tier RBAC Login',
+                        desc: 'Sleek dark-mode authentication portal with JWT session protection, OAuth SSO, and demo role switching between Owner, Admin, Cashier, and Customer.'
+                    },
+                    {
+                        src: 'img/POS and E-C/image copy 10.png',
+                        title: '08. User Profile & Credential Management (Admin Account)',
+                        desc: 'Authenticated profile settings console managing personal details, avatar upload, 256-bit JWT session status, and active RBAC clearance rights.'
+                    },
+                    // --- POS CASHIER & MULTI-CHANNEL OPERATIONS ---
+                    {
+                        src: 'img/POS and E-C/Screenshot 2026-10-17 010951.png',
+                        title: '09. Cashier POS Terminal #01 — Active Checkout Counter',
+                        desc: 'High-throughput point-of-sale interface equipped with live SKU barcode scanner (SKU 8934500101), active ticket builder, discount calculation, and split tender.'
+                    },
+                    {
+                        src: 'img/POS and E-C/Screenshot 2026-10-17 010929.png',
+                        title: '10. Operations Command — Multichannel Sales & Revenue Analytics',
+                        desc: 'Executive analytics suite tracking $184,920 annual turnover, channel volume breakdown (60% Web Storefront vs. 40% In-Store POS), and 1,226 active customer profiles.'
+                    },
+                    {
+                        src: 'img/POS and E-C/Screenshot 2026-10-17 010934.png',
+                        title: '11. Operations Hub — Product Catalog & SKU Management',
+                        desc: 'Complete inventory ledger displaying SKU codes, live stock quantities, wholesale vs. retail prices, and instant edit actions.'
+                    },
+                    {
+                        src: 'img/POS and E-C/Screenshot 2026-10-17 010946.png',
+                        title: '12. Operations Hub — Live Stock Balances & Quick Replenishment',
+                        desc: 'Counter inventory dispatch tool enabling one-click bulk restock lots (+10, +50, +100 units) and automated low-stock warnings.'
+                    },
+                    {
+                        src: 'img/POS and E-C/Screenshot 2026-10-17 011111.png',
+                        title: '13. Operations Hub — Stock Movement & Restock History Ledger',
+                        desc: 'Immutable real-time audit ledger logging stock intake events, cashier POS sales, web orders, quantity deltas, operator name, and remaining inventory.'
+                    },
+                    {
+                        src: 'img/POS and E-C/Screenshot 2026-10-17 011116.png',
+                        title: '14. Operations Hub — Incoming Orders & Counter Dispatch Queue',
+                        desc: 'Fulfillment queue managing web storefront customer orders and walk-in client pickups with instant Accept, Dispatched, and Fulfilled status updates.'
+                    },
+                    {
+                        src: 'img/POS and E-C/Screenshot 2026-10-17 011100.png',
+                        title: '15. Operations Hub — Add Product & POS Broadcast Engine',
+                        desc: 'Product intake workflow configuring SKU codes, barcode strings, price points, dosage specifications, and automatic broadcast to POS terminals.'
+                    },
+                    {
+                        src: 'img/POS and E-C/Screenshot 2026-10-17 010939.png',
+                        title: '16. Operations Hub — Category Taxonomy & Color Tint Management',
+                        desc: 'Hierarchical taxonomy creator managing slug routes, badge color tags, and category collections visible across web storefront and POS registers.'
+                    },
+                    {
+                        src: 'img/POS and E-C/Screenshot 2026-10-17 011056.png',
+                        title: '17. Operations Hub — User Provisioning & Team Access (RBAC)',
+                        desc: 'Team access management configuring role privileges across Owner, Admin, Cashier, and Customer accounts with active JWT authentication.'
+                    },
+                    {
+                        src: 'img/POS and E-C/image copy 7.png',
+                        title: '18. Admin Studio — Brand Customization & Dynamic Theme Tokens',
+                        desc: 'White-label brand customizer enabling dynamic color palette engine updates, custom SVG logo uploads, and real-time live preview broadcasting.'
+                    },
+                    {
+                        src: 'img/POS and E-C/Screenshot 2026-10-17 011127.png',
+                        title: '19. Admin Studio — Unified Activity & Security Audit Trail',
+                        desc: 'Chronological security audit log capturing every administrative action: ledger exports, barcode checkouts, price adjustments, and credential provisions.'
+                    }
+                ]
             }
         };
 
