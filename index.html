@@ -778,7 +778,7 @@
                 <div class="flex items-center gap-3">
                     <span id="slider-counter"
                         class="text-xs font-mono font-bold text-slate-600 bg-white px-3 py-1.5 rounded-full border border-slate-200 shadow-2xs">
-                        01 / 05
+                        01 / 06
                     </span>
                     <button type="button" onclick="prevProjectSlide()"
                         class="w-10 h-10 rounded-full bg-white hover:bg-slate-100 text-slate-700 border border-slate-300 flex items-center justify-center transition-all hover:scale-105 shadow-2xs cursor-pointer"
@@ -815,7 +815,7 @@
                     <div class="flex items-center gap-2">
                         <span id="window-frame-badge"
                             class="text-xs font-mono text-blue-400 bg-blue-950/80 px-2.5 py-0.5 rounded border border-blue-800/60 font-semibold">Project
-                            01 / 05</span>
+                            01 / 06</span>
                         <span id="window-frame-status"
                             class="text-emerald-400 text-xs flex items-center gap-1 font-mono"><span
                                 class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>Live</span>
@@ -825,7 +825,7 @@
                 <!-- In-Card Project Navigation Tabs Sub-Header -->
                 <div class="bg-[#0b101b] border-b border-slate-800/90 px-3 sm:px-6 py-2 overflow-x-auto no-scrollbar">
                     <div
-                        class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-2 sm:gap-2.5 min-w-[700px] lg:min-w-0">
+                        class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-2 sm:gap-2.5 min-w-[840px] lg:min-w-0">
                         <button type="button" onclick="goToProjectSlide(0)" data-tab-index="0"
                             class="slide-tab-item tab-active text-left px-3 py-2 rounded-lg cursor-pointer overflow-hidden group">
                             <div class="flex items-center justify-between mb-0.5">
@@ -894,6 +894,20 @@
                             <div class="text-[10px] text-slate-400 font-mono truncate">NestJS • React • RBAC</div>
                             <div class="absolute bottom-0 left-0 right-0 h-[2px] bg-slate-800/50">
                                 <div class="tab-progress-bar h-full bg-rose-500 w-0"></div>
+                            </div>
+                        </button>
+                        <button type="button" onclick="goToProjectSlide(5)" data-tab-index="5"
+                            class="slide-tab-item text-left px-3 py-2 rounded-lg cursor-pointer overflow-hidden group">
+                            <div class="flex items-center justify-between mb-0.5">
+                                <span
+                                    class="tab-index-badge text-[10px] font-mono font-bold px-1.5 py-0.5 rounded bg-slate-800 text-slate-400">06</span>
+                                <span
+                                    class="text-[10px] font-mono text-cyan-400 font-semibold tracking-wider">STUDIO</span>
+                            </div>
+                            <div class="font-bold text-xs truncate">Pop Commercial Photo</div>
+                            <div class="text-[10px] text-slate-400 font-mono truncate">Full-Stack • Studio Portal</div>
+                            <div class="absolute bottom-0 left-0 right-0 h-[2px] bg-slate-800/50">
+                                <div class="tab-progress-bar h-full bg-cyan-400 w-0"></div>
                             </div>
                         </button>
                     </div>
@@ -1486,6 +1500,113 @@
                         </div>
                     </div>
 
+                    <!-- SLIDE 5: Pop Commercial Photograph Studio Platform -->
+                    <div id="project-slide-5" class="project-slide">
+                        <div class="grid lg:grid-cols-12 gap-0">
+                            <!-- Left Column: Interactive Screenshot Preview with inspection trigger -->
+                            <div onclick="openProjectModal('pop-commercial-photograph')"
+                                class="lg:col-span-7 bg-slate-950 relative overflow-hidden group cursor-pointer min-h-[320px] sm:min-h-[440px] flex items-center justify-center p-4">
+                                <img src="img/pop-commercial-photograph/localhost_3000_.png"
+                                    alt="Pop Commercial Photograph Studio Preview"
+                                    class="w-full h-full object-cover object-top rounded-xl border border-slate-800/80 group-hover:scale-[1.02] transition-transform duration-500 shadow-2xl">
+                                <div
+                                    class="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-transparent to-transparent opacity-80 group-hover:opacity-60 transition-opacity">
+                                </div>
+
+                                <div class="absolute bottom-4 left-4 right-4 flex items-center justify-between">
+                                    <span
+                                        class="bg-cyan-600 text-white font-mono text-xs px-3 py-1.5 rounded-lg font-semibold flex items-center gap-2 shadow-lg backdrop-blur-md">
+                                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z">
+                                            </path>
+                                        </svg>
+                                        8 Production Screenshots Gallery
+                                    </span>
+                                    <span
+                                        class="bg-slate-900/90 text-cyan-300 border border-cyan-400/40 text-xs font-mono px-3 py-1 rounded-lg backdrop-blur-md">
+                                        Click to Enlarge &amp; Inspect →
+                                    </span>
+                                </div>
+                            </div>
+
+                            <!-- Right Column: System Specs, Highlights, and CTAs -->
+                            <div
+                                class="lg:col-span-5 p-6 sm:p-8 flex flex-col justify-between bg-white border-t lg:border-t-0 lg:border-l border-slate-200">
+                                <div>
+                                    <div class="flex items-center justify-between gap-2 mb-3">
+                                        <span
+                                            class="px-2.5 py-0.5 rounded-full text-xs font-mono font-medium bg-cyan-100 text-cyan-800 border border-cyan-200">Commercial
+                                            Studio &amp; Media</span>
+                                        <span class="text-xs font-mono text-slate-500">Full-Stack • Client Portal</span>
+                                    </div>
+                                    <h3 class="text-2xl font-extrabold text-slate-900 tracking-tight mb-3">
+                                        Pop Commercial Photograph
+                                    </h3>
+                                    <p class="text-slate-600 text-sm leading-relaxed mb-6">
+                                        End-to-end commercial photography studio platform featuring an editorial portfolio showcase, interactive rate calculator, staff workspace, client authentication, and publication journal.
+                                    </p>
+
+                                    <!-- Architectural Highlights -->
+                                    <div
+                                        class="space-y-3 mb-6 bg-slate-50 p-4 rounded-xl border border-slate-200 text-xs">
+                                        <div class="flex items-start gap-2.5 text-slate-700">
+                                            <span class="text-cyan-600 font-bold mt-0.5">▹</span>
+                                            <span><strong>Editorial Showcase &amp; Journal:</strong> High-resolution media presentation and behind-the-scenes production journal for creative campaigns.</span>
+                                        </div>
+                                        <div class="flex items-start gap-2.5 text-slate-700">
+                                            <span class="text-cyan-600 font-bold mt-0.5">▹</span>
+                                            <span><strong>Commercial Pricing &amp; Bookings:</strong> Tiered package pricing matrices with shoot specifications, deliverables breakdown, and inquiry capture.</span>
+                                        </div>
+                                        <div class="flex items-start gap-2.5 text-slate-700">
+                                            <span class="text-cyan-600 font-bold mt-0.5">▹</span>
+                                            <span><strong>Staff Operations &amp; Client Auth:</strong> Dedicated staff operations portal paired with client sign-in and account registration flows.</span>
+                                        </div>
+                                    </div>
+
+                                    <!-- Tech Stack Chips -->
+                                    <div class="flex flex-wrap gap-1.5 mb-6 text-xs font-mono text-slate-600">
+                                        <span
+                                            class="bg-cyan-50 text-cyan-800 border border-cyan-100 px-2.5 py-1 rounded font-semibold">Full-Stack</span>
+                                        <span
+                                            class="bg-slate-100 text-slate-700 border border-slate-200 px-2.5 py-1 rounded">JavaScript</span>
+                                        <span
+                                            class="bg-blue-50 text-blue-700 border border-blue-100 px-2.5 py-1 rounded">REST API</span>
+                                        <span
+                                            class="bg-purple-50 text-purple-700 border border-purple-100 px-2.5 py-1 rounded">Tailwind CSS</span>
+                                        <span
+                                            class="bg-emerald-50 text-emerald-700 border border-emerald-100 px-2.5 py-1 rounded">Auth &amp; RBAC</span>
+                                    </div>
+                                </div>
+
+                                <!-- Action CTAs -->
+                                <div
+                                    class="flex flex-wrap items-center gap-3 pt-4 border-t border-slate-100 font-mono text-xs">
+                                    <button type="button" onclick="openProjectModal('pop-commercial-photograph')"
+                                        class="bg-cyan-600 hover:bg-cyan-700 text-white px-5 py-2.5 rounded-full font-medium transition-all hover:scale-105 shadow-sm flex items-center gap-2 cursor-pointer">
+                                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z">
+                                            </path>
+                                        </svg>
+                                        Inspect System (8 Screenshots)
+                                    </button>
+                                    <a href="https://github.com/SokThavireak/pop-commercial-photograph" target="_blank"
+                                        class="bg-white hover:bg-slate-100 text-slate-700 border border-slate-300 px-4 py-2.5 rounded-full transition-all hover:scale-105 shadow-2xs flex items-center gap-1.5">
+                                        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                                d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z">
+                                            </path>
+                                        </svg>
+                                        GitHub
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </div>
@@ -1932,7 +2053,7 @@
         revealElements.forEach(el => revealObserver.observe(el));
         // Featured Projects Full-Page Slider Controller
         let currentProjectSlide = 0;
-        const totalProjectSlides = 5;
+        const totalProjectSlides = 6;
         let slideAutoTimer = null;
         let isSliderHovered = false;
 
@@ -1981,11 +2102,12 @@
 
             // Update macOS Frame Header Meta
             const frameMetadata = [
-                { url: 'hrms.internal.app — Executive Admin Console', badge: 'Project 01 / 05', status: '<span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>Live' },
-                { url: 'sushi-pos.production.app — Cashier & Kitchen Terminal', badge: 'Project 02 / 05', status: '<span class="w-2 h-2 rounded-full bg-purple-400 animate-pulse"></span>Stable' },
-                { url: 'sflcambodia.com — Official Brand & Logistics Portal', badge: 'Project 03 / 05', status: '<span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>Live' },
-                { url: 'pidan-inventory.internal.app — Silk Warehouse ERP', badge: 'Project 04 / 05', status: '<span class="w-2 h-2 rounded-full bg-amber-400 animate-pulse"></span>Active Dev' },
-                { url: 'biolabs-pos.internal.app — Omnichannel POS & Operations Hub', badge: 'Project 05 / 05', status: '<span class="w-2 h-2 rounded-full bg-rose-400 animate-pulse"></span>New Release' }
+                { url: 'hrms.internal.app — Executive Admin Console', badge: 'Project 01 / 06', status: '<span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>Live' },
+                { url: 'sushi-pos.production.app — Cashier & Kitchen Terminal', badge: 'Project 02 / 06', status: '<span class="w-2 h-2 rounded-full bg-purple-400 animate-pulse"></span>Stable' },
+                { url: 'sflcambodia.com — Official Brand & Logistics Portal', badge: 'Project 03 / 06', status: '<span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>Live' },
+                { url: 'pidan-inventory.internal.app — Silk Warehouse ERP', badge: 'Project 04 / 06', status: '<span class="w-2 h-2 rounded-full bg-amber-400 animate-pulse"></span>Active Dev' },
+                { url: 'biolabs-pos.internal.app — Omnichannel POS & Operations Hub', badge: 'Project 05 / 06', status: '<span class="w-2 h-2 rounded-full bg-rose-400 animate-pulse"></span>New Release' },
+                { url: 'pop-commercial-photo.internal.app — Studio & Client Portal', badge: 'Project 06 / 06', status: '<span class="w-2 h-2 rounded-full bg-cyan-400 animate-pulse"></span>New Project' }
             ];
             const meta = frameMetadata[currentProjectSlide];
             if (meta) {
@@ -2559,6 +2681,90 @@
                         src: 'img/POS and E-C/Screenshot 2026-10-17 011127.png',
                         title: '19. Admin Studio — Unified Activity & Security Audit Trail',
                         desc: 'Chronological security audit log capturing every administrative action: ledger exports, barcode checkouts, price adjustments, and credential provisions.'
+                    }
+                ]
+            },
+            'pop-commercial-photograph': {
+                title: 'Pop Commercial Photograph Studio',
+                badge: 'Commercial Studio Platform • Full-Stack Web',
+                domain: 'pop-commercial-photo.internal.app',
+                accentGradient: 'from-cyan-500 via-sky-600 to-indigo-600',
+                badgeClass: 'bg-cyan-100 text-cyan-800 border border-cyan-200 font-semibold',
+                counterClass: 'bg-cyan-100 text-cyan-800 border border-cyan-200',
+                themeAccent: '#0891b2',
+                themeGlow: 'rgba(8, 145, 178, 0.45)',
+                liveBtnClass: 'bg-cyan-600 hover:bg-cyan-700 text-white',
+                liveUrl: null,
+                githubUrl: 'https://github.com/SokThavireak/pop-commercial-photograph',
+                description: 'A bespoke commercial photography studio management and client engagement platform. Features an editorial portfolio showcase, interactive tiered service packages, dynamic rate calculator, staff workspace, client authentication, and behind-the-scenes journal.',
+                features: [
+                    { icon: '📸', title: 'Editorial Commercial Showcase', desc: 'Curated editorial portfolio presentation highlighting brand campaigns, model direction, high-definition lighting, and commercial photo galleries.' },
+                    { icon: '🏷️', title: 'Tiered Pricing & Service Specs', desc: 'Transparent tiered packages (Starter, Editorial, Campaign) detailing studio hours, retouched images, licensing terms, and instant quote bookings.' },
+                    { icon: '👥', title: 'Staff Operations Workspace', desc: 'Dedicated staff dashboard managing production schedules, lighting gear prep, team roles, and active client campaign workflows.' },
+                    { icon: '🔐', title: 'Client Authentication & Profiles', desc: 'Secure client sign-in and registration portal providing private shoot reviews, deliverable downloads, and account settings.' },
+                    { icon: '📖', title: 'Production Journal & Behind-the-Scenes', desc: 'Editorial journal documenting equipment setups, lighting diagrams, color grading recipes, and studio case studies.' },
+                    { icon: '📩', title: 'Interactive Inquiry & Booking Engine', desc: 'Structured intake questionnaire capturing project brief, shoot location, date options, deliverables count, and contact details.' }
+                ],
+                techStack: ['Full-Stack', 'JavaScript', 'HTML5', 'CSS3', 'Tailwind CSS', 'REST API', 'Auth / RBAC', 'Responsive Design'],
+                arch: {
+                    headline: 'Modern Creative Studio & Client Operations Topology',
+                    subtext: 'High-performance creative portfolio architecture integrating high-resolution asset delivery, structured booking funnels, staff management, and client account authentication.',
+                    pipeline: [
+                        { icon: '🖥️', step: '01. Presentation', title: 'Client Storefront & Editorial Deck', desc: 'Responsive editorial layout optimized for high-DPI displays, fluid typography, and interactive booking inquiries.' },
+                        { icon: '🏷️', step: '02. Pricing Engine', title: 'Dynamic Package & Rate Config', desc: 'Tiered commercial packages with real-time add-on calculations (extra edits, licensing rights, studio fees).' },
+                        { icon: '🛡️', step: '03. Identity Layer', title: 'Client & Staff Authentication', desc: 'Role-based access separating public prospective clients, authenticated clients, and studio production staff.' },
+                        { icon: '💼', step: '04. Staff Workspace', title: 'Production & Session Scheduling', desc: 'Back-office operations managing active campaign calendars, studio bookings, and shoot deliverables.' },
+                        { icon: '📖', step: '05. Content Hub', title: 'Creative Journal & Articles', desc: 'Markdown-friendly publication engine for photography behind-the-scenes, lighting setups, and client highlights.' },
+                        { icon: '⚡', step: '06. Production Asset CDN', title: 'Optimized Image Pipeline', desc: 'Asset delivery with responsive breakpoints, lazy loading, and sub-second visual rendering.' }
+                    ],
+                    specs: [
+                        { domain: 'System Topology', details: 'Full-Stack Studio Web Application & Client Portal' },
+                        { domain: 'Authentication & Roles', details: 'Role-based authentication with Client & Staff privilege tiers' },
+                        { domain: 'Client Experience', details: 'Curated gallery, rate calculator, contact inquiry, and editorial journal' },
+                        { domain: 'Staff Operations', details: 'Studio schedule tracking, session assignments, and client project hub' },
+                        { domain: 'Repository', details: 'github.com/SokThavireak/pop-commercial-photograph' }
+                    ]
+                },
+                images: [
+                    {
+                        src: 'img/pop-commercial-photograph/localhost_3000_.png',
+                        title: '01. Studio Homepage & Commercial Showcase',
+                        desc: 'Editorial studio landing page showcasing high-fashion commercial campaigns, creative direction services, and featured production portfolios.'
+                    },
+                    {
+                        src: 'img/pop-commercial-photograph/localhost_3000_about.png',
+                        title: '02. Studio About & Artistic Philosophy',
+                        desc: 'About page detailing the studio mission, lead photographer biography, awards, technical gear inventory, and creative philosophy.'
+                    },
+                    {
+                        src: 'img/pop-commercial-photograph/localhost_3000_pricing.png',
+                        title: '03. Commercial Pricing & Package Matrices',
+                        desc: 'Tiered service pricing matrix displaying starter sessions, full-day commercial shoots, included retouched plates, and commercial licensing scopes.'
+                    },
+                    {
+                        src: 'img/pop-commercial-photograph/localhost_3000_journal.png',
+                        title: '04. Production Journal & Behind-The-Scenes',
+                        desc: 'Creative publication journal highlighting photoshoot case studies, lighting setups, studio stories, and photography techniques.'
+                    },
+                    {
+                        src: 'img/pop-commercial-photograph/localhost_3000_contact.png',
+                        title: '05. Booking Inquiry & Contact Form',
+                        desc: 'Comprehensive project intake form capturing commercial client briefs, date requests, location requirements, and direct studio inquiries.'
+                    },
+                    {
+                        src: 'img/pop-commercial-photograph/localhost_3000_staff.png',
+                        title: '06. Staff Operations & Production Dashboard',
+                        desc: 'Internal workspace for studio team members to review scheduled shoots, client requests, and equipment checklist management.'
+                    },
+                    {
+                        src: 'img/pop-commercial-photograph/localhost_3000_sign_in.png',
+                        title: '07. Client & Staff Secure Sign-In Portal',
+                        desc: 'Authentication gateway enabling registered clients and production team members to access private galleries and project consoles.'
+                    },
+                    {
+                        src: 'img/pop-commercial-photograph/localhost_3000_sign_up.png',
+                        title: '08. New Client Registration Portal',
+                        desc: 'Streamlined onboarding interface for commercial clients and agency partners to create an account and manage photo shoot bookings.'
                     }
                 ]
             }
