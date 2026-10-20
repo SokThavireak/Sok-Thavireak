@@ -1,0 +1,59 @@
+/**
+ * Sok Thavireak - Portfolio Sections Content (JS Bundle)
+ */
+window.PORTFOLIO_SECTIONS_DATA = window.PORTFOLIO_SECTIONS_DATA || {};
+
+window.PORTFOLIO_SECTIONS_DATA['contact'] = `
+    <footer id="contact" class="relative z-10 py-16 text-center border-t border-slate-200 bg-slate-50">
+        <div class="max-w-4xl mx-auto px-6 reveal">
+            <div
+                class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-mono font-medium bg-blue-50 text-blue-700 border border-blue-200/80 mb-3">
+                <span class="w-1.5 h-1.5 rounded-full bg-blue-600"></span>
+                <span>Get In Touch</span>
+            </div>
+            <h2 class="text-3xl font-extrabold mb-3 text-slate-900 tracking-tight">Let's Connect</h2>
+            <p class="text-slate-600 text-sm max-w-lg mx-auto mb-8 leading-relaxed">
+                Whether you have an opportunity, a question about my work, or want to collaborate on a project, feel
+                free to reach out.
+            </p>
+
+            <div class="flex flex-wrap justify-center items-center gap-3 sm:gap-4 mb-8 text-sm font-mono">
+                <a href="mailto:thavireaksok@gmail.com"
+                    class="bg-blue-600 hover:bg-blue-700 text-white px-5 py-2.5 rounded-full font-medium transition-all duration-200 hover:scale-105 shadow-sm flex items-center gap-2">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z">
+                        </path>
+                    </svg>
+                    thavireaksok@gmail.com
+                </a>
+                <a href="tel:0976311421"
+                    class="bg-white hover:bg-slate-100 text-slate-700 border border-slate-300 px-5 py-2.5 rounded-full transition-all duration-200 hover:scale-105 shadow-2xs flex items-center gap-2">
+                    <svg class="w-4 h-4 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z">
+                        </path>
+                    </svg>
+                    097 631 1421
+                </a>
+                <a href="THAVIREAK SOK (Website Developer).pdf" target="_blank"
+                    class="bg-white hover:bg-slate-100 text-slate-700 border border-slate-300 px-5 py-2.5 rounded-full transition-all duration-200 hover:scale-105 shadow-2xs flex items-center gap-2">
+                    <svg class="w-4 h-4 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z">
+                        </path>
+                    </svg>
+                    Resume (PDF)
+                </a>
+            </div>
+
+            <div class="flex items-center justify-center gap-2 text-xs font-mono text-slate-500 mb-6">
+                <span>📍 Phnom Penh, Cambodia</span>
+                <span>•</span>
+                <span>Available for Full-time Roles</span>
+            </div>
+
+            <p class="text-slate-400 text-xs">© 2026 Sok Thavireak • Built with clean HTML, CSS & JavaScript</p>
+        </div>
+    </footer>
+`;

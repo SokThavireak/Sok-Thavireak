@@ -1,0 +1,312 @@
+/* Sok Thavireak - Portfolio Custom Styles */
+body {
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+}
+
+.font-mono {
+    font-family: 'JetBrains Mono', monospace;
+}
+
+/* Subtle Engineering Blueprint Grid */
+.bg-engineering-grid {
+    background-image: radial-gradient(rgba(148, 163, 184, 0.28) 1px, transparent 1px);
+    background-size: 28px 28px;
+}
+
+/* Glassmorphism & Surface Cards */
+.glass-panel {
+    background: rgba(255, 255, 255, 0.88);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(226, 232, 240, 0.9);
+}
+
+.glass-panel-dark {
+    background: rgba(15, 23, 42, 0.88);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(51, 65, 85, 0.8);
+}
+
+/* Window / Browser Mockup Chrome */
+.window-mockup {
+    transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    box-shadow: 0 10px 30px -10px rgba(15, 23, 42, 0.08), 0 0 0 1px rgba(226, 232, 240, 0.8);
+}
+
+.window-mockup:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 25px 50px -12px rgba(37, 99, 235, 0.16), 0 0 0 1px rgba(147, 197, 253, 0.7);
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0px) rotate(0deg);
+    }
+    50% {
+        transform: translateY(-16px) rotate(6deg);
+    }
+    100% {
+        transform: translateY(0px) rotate(0deg);
+    }
+}
+
+@keyframes pulseSlow {
+    0%, 100% {
+        opacity: 0.3;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 0.55;
+        transform: scale(1.06);
+    }
+}
+
+.animate-float {
+    animation: float 7s ease-in-out infinite;
+}
+
+.animate-float-delayed {
+    animation: float 9s ease-in-out infinite;
+    animation-delay: 2.5s;
+}
+
+.animate-pulse-slow {
+    animation: pulseSlow 6s ease-in-out infinite;
+}
+
+.reveal {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: all 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+    width: 7px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f8fafc;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #94a3b8;
+}
+
+/* Modal Transitions & Gallery */
+.modal-backdrop {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.3s;
+}
+
+.modal-backdrop.active-modal {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal-content-box {
+    transform: scale(0.96) translateY(16px);
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.modal-backdrop.active-modal .modal-content-box {
+    transform: scale(1) translateY(0);
+}
+
+.gallery-thumb {
+    opacity: 0.55;
+    transition: all 0.2s ease;
+}
+
+.gallery-thumb:hover {
+    opacity: 0.9;
+    transform: translateY(-2px);
+}
+
+.gallery-thumb.active {
+    opacity: 1;
+    border-color: var(--gallery-accent, #2563eb);
+    box-shadow: 0 0 14px var(--gallery-accent-glow, rgba(37, 99, 235, 0.45));
+    transform: scale(1.04);
+}
+
+.gallery-nav-btn:hover {
+    background-color: var(--gallery-accent, #2563eb) !important;
+}
+
+.modal-scroll::-webkit-scrollbar {
+    width: 6px;
+}
+
+.modal-scroll::-webkit-scrollbar-track {
+    background: #f8fafc;
+}
+
+.modal-scroll::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 3px;
+}
+
+.modal-scroll::-webkit-scrollbar-thumb:hover {
+    background: #94a3b8;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+
+.no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+/* Featured Projects Showcase Slide Animations & Sleek Browser Tabs */
+.project-slide {
+    display: none;
+    opacity: 0;
+    transform: scale(0.99) translateY(10px);
+    transition: opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1), transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.project-slide.slide-active {
+    display: block;
+    opacity: 1;
+    transform: scale(1) translateY(0);
+}
+
+.slide-tab-item {
+    position: relative;
+    background: transparent;
+    color: #94a3b8;
+    border-bottom: 2px solid transparent;
+    transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+    user-select: none;
+}
+
+.slide-tab-item:hover {
+    color: #f1f5f9;
+    background-color: rgba(255, 255, 255, 0.04);
+}
+
+.slide-tab-item.tab-active {
+    color: #ffffff;
+    background-color: rgba(30, 41, 59, 0.7);
+    border-bottom-color: #3b82f6;
+}
+
+.slide-tab-item.tab-active .tab-index-badge {
+    background-color: #2563eb;
+    color: #ffffff;
+}
+
+.slide-tab-item .tab-progress-bar {
+    width: 0%;
+}
+
+.slide-tab-item.tab-active .tab-progress-bar {
+    width: 100%;
+    transition: width 7.5s linear;
+}
+
+/* Long Screenshot Hover & Smooth Scroll Preview */
+.long-screenshot-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    border-radius: 0.75rem;
+    cursor: pointer;
+}
+
+.long-screenshot-scrollable {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+.long-screenshot-scrollable::-webkit-scrollbar {
+    width: 5px;
+}
+
+.long-screenshot-scrollable::-webkit-scrollbar-track {
+    background: rgba(15, 23, 42, 0.6);
+}
+
+.long-screenshot-scrollable::-webkit-scrollbar-thumb {
+    background: rgba(56, 189, 248, 0.4);
+    border-radius: 10px;
+}
+
+.long-screenshot-scrollable::-webkit-scrollbar-thumb:hover {
+    background: rgba(56, 189, 248, 0.8);
+}
+
+/* Hover scroll animation for long page captures */
+.hover-scroll-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+    object-position: top;
+    transform: translateY(0);
+    transition: transform 6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.group:hover .hover-scroll-img {
+    transform: translateY(calc(-100% + 380px));
+}
+
+/* Modal viewport scrollable screenshot */
+.modal-scrollable-preview {
+    max-height: 100%;
+    width: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+    border-radius: 0.75rem;
+    scroll-behavior: smooth;
+}
+
+.modal-scrollable-preview::-webkit-scrollbar {
+    width: 6px;
+}
+
+.modal-scrollable-preview::-webkit-scrollbar-track {
+    background: rgba(15, 23, 42, 0.8);
+    border-radius: 6px;
+}
+
+.modal-scrollable-preview::-webkit-scrollbar-thumb {
+    background: rgba(148, 163, 184, 0.4);
+    border-radius: 6px;
+}
+
+.modal-scrollable-preview::-webkit-scrollbar-thumb:hover {
+    background: var(--gallery-accent, #38bdf8);
+}
+
+/* Modal Tabs */
+.tab-btn {
+    transition: all 0.2s ease;
+}
+
+.tab-btn.active {
+    background-color: #ffffff;
+    color: #0f172a;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08), 0 1px 2px rgba(0, 0, 0, 0.04);
+    font-weight: 600;
+}

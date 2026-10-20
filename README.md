@@ -18,3 +18,9 @@ Personal portfolio website for **Sok Thavireak**, Full-Stack Website Developer &
 - HTML5 & CSS3
 - JavaScript (ES6+)
 - Tailwind CSS
+
+## 📁 Modular Project Structure ("One Part, One File")
+- `index.html` — Clean semantic structure and view templates
+- `css/style.css` — Custom animations, blueprint grid, scrollbar rules, and long-screenshot hover autoscroll
+- `js/projects-data.js` — All multi-project data specifications, architecture workflows, and screenshot galleries
+- `js/main.js` — Core application logic (slider, modal, gallery navigation, scroll observers, keyboard shortcuts)

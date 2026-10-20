@@ -1,0 +1,177 @@
+/**
+ * Sok Thavireak - Portfolio Sections Content (JS Bundle)
+ * This allows all 5 sections to be stored in distinct files without CORS errors when opened via file://.
+ */
+window.PORTFOLIO_SECTIONS_DATA = window.PORTFOLIO_SECTIONS_DATA || {};
+
+window.PORTFOLIO_SECTIONS_DATA['about'] = `
+    <!-- Hero & About Section -->
+    <section class="relative z-10 min-h-screen flex items-center justify-center px-6 pt-28 pb-16">
+        <div class="max-w-7xl mx-auto grid lg:grid-cols-12 gap-12 items-center reveal w-full">
+            <!-- Left Column: Text & Engineering Metrics -->
+            <div class="lg:col-span-7 text-center lg:text-left order-2 lg:order-1">
+                <!-- Status Pill -->
+                <div
+                    class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-mono font-medium bg-emerald-50 text-emerald-700 border border-emerald-200/80 shadow-xs mb-5">
+                    <span class="relative flex h-2 w-2">
+                        <span
+                            class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                        <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+                    </span>
+                    <span>Full-Stack Software Engineer • Enterprise Systems</span>
+                </div>
+
+                <h1
+                    class="text-4xl sm:text-5xl md:text-6xl font-black mb-4 tracking-tight text-slate-900 leading-[1.12]">
+                    Sok Thavireak
+                </h1>
+                <h2
+                    class="text-lg sm:text-xl md:text-2xl text-slate-700 font-medium mb-5 flex flex-wrap items-center justify-center lg:justify-start gap-2">
+                    <span
+                        class="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 font-bold">Full-Stack
+                        Software Engineer</span>
+                    <span class="text-slate-300 font-light">•</span>
+                    <span class="text-slate-600 font-mono text-sm sm:text-base">IT Systems Specialist</span>
+                </h2>
+                <p class="text-base sm:text-lg text-slate-600 mb-8 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
+                    Building resilient web applications with <strong class="text-slate-900 font-semibold">Node.js,
+                        Express, React, and PostgreSQL</strong>. Experienced in role-based JWT authentication, automated
+                    calculation engines, and reliable enterprise IT network administration.
+                </p>
+
+                <!-- Action CTAs -->
+                <div class="flex flex-col sm:flex-row justify-center lg:justify-start gap-3.5 mb-10">
+                    <a href="#projects"
+                        class="px-7 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-full font-medium text-sm text-center transition-all duration-200 hover:-translate-y-0.5 shadow-lg shadow-blue-500/20 flex items-center justify-center gap-2">
+                        <span>Explore Projects</span>
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7">
+                            </path>
+                        </svg>
+                    </a>
+                    <a href="THAVIREAK SOK (Website Developer).pdf" target="_blank"
+                        class="px-7 py-3 glass-panel text-slate-700 hover:text-blue-600 hover:border-blue-300 rounded-full font-medium text-sm text-center transition-all duration-200 hover:-translate-y-0.5 shadow-xs flex items-center justify-center gap-2">
+                        <svg class="w-4 h-4 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z">
+                            </path>
+                        </svg>
+                        <span>Download CV</span>
+                    </a>
+                    <a href="#contact"
+                        class="px-6 py-3 border border-slate-200 hover:border-slate-400 text-slate-600 hover:text-slate-900 rounded-full font-medium text-sm text-center transition-all duration-200 hover:-translate-y-0.5">
+                        Contact
+                    </a>
+                </div>
+
+                <!-- Metrics Row -->
+                <div class="grid grid-cols-3 gap-3 max-w-xl mx-auto lg:mx-0 pt-6 border-t border-slate-200/80">
+                    <div class="glass-panel p-3.5 rounded-xl text-center lg:text-left">
+                        <div class="text-xl sm:text-2xl font-bold text-blue-600 font-mono">5+</div>
+                        <div class="text-[11px] font-mono text-slate-600 font-medium">Production & Active Projects</div>
+                    </div>
+                    <div class="glass-panel p-3.5 rounded-xl text-center lg:text-left">
+                        <div class="text-xl sm:text-2xl font-bold text-indigo-600 font-mono">2+ Yrs</div>
+                        <div class="text-[11px] font-mono text-slate-600 font-medium">Hands-On IT & Systems</div>
+                    </div>
+                    <div class="glass-panel p-3.5 rounded-xl text-center lg:text-left">
+                        <div class="text-xl sm:text-2xl font-bold text-emerald-600 font-mono">Full-Stack</div>
+                        <div class="text-[11px] font-mono text-slate-600 font-medium">React, Node, DBs & Linux</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Column: Photo + Interactive Architecture Card -->
+            <div class="lg:col-span-5 flex flex-col items-center justify-center order-1 lg:order-2">
+                <div
+                    class="relative w-56 h-56 sm:w-64 sm:h-64 md:w-72 md:h-72 rounded-full overflow-hidden bg-gradient-to-br from-blue-100 via-indigo-50 to-purple-100 border border-slate-200 p-2 shadow-2xl group transition-all duration-500 hover:border-blue-400">
+                    <!-- Glow effect layers -->
+                    <div
+                        class="absolute inset-0 bg-gradient-to-tr from-blue-400/20 via-purple-400/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700">
+                    </div>
+                    <div
+                        class="absolute -inset-0.5 bg-gradient-to-r from-blue-500 to-indigo-500 rounded-full blur opacity-30 group-hover:opacity-60 transition duration-700">
+                    </div>
+
+                    <!-- Circular photo wrapper -->
+                    <div
+                        class="relative w-full h-full rounded-full overflow-hidden bg-slate-100 flex items-center justify-center border border-slate-200/60">
+                        <img src="img/developer_photo.png?v=1" alt="Sok Thavireak"
+                            class="w-full h-full object-cover object-top scale-[1.05] hover:scale-110 transition-transform duration-500">
+                    </div>
+                </div>
+
+                <!-- Floating Senior Architecture Terminal Widget -->
+                <div
+                    class="w-full max-w-sm glass-panel-dark rounded-xl border border-slate-800 shadow-2xl p-4 font-mono text-xs text-slate-300 space-y-2 mt-6">
+                    <div class="flex items-center justify-between pb-2 border-b border-slate-800/80 text-[11px]">
+                        <div class="flex items-center gap-1.5">
+                            <span class="w-2.5 h-2.5 rounded-full bg-red-500/80"></span>
+                            <span class="w-2.5 h-2.5 rounded-full bg-yellow-500/80"></span>
+                            <span class="w-2.5 h-2.5 rounded-full bg-green-500/80"></span>
+                        </div>
+                        <span class="text-slate-400">engineer@architecture ~</span>
+                        <span class="text-emerald-400 flex items-center gap-1"><span
+                                class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>live</span>
+                    </div>
+                    <div class="space-y-1 text-[11px] pt-1">
+                        <div><span class="text-blue-400">backend:</span> <span class="text-emerald-300">"NestJS /
+                                Node.js"</span></div>
+                        <div><span class="text-blue-400">security:</span> <span class="text-emerald-300">"Stateless JWT
+                                + RBAC"</span></div>
+                        <div><span class="text-blue-400">frontend:</span> <span class="text-emerald-300">"React SPA +
+                                Tailwind CSS"</span></div>
+                        <div><span class="text-blue-400">database:</span> <span class="text-emerald-300">"PostgreSQL
+                                Relational"</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Me Detailed Section -->
+    <section id="about" class="relative z-10 py-24 bg-slate-50 border-y border-slate-200/80">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid md:grid-cols-2 gap-16 items-center">
+                <div class="reveal">
+                    <h2 class="text-3xl font-bold mb-6 flex items-center gap-3 text-slate-900"><span
+                            class="w-8 h-[2px] bg-blue-600 inline-block"></span> About Me</h2>
+                    <p class="text-slate-600 mb-4 leading-relaxed">
+                        I am a Computer Science student at Western University with a passion for building clean web
+                        applications and keeping IT systems running without disruption. In engineering, things rarely
+                        work on the first try—I enjoy digging into the details, reading the docs, and debugging until
+                        things work reliably.
+                    </p>
+                    <p class="text-slate-600 mb-4 leading-relaxed">
+                        Alongside code, my experience as an IT Administrator and earlier roles in customer service
+                        taught me how to stay calm under pressure, listen to what end-users actually need, and work
+                        effectively with team members across different disciplines.
+                    </p>
+                </div>
+
+                <div class="reveal grid gap-4">
+                    <div
+                        class="bg-white p-6 rounded-xl border border-slate-200 shadow-xs hover:border-blue-400 hover:shadow-md transition-all">
+                        <h4 class="text-slate-900 font-semibold mb-2 flex justify-between items-start">
+                            <span>The Complete Full-Stack Web Development Bootcamp</span>
+                            <span
+                                class="text-blue-600 text-xs font-mono font-medium bg-blue-50 px-2 py-0.5 rounded border border-blue-100">Udemy</span>
+                        </h4>
+                        <p class="text-xs text-slate-500">Instructor: Dr. Angela Yu • 62 Hours • Completed March 2026
+                        </p>
+                    </div>
+                    <div
+                        class="bg-white p-6 rounded-xl border border-slate-200 shadow-xs hover:border-purple-400 hover:shadow-md transition-all">
+                        <h4 class="text-slate-900 font-semibold mb-2 flex justify-between items-start">
+                            <span>Bachelor Degree in Computer Science</span>
+                            <span
+                                class="text-purple-600 text-xs font-mono font-medium bg-purple-50 px-2 py-0.5 rounded border border-purple-100">In
+                                Progress</span>
+                        </h4>
+                        <p class="text-xs text-slate-500">Western University, Phnom Penh, Cambodia</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+`;
