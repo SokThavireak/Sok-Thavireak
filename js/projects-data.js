@@ -97,7 +97,7 @@ const projectsData = {
         themeAccent: '#2563eb',
         themeGlow: 'rgba(37, 99, 235, 0.45)',
         liveBtnClass: 'bg-blue-600 hover:bg-blue-700 text-white',
-        liveUrl: 'https://hrms-frontend-w6hf.onrender.com',
+        liveUrl: 'https://hr-system-one-hazel.vercel.app/',
         githubUrl: 'https://github.com/anhahseven/HR_System',
         description: 'A complete human resource management system featuring a Spring Boot 3 REST API and a React SPA. Includes automated payroll calculations (overtime, taxes, bonuses), multi-step leave request approvals, attendance clock-in logging, and role-based access control with JWT.',
         features: [

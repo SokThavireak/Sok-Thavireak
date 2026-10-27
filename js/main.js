@@ -441,6 +441,19 @@ function openProjectModal(projectId) {
     }
 
     // Action buttons
+    const liveBtn = document.getElementById('modal-live-btn');
+    if (liveBtn) {
+        if (project.liveUrl) {
+            liveBtn.href = project.liveUrl;
+            liveBtn.style.display = 'inline-flex';
+            if (project.liveBtnClass) {
+                liveBtn.className = `inline-flex items-center gap-1.5 ${project.liveBtnClass} font-mono text-xs px-4 py-2 rounded-full transition-all duration-200 hover:scale-105 shadow-xs font-medium`;
+            }
+        } else {
+            liveBtn.style.display = 'none';
+        }
+    }
+
     const githubBtn = document.getElementById('modal-github-btn');
     if (githubBtn) {
         if (project.githubUrl) {
