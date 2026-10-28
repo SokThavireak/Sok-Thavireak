@@ -173,7 +173,7 @@ window.PORTFOLIO_SECTIONS_DATA['projects'] = `
                         <div class="grid lg:grid-cols-12 gap-0">
                             <!-- Left Column: Interactive Screenshot Preview with inspection trigger -->
                             <div onclick="openProjectModal('hrms')"
-                                class="lg:col-span-7 bg-slate-950 relative overflow-hidden group cursor-pointer min-h-[340px] sm:min-h-[460px] lg:min-h-[530px] h-full flex items-center justify-center p-4">
+                                class="lg:col-span-7 bg-slate-950 relative overflow-hidden group cursor-pointer min-h-[340px] sm:min-h-[460px] lg:min-h-[580px] h-full flex items-center justify-center p-4">
                                 <img src="img/HR/HR user/{A5523F21-E004-4C74-8803-5C5AF29BF1BE}.png"
                                     alt="Full-Stack HRMS Admin Dashboard"
                                     class="w-full h-full object-cover object-top rounded-xl border border-slate-800/80 group-hover:scale-[1.02] transition-transform duration-500 shadow-2xl"
@@ -201,7 +201,7 @@ window.PORTFOLIO_SECTIONS_DATA['projects'] = `
 
                             <!-- Right Column: System Specs, Highlights, and CTAs -->
                             <div
-                                class="lg:col-span-5 p-6 sm:p-8 flex flex-col justify-between bg-white border-t lg:border-t-0 lg:border-l border-slate-200 lg:min-h-[530px] h-full">
+                                class="lg:col-span-5 p-6 sm:p-8 flex flex-col justify-between bg-white border-t lg:border-t-0 lg:border-l border-slate-200 lg:min-h-[580px] h-full">
                                 <div>
                                     <div class="flex items-center justify-between gap-2 mb-3">
                                         <span
@@ -300,7 +300,7 @@ window.PORTFOLIO_SECTIONS_DATA['projects'] = `
                         <div class="grid lg:grid-cols-12 gap-0">
                             <!-- Left Column: Image -->
                             <div onclick="openProjectModal('sushi-store')"
-                                class="lg:col-span-7 bg-slate-950 relative overflow-hidden group cursor-pointer min-h-[340px] sm:min-h-[460px] lg:min-h-[530px] h-full flex items-center justify-center p-4">
+                                class="lg:col-span-7 bg-slate-950 relative overflow-hidden group cursor-pointer min-h-[340px] sm:min-h-[460px] lg:min-h-[580px] h-full flex items-center justify-center p-4">
                                 <img src="img/Screenshot 2026-09-14 134028.png" alt="Murakami Sushi Store & POS Preview"
                                     class="w-full h-full object-cover object-top rounded-xl border border-slate-800/80 group-hover:scale-[1.02] transition-transform duration-500 shadow-2xl"
                                     loading="lazy" decoding="async">
@@ -327,7 +327,7 @@ window.PORTFOLIO_SECTIONS_DATA['projects'] = `
 
                             <!-- Right Column: Specs -->
                             <div
-                                class="lg:col-span-5 p-6 sm:p-8 flex flex-col justify-between bg-white border-t lg:border-t-0 lg:border-l border-slate-200 lg:min-h-[530px] h-full">
+                                class="lg:col-span-5 p-6 sm:p-8 flex flex-col justify-between bg-white border-t lg:border-t-0 lg:border-l border-slate-200 lg:min-h-[580px] h-full">
                                 <div>
                                     <div class="flex items-center justify-between gap-2 mb-3">
                                         <span
@@ -420,7 +420,7 @@ window.PORTFOLIO_SECTIONS_DATA['projects'] = `
                         <div class="grid lg:grid-cols-12 gap-0">
                             <!-- Left Column: Visual Banner -->
                             <div onclick="openProjectModal('sfl')"
-                                class="lg:col-span-7 bg-gradient-to-br from-emerald-900 via-teal-950 to-slate-900 relative overflow-hidden group cursor-pointer min-h-[340px] sm:min-h-[460px] lg:min-h-[530px] h-full flex flex-col justify-between p-8 text-white">
+                                class="lg:col-span-7 bg-gradient-to-br from-emerald-900 via-teal-950 to-slate-900 relative overflow-hidden group cursor-pointer min-h-[340px] sm:min-h-[460px] lg:min-h-[580px] h-full flex flex-col justify-between p-8 text-white">
                                 <div class="flex justify-between items-start">
                                     <span
                                         class="bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 font-mono text-xs px-3 py-1 rounded-md">
@@ -458,7 +458,7 @@ window.PORTFOLIO_SECTIONS_DATA['projects'] = `
 
                             <!-- Right Column: Specs -->
                             <div
-                                class="lg:col-span-5 p-6 sm:p-8 flex flex-col justify-between bg-white border-t lg:border-t-0 lg:border-l border-slate-200 lg:min-h-[530px] h-full">
+                                class="lg:col-span-5 p-6 sm:p-8 flex flex-col justify-between bg-white border-t lg:border-t-0 lg:border-l border-slate-200 lg:min-h-[580px] h-full">
                                 <div>
                                     <div class="flex items-center justify-between gap-2 mb-3">
                                         <span
@@ -533,7 +533,7 @@ window.PORTFOLIO_SECTIONS_DATA['projects'] = `
                         <div class="grid lg:grid-cols-12 gap-0">
                             <!-- Left Column: Visual Banner -->
                             <div onclick="openProjectModal('pidan-silk')"
-                                class="lg:col-span-7 bg-gradient-to-br from-amber-950 via-slate-900 to-indigo-950 relative overflow-hidden group cursor-pointer min-h-[340px] sm:min-h-[460px] lg:min-h-[530px] h-full flex flex-col justify-between p-8 text-white">
+                                class="lg:col-span-7 bg-gradient-to-br from-amber-950 via-slate-900 to-indigo-950 relative overflow-hidden group cursor-pointer min-h-[340px] sm:min-h-[460px] lg:min-h-[580px] h-full flex flex-col justify-between p-8 text-white">
                                 <div class="flex justify-between items-start">
                                     <span
                                         class="bg-amber-500/20 text-amber-300 border border-amber-500/30 font-mono text-xs px-3 py-1 rounded-md flex items-center gap-1.5">
@@ -572,7 +572,7 @@ window.PORTFOLIO_SECTIONS_DATA['projects'] = `
 
                             <!-- Right Column: Specs -->
                             <div
-                                class="lg:col-span-5 p-6 sm:p-8 flex flex-col justify-between bg-white border-t lg:border-t-0 lg:border-l border-slate-200 lg:min-h-[530px] h-full">
+                                class="lg:col-span-5 p-6 sm:p-8 flex flex-col justify-between bg-white border-t lg:border-t-0 lg:border-l border-slate-200 lg:min-h-[580px] h-full">
                                 <div>
                                     <div class="flex items-center justify-between gap-2 mb-3">
                                         <span
@@ -655,7 +655,7 @@ window.PORTFOLIO_SECTIONS_DATA['projects'] = `
                         <div class="grid lg:grid-cols-12 gap-0">
                             <!-- Left Column: Interactive Screenshot Preview with inspection trigger -->
                             <div onclick="openProjectModal('pos-and-ecommerce')"
-                                class="lg:col-span-7 bg-slate-950 relative overflow-hidden group cursor-pointer min-h-[340px] sm:min-h-[460px] lg:min-h-[530px] h-full flex items-center justify-center p-4">
+                                class="lg:col-span-7 bg-slate-950 relative overflow-hidden group cursor-pointer min-h-[340px] sm:min-h-[460px] lg:min-h-[580px] h-full flex items-center justify-center p-4">
                                 <img src="img/POS and E-C/Screenshot 2026-10-17 010929.png"
                                     alt="Omnichannel POS and E-Commerce System Preview"
                                     class="w-full h-full object-cover object-top rounded-xl border border-slate-800/80 group-hover:scale-[1.02] transition-transform duration-500 shadow-2xl"
@@ -683,7 +683,7 @@ window.PORTFOLIO_SECTIONS_DATA['projects'] = `
 
                             <!-- Right Column: System Specs, Highlights, and CTAs -->
                             <div
-                                class="lg:col-span-5 p-6 sm:p-8 flex flex-col justify-between bg-white border-t lg:border-t-0 lg:border-l border-slate-200 lg:min-h-[530px] h-full">
+                                class="lg:col-span-5 p-6 sm:p-8 flex flex-col justify-between bg-white border-t lg:border-t-0 lg:border-l border-slate-200 lg:min-h-[580px] h-full">
                                 <div>
                                     <div class="flex items-center justify-between gap-2 mb-3">
                                         <span
@@ -784,7 +784,7 @@ window.PORTFOLIO_SECTIONS_DATA['projects'] = `
                         <div class="grid lg:grid-cols-12 gap-0">
                             <!-- Left Column: Interactive Screenshot Preview with smooth hover-scroll -->
                             <div onclick="openProjectModal('pop-commercial-photograph')"
-                                class="lg:col-span-7 bg-slate-950 relative overflow-hidden group cursor-pointer min-h-[340px] sm:min-h-[460px] lg:min-h-[530px] h-full flex items-start justify-center p-4">
+                                class="lg:col-span-7 bg-slate-950 relative overflow-hidden group cursor-pointer min-h-[340px] sm:min-h-[460px] lg:min-h-[580px] h-full flex items-start justify-center p-4">
                                 <div class="w-full h-full overflow-hidden rounded-xl border border-slate-800/80 shadow-2xl relative bg-slate-900">
                                     <img src="img/pop-commercial-photograph/localhost_3000_.png"
                                         alt="Pop Commercial Photograph Studio Preview"
@@ -823,7 +823,7 @@ window.PORTFOLIO_SECTIONS_DATA['projects'] = `
 
                             <!-- Right Column: System Specs, Highlights, and CTAs -->
                             <div
-                                class="lg:col-span-5 p-6 sm:p-8 flex flex-col justify-between bg-white border-t lg:border-t-0 lg:border-l border-slate-200 lg:min-h-[530px] h-full">
+                                class="lg:col-span-5 p-6 sm:p-8 flex flex-col justify-between bg-white border-t lg:border-t-0 lg:border-l border-slate-200 lg:min-h-[580px] h-full">
                                 <div>
                                     <div class="flex items-center justify-between gap-2 mb-3">
                                         <span

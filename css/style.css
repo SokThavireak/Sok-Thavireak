@@ -191,28 +191,13 @@ body {
     min-height: 520px;
 }
 
-.project-slide {
-    height: 100%;
-}
-
-.project-slide > .grid {
-    min-height: 520px;
-    height: 100%;
-}
-
 @media (min-width: 1024px) {
     #project-slides-viewport {
-        min-height: 530px;
-        height: 530px;
-    }
-
-    .project-slide {
-        height: 530px;
+        min-height: 580px;
     }
 
     .project-slide > .grid {
-        min-height: 530px;
-        height: 530px;
+        min-height: 580px;
     }
 }
 
