@@ -1,914 +1,929 @@
-    <!-- Projects / Systems Architecture Section (Interactive Full-Page Showcase Slider) -->
-    <section id="projects" class="relative z-10 py-24 bg-slate-50/90 border-y border-slate-200/80">
-        <div class="max-w-7xl mx-auto px-6">
+<!-- Projects / Systems Architecture Section (Interactive Full-Page Showcase Slider) -->
+<section id="projects" class="relative z-10 py-24 bg-slate-50/90 border-y border-slate-200/80">
+    <div class="max-w-7xl mx-auto px-6">
 
-            <!-- Section Header & Controls -->
-            <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10 reveal">
-                <div>
-                    <div
-                        class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-mono font-medium bg-blue-50 text-blue-700 border border-blue-200/80 mb-3">
-                        <span class="w-1.5 h-1.5 rounded-full bg-blue-600"></span>
-                        <span>Interactive System Showcase</span>
+        <!-- Section Header & Controls -->
+        <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10 reveal">
+            <div>
+                <div
+                    class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-mono font-medium bg-blue-50 text-blue-700 border border-blue-200/80 mb-3">
+                    <span class="w-1.5 h-1.5 rounded-full bg-blue-600"></span>
+                    <span>Interactive System Showcase</span>
+                </div>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight mb-2">
+                    Featured Projects
+                </h2>
+                <p class="text-slate-600 text-sm sm:text-base max-w-xl leading-relaxed">
+                    Explore full-featured engineering systems. Navigate with the index tabs below or arrow keys to
+                    inspect architecture and live production workflows.
+                </p>
+            </div>
+
+            <!-- Slide Navigation Arrows & Counter -->
+            <div class="flex items-center gap-3">
+                <span id="slider-counter"
+                    class="text-xs font-mono font-bold text-slate-600 bg-white px-3 py-1.5 rounded-full border border-slate-200 shadow-2xs">
+                    01 / 06
+                </span>
+                <button type="button" onclick="prevProjectSlide()"
+                    class="w-10 h-10 rounded-full bg-white hover:bg-slate-100 text-slate-700 border border-slate-300 flex items-center justify-center transition-all hover:scale-105 shadow-2xs cursor-pointer"
+                    aria-label="Previous Project">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7">
+                        </path>
+                    </svg>
+                </button>
+                <button type="button" onclick="nextProjectSlide()"
+                    class="w-10 h-10 rounded-full bg-slate-900 hover:bg-blue-600 text-white flex items-center justify-center transition-all hover:scale-105 shadow-xs cursor-pointer"
+                    aria-label="Next Project">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7">
+                        </path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- Full-Page Slide Container (macOS Style Frame) -->
+        <div class="bg-white rounded-2xl sm:rounded-3xl border border-slate-200 shadow-xl overflow-hidden">
+            <!-- macOS Mockup Chrome Header -->
+            <div
+                class="flex items-center justify-between px-5 py-3 bg-slate-900 border-b border-slate-800 text-xs font-mono select-none">
+                <div class="flex items-center gap-2">
+                    <span class="w-3 h-3 rounded-full bg-[#ff5f56] inline-block"></span>
+                    <span class="w-3 h-3 rounded-full bg-[#ffbd2e] inline-block"></span>
+                    <span class="w-3 h-3 rounded-full bg-[#27c93f] inline-block"></span>
+                    <span id="window-frame-url"
+                        class="ml-2 text-slate-400 text-[11px] hidden sm:inline">hrms.internal.app — Executive Admin
+                        Console</span>
+                </div>
+                <div class="flex items-center gap-2">
+                    <span id="window-frame-badge"
+                        class="text-xs font-mono text-blue-400 bg-blue-950/80 px-2.5 py-0.5 rounded border border-blue-800/60 font-semibold">Project
+                        01 / 06</span>
+                    <span id="window-frame-status"
+                        class="text-emerald-400 text-xs flex items-center gap-1 font-mono"><span
+                            class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>Live</span>
+                </div>
+            </div>
+
+            <!-- In-Card Project Navigation Tabs Sub-Header -->
+            <div class="bg-[#0b101b] border-b border-slate-800/90 px-3 sm:px-6 py-2 overflow-x-auto no-scrollbar">
+                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-2 sm:gap-2.5 min-w-[840px] lg:min-w-0">
+                    <button type="button" onclick="goToProjectSlide(0)" data-tab-index="0"
+                        class="slide-tab-item tab-active text-left px-3 py-2 rounded-lg cursor-pointer overflow-hidden group">
+                        <div class="flex items-center justify-between mb-0.5">
+                            <span
+                                class="tab-index-badge text-[10px] font-mono font-bold px-1.5 py-0.5 rounded bg-slate-800 text-slate-300">01</span>
+                            <span class="text-[10px] font-mono text-blue-400 font-semibold tracking-wider">PROD</span>
+                        </div>
+                        <div class="font-bold text-xs truncate">Full-Stack HRMS</div>
+                        <div class="text-[10px] text-slate-400 font-mono truncate">Spring Boot 3 • React</div>
+                        <div class="absolute bottom-0 left-0 right-0 h-[2px] bg-slate-800/50">
+                            <div class="tab-progress-bar h-full bg-blue-500 w-0"></div>
+                        </div>
+                    </button>
+                    <button type="button" onclick="goToProjectSlide(1)" data-tab-index="1"
+                        class="slide-tab-item text-left px-3 py-2 rounded-lg cursor-pointer overflow-hidden group">
+                        <div class="flex items-center justify-between mb-0.5">
+                            <span
+                                class="tab-index-badge text-[10px] font-mono font-bold px-1.5 py-0.5 rounded bg-slate-800 text-slate-400">02</span>
+                            <span
+                                class="text-[10px] font-mono text-purple-400 font-semibold tracking-wider">STABLE</span>
+                        </div>
+                        <div class="font-bold text-xs truncate">Sushi Store &amp; POS</div>
+                        <div class="text-[10px] text-slate-500 font-mono truncate">Node.js • React • PayWay</div>
+                        <div class="absolute bottom-0 left-0 right-0 h-[2px] bg-slate-800/50">
+                            <div class="tab-progress-bar h-full bg-purple-500 w-0"></div>
+                        </div>
+                    </button>
+                    <button type="button" onclick="goToProjectSlide(2)" data-tab-index="2"
+                        class="slide-tab-item text-left px-3 py-2 rounded-lg cursor-pointer overflow-hidden group">
+                        <div class="flex items-center justify-between mb-0.5">
+                            <span
+                                class="tab-index-badge text-[10px] font-mono font-bold px-1.5 py-0.5 rounded bg-slate-800 text-slate-400">03</span>
+                            <span
+                                class="text-[10px] font-mono text-emerald-400 font-semibold tracking-wider">LIVE</span>
+                        </div>
+                        <div class="font-bold text-xs truncate">SFL Cambodia Portal</div>
+                        <div class="text-[10px] text-slate-500 font-mono truncate">HTML5 • CSS3 • Bootstrap</div>
+                        <div class="absolute bottom-0 left-0 right-0 h-[2px] bg-slate-800/50">
+                            <div class="tab-progress-bar h-full bg-emerald-500 w-0"></div>
+                        </div>
+                    </button>
+                    <button type="button" onclick="goToProjectSlide(3)" data-tab-index="3"
+                        class="slide-tab-item text-left px-3 py-2 rounded-lg cursor-pointer overflow-hidden group">
+                        <div class="flex items-center justify-between mb-0.5">
+                            <span
+                                class="tab-index-badge text-[10px] font-mono font-bold px-1.5 py-0.5 rounded bg-slate-800 text-slate-400">04</span>
+                            <span class="text-[10px] font-mono text-amber-400 font-semibold tracking-wider">BUILD</span>
+                        </div>
+                        <div class="font-bold text-xs truncate">Pidan Silk Inventory</div>
+                        <div class="text-[10px] text-slate-500 font-mono truncate">Nuxt 3 • NestJS • Docker</div>
+                        <div class="absolute bottom-0 left-0 right-0 h-[2px] bg-slate-800/50">
+                            <div class="tab-progress-bar h-full bg-amber-500 w-0"></div>
+                        </div>
+                    </button>
+                    <button type="button" onclick="goToProjectSlide(4)" data-tab-index="4"
+                        class="slide-tab-item text-left px-3 py-2 rounded-lg cursor-pointer overflow-hidden group">
+                        <div class="flex items-center justify-between mb-0.5">
+                            <span
+                                class="tab-index-badge text-[10px] font-mono font-bold px-1.5 py-0.5 rounded bg-slate-800 text-slate-400">05</span>
+                            <span class="text-[10px] font-mono text-rose-400 font-semibold tracking-wider">NEW</span>
+                        </div>
+                        <div class="font-bold text-xs truncate">Omnichannel POS &amp; E-C</div>
+                        <div class="text-[10px] text-slate-400 font-mono truncate">NestJS • React • RBAC</div>
+                        <div class="absolute bottom-0 left-0 right-0 h-[2px] bg-slate-800/50">
+                            <div class="tab-progress-bar h-full bg-rose-500 w-0"></div>
+                        </div>
+                    </button>
+                    <button type="button" onclick="goToProjectSlide(5)" data-tab-index="5"
+                        class="slide-tab-item text-left px-3 py-2 rounded-lg cursor-pointer overflow-hidden group">
+                        <div class="flex items-center justify-between mb-0.5">
+                            <span
+                                class="tab-index-badge text-[10px] font-mono font-bold px-1.5 py-0.5 rounded bg-slate-800 text-slate-400">06</span>
+                            <span class="text-[10px] font-mono text-cyan-400 font-semibold tracking-wider">STUDIO</span>
+                        </div>
+                        <div class="font-bold text-xs truncate">Pop Commercial Photo</div>
+                        <div class="text-[10px] text-slate-400 font-mono truncate">Full-Stack • Studio Portal</div>
+                        <div class="absolute bottom-0 left-0 right-0 h-[2px] bg-slate-800/50">
+                            <div class="tab-progress-bar h-full bg-cyan-400 w-0"></div>
+                        </div>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Slide Viewport (Project Content Deck) -->
+            <div id="project-slides-viewport" class="relative">
+
+                <!-- SLIDE 0: Full-Stack HRMS Platform -->
+                <div id="project-slide-0" class="project-slide slide-active">
+                    <div class="grid lg:grid-cols-12 gap-0">
+                        <!-- Left Column: Interactive Screenshot Preview with inspection trigger -->
+                        <div onclick="openProjectModal('hrms')"
+                            class="lg:col-span-7 bg-slate-950 relative overflow-hidden group cursor-pointer min-h-[320px] sm:min-h-[440px] flex items-center justify-center p-4">
+                            <img src="img/HR/HR user/{A5523F21-E004-4C74-8803-5C5AF29BF1BE}.png"
+                                alt="Full-Stack HRMS Admin Dashboard"
+                                class="w-full h-full object-cover object-top rounded-xl border border-slate-800/80 group-hover:scale-[1.02] transition-transform duration-500 shadow-2xl"
+                                decoding="async">
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-transparent to-transparent opacity-80 group-hover:opacity-60 transition-opacity">
+                            </div>
+
+                            <div class="absolute bottom-4 left-4 right-4 flex items-center justify-between">
+                                <span
+                                    class="bg-blue-600 text-white font-mono text-xs px-3 py-1.5 rounded-lg font-semibold flex items-center gap-2 shadow-lg backdrop-blur-md">
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z">
+                                        </path>
+                                    </svg>
+                                    13 Production Screenshots Gallery
+                                </span>
+                                <span
+                                    class="bg-slate-900/90 text-blue-300 border border-blue-400/40 text-xs font-mono px-3 py-1 rounded-lg backdrop-blur-md">
+                                    Click to Enlarge &amp; Inspect →
+                                </span>
+                            </div>
+                        </div>
+
+                        <!-- Right Column: System Specs, Highlights, and CTAs -->
+                        <div
+                            class="lg:col-span-5 p-6 sm:p-8 flex flex-col justify-between bg-white border-t lg:border-t-0 lg:border-l border-slate-200">
+                            <div>
+                                <div class="flex items-center justify-between gap-2 mb-3">
+                                    <span
+                                        class="px-2.5 py-0.5 rounded-full text-xs font-mono font-medium bg-blue-100 text-blue-700 border border-blue-200">Enterprise
+                                        HR Suite</span>
+                                    <span class="text-xs font-mono text-slate-500">Java 17 • Spring Boot 3</span>
+                                </div>
+                                <h3 class="text-2xl font-extrabold text-slate-900 tracking-tight mb-3">
+                                    Full-Stack HRMS Platform
+                                </h3>
+                                <p class="text-slate-600 text-sm leading-relaxed mb-6">
+                                    Decoupled enterprise human resource suite engineered with automated salary
+                                    calculation rules, multi-tier leave approval lifecycles, and high-precision
+                                    daily attendance time-logging.
+                                </p>
+
+                                <!-- Architectural Highlights -->
+                                <div class="space-y-3 mb-6 bg-slate-50 p-4 rounded-xl border border-slate-200 text-xs">
+                                    <div class="flex items-start gap-2.5 text-slate-700">
+                                        <span class="text-blue-600 font-bold mt-0.5">▹</span>
+                                        <span><strong>Stateless JWT &amp; RBAC:</strong> HMAC-SHA256 authenticated
+                                            routes segregating Admin, HR Viewer, and Employee portal
+                                            dashboards.</span>
+                                    </div>
+                                    <div class="flex items-start gap-2.5 text-slate-700">
+                                        <span class="text-blue-600 font-bold mt-0.5">▹</span>
+                                        <span><strong>Automated Payroll Engine:</strong> Computes base wages,
+                                            overtime tiers, and deductions with real-time draft/paid status
+                                            flags.</span>
+                                    </div>
+                                    <div class="flex items-start gap-2.5 text-slate-700">
+                                        <span class="text-blue-600 font-bold mt-0.5">▹</span>
+                                        <span><strong>Relational Integrity:</strong> PostgreSQL database with
+                                            normalized entities and indexed queries for sub-second retrieval.</span>
+                                    </div>
+                                </div>
+
+                                <!-- Tech Stack Chips -->
+                                <div class="flex flex-wrap gap-1.5 mb-6 text-xs font-mono text-slate-600">
+                                    <span
+                                        class="bg-blue-50 text-blue-700 border border-blue-100 px-2.5 py-1 rounded">Java
+                                        17</span>
+                                    <span
+                                        class="bg-blue-50 text-blue-700 border border-blue-100 px-2.5 py-1 rounded">Spring
+                                        Boot 3</span>
+                                    <span
+                                        class="bg-slate-100 text-slate-700 border border-slate-200 px-2.5 py-1 rounded">React
+                                        18</span>
+                                    <span
+                                        class="bg-slate-100 text-slate-700 border border-slate-200 px-2.5 py-1 rounded">JWT
+                                        RBAC</span>
+                                    <span
+                                        class="bg-slate-100 text-slate-700 border border-slate-200 px-2.5 py-1 rounded">PostgreSQL</span>
+                                </div>
+                            </div>
+
+                            <!-- Action CTAs -->
+                            <div
+                                class="flex flex-wrap items-center gap-3 pt-4 border-t border-slate-100 font-mono text-xs">
+                                <button type="button" onclick="openProjectModal('hrms')"
+                                    class="bg-blue-600 hover:bg-blue-700 text-white px-5 py-2.5 rounded-full font-medium transition-all hover:scale-105 shadow-sm flex items-center gap-2 cursor-pointer">
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z">
+                                        </path>
+                                    </svg>
+                                    Inspect System (13 Screenshots)
+                                </button>
+                                <a href="https://github.com/anhahseven/HR_System" target="_blank"
+                                    class="bg-white hover:bg-slate-100 text-slate-700 border border-slate-300 px-4 py-2.5 rounded-full transition-all hover:scale-105 shadow-2xs flex items-center gap-1.5">
+                                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                                        <path fill-rule="evenodd" clip-rule="evenodd"
+                                            d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z">
+                                        </path>
+                                    </svg>
+                                    GitHub
+                                </a>
+                                <a href="https://hr-system-one-hazel.vercel.app/" target="_blank"
+                                    rel="noopener noreferrer"
+                                    class="bg-emerald-600 hover:bg-emerald-700 text-white px-4 py-2.5 rounded-full transition-all hover:scale-105 shadow-2xs flex items-center gap-1.5 font-medium">
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14">
+                                        </path>
+                                    </svg>
+                                    Live
+                                </a>
+                            </div>
+                        </div>
                     </div>
-                    <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight mb-2">
-                        Featured Projects
-                    </h2>
-                    <p class="text-slate-600 text-sm sm:text-base max-w-xl leading-relaxed">
-                        Explore full-featured engineering systems. Navigate with the index tabs below or arrow keys to
-                        inspect architecture and live production workflows.
-                    </p>
                 </div>
 
-                <!-- Slide Navigation Arrows & Counter -->
+                <!-- SLIDE 1: Sushi Store & POS Terminal -->
+                <div id="project-slide-1" class="project-slide">
+                    <div class="grid lg:grid-cols-12 gap-0">
+                        <!-- Left Column: Image -->
+                        <div onclick="openProjectModal('sushi-store')"
+                            class="lg:col-span-7 bg-slate-950 relative overflow-hidden group cursor-pointer min-h-[320px] sm:min-h-[440px] flex items-center justify-center p-4">
+                            <img src="img/Screenshot 2026-09-14 134028.png" alt="Murakami Sushi Store & POS Preview"
+                                class="w-full h-full object-cover object-top rounded-xl border border-slate-800/80 group-hover:scale-[1.02] transition-transform duration-500 shadow-2xl"
+                                loading="lazy" decoding="async">
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-transparent to-transparent opacity-80 group-hover:opacity-60 transition-opacity">
+                            </div>
+
+                            <div class="absolute bottom-4 left-4 right-4 flex items-center justify-between">
+                                <span
+                                    class="bg-purple-600 text-white font-mono text-xs px-3 py-1.5 rounded-lg font-semibold flex items-center gap-2 shadow-lg backdrop-blur-md">
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z">
+                                        </path>
+                                    </svg>
+                                    8 Production Screenshots Gallery
+                                </span>
+                                <span
+                                    class="bg-slate-900/90 text-purple-300 border border-purple-400/40 text-xs font-mono px-3 py-1 rounded-lg backdrop-blur-md">
+                                    Click to Enlarge &amp; Inspect →
+                                </span>
+                            </div>
+                        </div>
+
+                        <!-- Right Column: Specs -->
+                        <div
+                            class="lg:col-span-5 p-6 sm:p-8 flex flex-col justify-between bg-white border-t lg:border-t-0 lg:border-l border-slate-200">
+                            <div>
+                                <div class="flex items-center justify-between gap-2 mb-3">
+                                    <span
+                                        class="px-2.5 py-0.5 rounded-full text-xs font-mono font-medium bg-purple-100 text-purple-700 border border-purple-200">Commerce
+                                        &amp; POS</span>
+                                    <span class="text-xs font-mono text-slate-500">Node.js • React • PayWay</span>
+                                </div>
+                                <h3 class="text-2xl font-extrabold text-slate-900 tracking-tight mb-3">
+                                    Sushi Store &amp; POS Terminal
+                                </h3>
+                                <p class="text-slate-600 text-sm leading-relaxed mb-6">
+                                    Full-stack restaurant commerce system featuring dedicated cashier point-of-sale
+                                    checkout, live SKU search, ABA PayWay QR banking integration, and real-time
+                                    inventory decrements.
+                                </p>
+
+                                <div class="space-y-3 mb-6 bg-slate-50 p-4 rounded-xl border border-slate-200 text-xs">
+                                    <div class="flex items-start gap-2.5 text-slate-700">
+                                        <span class="text-purple-600 font-bold mt-0.5">▹</span>
+                                        <span><strong>Point of Sale:</strong> Cashier checkout module with item
+                                            lookup, operator tracking, and real-time transaction
+                                            reconciliation.</span>
+                                    </div>
+                                    <div class="flex items-start gap-2.5 text-slate-700">
+                                        <span class="text-purple-600 font-bold mt-0.5">▹</span>
+                                        <span><strong>ABA PayWay Gateway:</strong> Integrated digital banking QR
+                                            payment processing and order receipt generation.</span>
+                                    </div>
+                                    <div class="flex items-start gap-2.5 text-slate-700">
+                                        <span class="text-purple-600 font-bold mt-0.5">▹</span>
+                                        <span><strong>Cloudinary CDN:</strong> Automated image transformations and
+                                            responsive asset delivery for high-resolution menu items.</span>
+                                    </div>
+                                </div>
+
+                                <div class="flex flex-wrap gap-1.5 mb-6 text-xs font-mono text-slate-600">
+                                    <span
+                                        class="bg-purple-50 text-purple-700 border border-purple-100 px-2.5 py-1 rounded">Node.js</span>
+                                    <span
+                                        class="bg-purple-50 text-purple-700 border border-purple-100 px-2.5 py-1 rounded">Express.js</span>
+                                    <span
+                                        class="bg-slate-100 text-slate-700 border border-slate-200 px-2.5 py-1 rounded">React
+                                        SPA</span>
+                                    <span
+                                        class="bg-slate-100 text-slate-700 border border-slate-200 px-2.5 py-1 rounded">PostgreSQL</span>
+                                    <span
+                                        class="bg-slate-100 text-slate-700 border border-slate-200 px-2.5 py-1 rounded">ABA
+                                        PayWay</span>
+                                </div>
+                            </div>
+
+                            <div
+                                class="flex flex-wrap items-center gap-3 pt-4 border-t border-slate-100 font-mono text-xs">
+                                <button type="button" onclick="openProjectModal('sushi-store')"
+                                    class="bg-purple-600 hover:bg-purple-700 text-white px-5 py-2.5 rounded-full font-medium transition-all hover:scale-105 shadow-sm flex items-center gap-2 cursor-pointer">
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z">
+                                        </path>
+                                    </svg>
+                                    Inspect System (8 Screenshots)
+                                </button>
+                                <a href="https://github.com/anhahseven/sushi-store" target="_blank"
+                                    class="bg-white hover:bg-slate-100 text-slate-700 border border-slate-300 px-4 py-2.5 rounded-full transition-all hover:scale-105 shadow-2xs flex items-center gap-1.5">
+                                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                                        <path fill-rule="evenodd" clip-rule="evenodd"
+                                            d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z">
+                                        </path>
+                                    </svg>
+                                    GitHub
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SLIDE 2: SFL Cambodia Platform -->
+                <div id="project-slide-2" class="project-slide">
+                    <div class="grid lg:grid-cols-12 gap-0">
+                        <!-- Left Column: Visual Banner -->
+                        <div onclick="openProjectModal('sfl')"
+                            class="lg:col-span-7 bg-gradient-to-br from-emerald-900 via-teal-950 to-slate-900 relative overflow-hidden group cursor-pointer min-h-[320px] sm:min-h-[440px] flex flex-col justify-between p-8 text-white">
+                            <div class="flex justify-between items-start">
+                                <span
+                                    class="bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 font-mono text-xs px-3 py-1 rounded-md">
+                                    Institutional Portal
+                                </span>
+                                <span
+                                    class="text-xs font-mono text-emerald-300 bg-slate-900/80 px-3 py-1 rounded-full border border-emerald-500/30">
+                                    sflcambodia.com
+                                </span>
+                            </div>
+
+                            <div class="space-y-3 my-auto">
+                                <div
+                                    class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-mono bg-emerald-400/10 text-emerald-300 border border-emerald-400/20">
+                                    <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                                    <span>High-Performance Responsive Delivery</span>
+                                </div>
+                                <h4 class="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">
+                                    Zero-Bloat Mobile Academic Platform
+                                </h4>
+                                <p class="text-slate-300 text-xs sm:text-sm max-w-lg leading-relaxed">
+                                    Architected with clean semantic HTML5, modern CSS3 layout rules, and lightweight
+                                    JavaScript to guarantee sub-second page loads across low-bandwidth cellular
+                                    networks.
+                                </p>
+                            </div>
+
+                            <div
+                                class="flex justify-between items-center pt-4 border-t border-emerald-500/20 text-xs font-mono text-emerald-300">
+                                <span>Verified Production Domain</span>
+                                <span class="group-hover:translate-x-1 transition-transform">Click to View Specs
+                                    &amp; Architecture →</span>
+                            </div>
+                        </div>
+
+                        <!-- Right Column: Specs -->
+                        <div
+                            class="lg:col-span-5 p-6 sm:p-8 flex flex-col justify-between bg-white border-t lg:border-t-0 lg:border-l border-slate-200">
+                            <div>
+                                <div class="flex items-center justify-between gap-2 mb-3">
+                                    <span
+                                        class="px-2.5 py-0.5 rounded-full text-xs font-mono font-medium bg-emerald-100 text-emerald-700 border border-emerald-200">Client
+                                        Web Platform</span>
+                                    <span class="text-xs font-mono text-slate-500">HTML5 • CSS3 • Bootstrap 5</span>
+                                </div>
+                                <h3 class="text-2xl font-extrabold text-slate-900 tracking-tight mb-3">
+                                    SFL Cambodia Interface
+                                </h3>
+                                <p class="text-slate-600 text-sm leading-relaxed mb-6">
+                                    Responsive institutional web portal developed for an international school.
+                                    Focused on mobile accessibility, sub-second load times, and structured
+                                    prospective student inquiry pipelines.
+                                </p>
+
+                                <div class="space-y-3 mb-6 bg-slate-50 p-4 rounded-xl border border-slate-200 text-xs">
+                                    <div class="flex items-start gap-2.5 text-slate-700">
+                                        <span class="text-emerald-600 font-bold mt-0.5">▹</span>
+                                        <span><strong>Performance:</strong> Sub-second load speeds achieved through
+                                            lean zero-dependency vanilla scripting and optimized CSS assets.</span>
+                                    </div>
+                                    <div class="flex items-start gap-2.5 text-slate-700">
+                                        <span class="text-emerald-600 font-bold mt-0.5">▹</span>
+                                        <span><strong>Cross-Browser Viewports:</strong> Tested for touch
+                                            accessibility and typography hierarchy from mobile phones to high-DPI
+                                            displays.</span>
+                                    </div>
+                                    <div class="flex items-start gap-2.5 text-slate-700">
+                                        <span class="text-emerald-600 font-bold mt-0.5">▹</span>
+                                        <span><strong>SSL &amp; Custom Domain:</strong> Production hosting with
+                                            automatic SSL/TLS encryption and DNS management.</span>
+                                    </div>
+                                </div>
+
+                                <div class="flex flex-wrap gap-1.5 mb-6 text-xs font-mono text-slate-600">
+                                    <span
+                                        class="bg-emerald-50 text-emerald-700 border border-emerald-100 px-2.5 py-1 rounded">HTML5</span>
+                                    <span
+                                        class="bg-emerald-50 text-emerald-700 border border-emerald-100 px-2.5 py-1 rounded">CSS3</span>
+                                    <span
+                                        class="bg-slate-100 text-slate-700 border border-slate-200 px-2.5 py-1 rounded">JavaScript</span>
+                                    <span
+                                        class="bg-slate-100 text-slate-700 border border-slate-200 px-2.5 py-1 rounded">Bootstrap
+                                        5</span>
+                                    <span
+                                        class="bg-slate-100 text-slate-700 border border-slate-200 px-2.5 py-1 rounded">SEO</span>
+                                </div>
+                            </div>
+
+                            <div
+                                class="flex flex-wrap items-center gap-3 pt-4 border-t border-slate-100 font-mono text-xs">
+                                <button type="button" onclick="openProjectModal('sfl')"
+                                    class="bg-emerald-600 hover:bg-emerald-700 text-white px-5 py-2.5 rounded-full font-medium transition-all hover:scale-105 shadow-sm flex items-center gap-2 cursor-pointer">
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z">
+                                        </path>
+                                    </svg>
+                                    Project Details &amp; Architecture
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SLIDE 3: Pidan Khmer Silk Inventory System -->
+                <div id="project-slide-3" class="project-slide">
+                    <div class="grid lg:grid-cols-12 gap-0">
+                        <!-- Left Column: Visual Banner -->
+                        <div onclick="openProjectModal('pidan-silk')"
+                            class="lg:col-span-7 bg-gradient-to-br from-amber-950 via-slate-900 to-indigo-950 relative overflow-hidden group cursor-pointer min-h-[320px] sm:min-h-[440px] flex flex-col justify-between p-8 text-white">
+                            <div class="flex justify-between items-start">
+                                <span
+                                    class="bg-amber-500/20 text-amber-300 border border-amber-500/30 font-mono text-xs px-3 py-1 rounded-md flex items-center gap-1.5">
+                                    <span>🧵</span> Traditional Pidan Khmer Silk
+                                </span>
+                                <span
+                                    class="text-xs font-mono text-amber-300 bg-slate-900/80 px-3 py-1 rounded-full border border-amber-500/30 flex items-center gap-1">
+                                    <span class="w-1.5 h-1.5 rounded-full bg-amber-400 animate-pulse"></span> Active
+                                    Engineering
+                                </span>
+                            </div>
+
+                            <div class="space-y-3 my-auto">
+                                <div
+                                    class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-mono bg-amber-400/10 text-amber-300 border border-amber-400/20">
+                                    <span>⚡</span>
+                                    <span>Docker Compose • Nuxt 3 SSR • NestJS Microservices</span>
+                                </div>
+                                <h4 class="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">
+                                    Artisan Textile ERP &amp; Warehouse Inventory
+                                </h4>
+                                <p class="text-slate-300 text-xs sm:text-sm max-w-lg leading-relaxed">
+                                    Multi-container architecture orchestrating Nuxt.js SSR presentation, NestJS
+                                    domain business services, Redis caching, and PostgreSQL relational database
+                                    within an isolated Docker network.
+                                </p>
+                            </div>
+
+                            <div
+                                class="flex justify-between items-center pt-4 border-t border-amber-500/20 text-xs font-mono text-amber-300">
+                                <span>Multi-Variant Silk SKU Tracking</span>
+                                <span class="group-hover:translate-x-1 transition-transform">Click to Inspect
+                                    Architecture Console →</span>
+                            </div>
+                        </div>
+
+                        <!-- Right Column: Specs -->
+                        <div
+                            class="lg:col-span-5 p-6 sm:p-8 flex flex-col justify-between bg-white border-t lg:border-t-0 lg:border-l border-slate-200">
+                            <div>
+                                <div class="flex items-center justify-between gap-2 mb-3">
+                                    <span
+                                        class="px-2.5 py-0.5 rounded-full text-xs font-mono font-medium bg-amber-100 text-amber-800 border border-amber-200">Shop
+                                        Inventory &amp; ERP</span>
+                                    <span class="text-xs font-mono text-slate-500">Nuxt 3 • NestJS • Docker</span>
+                                </div>
+                                <h3 class="text-2xl font-extrabold text-slate-900 tracking-tight mb-3">
+                                    Pidan Khmer Silk Inventory
+                                </h3>
+                                <p class="text-slate-600 text-sm leading-relaxed mb-6">
+                                    Custom inventory management system designed for authentic Cambodian handwoven
+                                    silk. Tracks raw silk thread batches, artisan consignments, barcode scanning,
+                                    and multi-location showroom transfers.
+                                </p>
+
+                                <div class="space-y-3 mb-6 bg-slate-50 p-4 rounded-xl border border-slate-200 text-xs">
+                                    <div class="flex items-start gap-2.5 text-slate-700">
+                                        <span class="text-amber-600 font-bold mt-0.5">▹</span>
+                                        <span><strong>Modular NestJS:</strong> Clean architecture with Dependency
+                                            Injection, class-validator DTOs, and transactional ledger
+                                            operations.</span>
+                                    </div>
+                                    <div class="flex items-start gap-2.5 text-slate-700">
+                                        <span class="text-amber-600 font-bold mt-0.5">▹</span>
+                                        <span><strong>Containerization:</strong> Docker Compose runtime
+                                            orchestrating client SSR, API gateway, PostgreSQL, and Redis
+                                            caching.</span>
+                                    </div>
+                                    <div class="flex items-start gap-2.5 text-slate-700">
+                                        <span class="text-amber-600 font-bold mt-0.5">▹</span>
+                                        <span><strong>Artisan Consignment:</strong> Tracks individual weaving
+                                            credits, tapestry dimensions, dye formulations, and retail sales.</span>
+                                    </div>
+                                </div>
+
+                                <div class="flex flex-wrap gap-1.5 mb-6 text-xs font-mono text-slate-600">
+                                    <span
+                                        class="bg-amber-50 text-amber-800 border border-amber-100 px-2.5 py-1 rounded font-semibold">Docker</span>
+                                    <span
+                                        class="bg-emerald-50 text-emerald-700 border border-emerald-100 px-2.5 py-1 rounded font-semibold">Nuxt
+                                        3</span>
+                                    <span
+                                        class="bg-red-50 text-red-700 border border-red-100 px-2.5 py-1 rounded font-semibold">NestJS</span>
+                                    <span
+                                        class="bg-blue-50 text-blue-700 border border-blue-100 px-2.5 py-1 rounded">TypeScript</span>
+                                    <span
+                                        class="bg-slate-100 text-slate-700 border border-slate-200 px-2.5 py-1 rounded">PostgreSQL</span>
+                                    <span
+                                        class="bg-slate-100 text-slate-700 border border-slate-200 px-2.5 py-1 rounded">Redis</span>
+                                </div>
+                            </div>
+
+                            <div
+                                class="flex flex-wrap items-center gap-3 pt-4 border-t border-slate-100 font-mono text-xs">
+                                <button type="button" onclick="openProjectModal('pidan-silk')"
+                                    class="bg-gradient-to-r from-amber-600 to-amber-700 hover:from-amber-700 hover:to-amber-800 text-white px-5 py-2.5 rounded-full font-medium transition-all hover:scale-105 shadow-sm flex items-center gap-2 cursor-pointer">
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z">
+                                        </path>
+                                    </svg>
+                                    Inspect Architecture &amp; Stack
+                                </button>
+                                <span
+                                    class="bg-amber-50 text-amber-800 border border-amber-200/80 px-3 py-2 rounded-full flex items-center gap-1.5">
+                                    <span class="w-2 h-2 rounded-full bg-amber-500 animate-ping"></span>
+                                    Active Development
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SLIDE 4: Omnichannel POS & E-Commerce Platform -->
+                <div id="project-slide-4" class="project-slide">
+                    <div class="grid lg:grid-cols-12 gap-0">
+                        <!-- Left Column: Interactive Screenshot Preview with inspection trigger -->
+                        <div onclick="openProjectModal('pos-and-ecommerce')"
+                            class="lg:col-span-7 bg-slate-950 relative overflow-hidden group cursor-pointer min-h-[320px] sm:min-h-[440px] flex items-center justify-center p-4">
+                            <img src="img/POS and E-C/Screenshot 2026-10-17 010929.png"
+                                alt="Omnichannel POS and E-Commerce System Preview"
+                                class="w-full h-full object-cover object-top rounded-xl border border-slate-800/80 group-hover:scale-[1.02] transition-transform duration-500 shadow-2xl"
+                                loading="lazy" decoding="async">
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-transparent to-transparent opacity-80 group-hover:opacity-60 transition-opacity">
+                            </div>
+
+                            <div class="absolute bottom-4 left-4 right-4 flex items-center justify-between">
+                                <span
+                                    class="bg-rose-600 text-white font-mono text-xs px-3 py-1.5 rounded-lg font-semibold flex items-center gap-2 shadow-lg backdrop-blur-md">
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z">
+                                        </path>
+                                    </svg>
+                                    19 Production Screenshots Gallery
+                                </span>
+                                <span
+                                    class="bg-slate-900/90 text-rose-300 border border-rose-400/40 text-xs font-mono px-3 py-1 rounded-lg backdrop-blur-md">
+                                    Click to Enlarge &amp; Inspect →
+                                </span>
+                            </div>
+                        </div>
+
+                        <!-- Right Column: System Specs, Highlights, and CTAs -->
+                        <div
+                            class="lg:col-span-5 p-6 sm:p-8 flex flex-col justify-between bg-white border-t lg:border-t-0 lg:border-l border-slate-200">
+                            <div>
+                                <div class="flex items-center justify-between gap-2 mb-3">
+                                    <span
+                                        class="px-2.5 py-0.5 rounded-full text-xs font-mono font-medium bg-rose-100 text-rose-700 border border-rose-200">Omnichannel
+                                        Retail &amp; POS</span>
+                                    <span class="text-xs font-mono text-slate-500">NestJS • React SPA • RBAC</span>
+                                </div>
+                                <h3 class="text-2xl font-extrabold text-slate-900 tracking-tight mb-3">
+                                    Omnichannel POS &amp; E-Commerce
+                                </h3>
+                                <p class="text-slate-600 text-sm leading-relaxed mb-6">
+                                    Unified enterprise retail platform synchronizing customer web storefront
+                                    purchases with physical cashier point-of-sale checkout counters, live stock
+                                    movement ledgers, and comprehensive role-based access control.
+                                </p>
+
+                                <!-- Architectural Highlights -->
+                                <div class="space-y-3 mb-6 bg-slate-50 p-4 rounded-xl border border-slate-200 text-xs">
+                                    <div class="flex items-start gap-2.5 text-slate-700">
+                                        <span class="text-rose-600 font-bold mt-0.5">▹</span>
+                                        <span><strong>Unified Inventory Sync:</strong> Real-time inventory parity
+                                            preventing overselling across online web storefronts and physical
+                                            cashier POS terminals.</span>
+                                    </div>
+                                    <div class="flex items-start gap-2.5 text-slate-700">
+                                        <span class="text-rose-600 font-bold mt-0.5">▹</span>
+                                        <span><strong>Operations Hub &amp; Restock Ledger:</strong> Immutable
+                                            inventory history ledger tracking restocks, counter sales, order
+                                            pickups, and lot intakes in real time.</span>
+                                    </div>
+                                    <div class="flex items-start gap-2.5 text-slate-700">
+                                        <span class="text-rose-600 font-bold mt-0.5">▹</span>
+                                        <span><strong>4-Tier RBAC &amp; Audit Trail:</strong> Stateless JWT
+                                            authentication enforcing distinct privilege boundaries across Owner,
+                                            Admin, Cashier, and Customer roles.</span>
+                                    </div>
+                                </div>
+
+                                <!-- Tech Stack Chips -->
+                                <div class="flex flex-wrap gap-1.5 mb-6 text-xs font-mono text-slate-600">
+                                    <span
+                                        class="bg-rose-50 text-rose-700 border border-rose-100 px-2.5 py-1 rounded font-semibold">NestJS</span>
+                                    <span
+                                        class="bg-slate-100 text-slate-700 border border-slate-200 px-2.5 py-1 rounded">TypeScript</span>
+                                    <span
+                                        class="bg-blue-50 text-blue-700 border border-blue-100 px-2.5 py-1 rounded">React
+                                        SPA</span>
+                                    <span
+                                        class="bg-purple-50 text-purple-700 border border-purple-100 px-2.5 py-1 rounded">Tailwind
+                                        CSS</span>
+                                    <span
+                                        class="bg-emerald-50 text-emerald-700 border border-emerald-100 px-2.5 py-1 rounded">PostgreSQL</span>
+                                    <span
+                                        class="bg-slate-100 text-slate-700 border border-slate-200 px-2.5 py-1 rounded">JWT
+                                        &amp; RBAC</span>
+                                </div>
+                            </div>
+
+                            <!-- Action CTAs -->
+                            <div
+                                class="flex flex-wrap items-center gap-3 pt-4 border-t border-slate-100 font-mono text-xs">
+                                <button type="button" onclick="openProjectModal('pos-and-ecommerce')"
+                                    class="bg-rose-600 hover:bg-rose-700 text-white px-5 py-2.5 rounded-full font-medium transition-all hover:scale-105 shadow-sm flex items-center gap-2 cursor-pointer">
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z">
+                                        </path>
+                                    </svg>
+                                    Inspect System (19 Screenshots)
+                                </button>
+                                <a href="https://github.com/SokThavireak/pos-and-ecommerce" target="_blank"
+                                    class="bg-white hover:bg-slate-100 text-slate-700 border border-slate-300 px-4 py-2.5 rounded-full transition-all hover:scale-105 shadow-2xs flex items-center gap-1.5">
+                                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                                        <path fill-rule="evenodd" clip-rule="evenodd"
+                                            d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z">
+                                        </path>
+                                    </svg>
+                                    GitHub
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SLIDE 5: Pop Commercial Photograph Studio Platform -->
+                <div id="project-slide-5" class="project-slide">
+                    <div class="grid lg:grid-cols-12 gap-0">
+                        <!-- Left Column: Interactive Screenshot Preview with smooth hover-scroll -->
+                        <div onclick="openProjectModal('pop-commercial-photograph')"
+                            class="lg:col-span-7 bg-slate-950 relative overflow-hidden group cursor-pointer min-h-[320px] sm:min-h-[440px] flex items-start justify-center p-4">
+                            <div
+                                class="w-full h-full overflow-hidden rounded-xl border border-slate-800/80 shadow-2xl relative bg-slate-900">
+                                <img src="img/pop-commercial-photograph/localhost_3000_.png"
+                                    alt="Pop Commercial Photograph Studio Preview"
+                                    class="hover-scroll-img w-full select-none" loading="lazy" decoding="async">
+
+                                <div
+                                    class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent pointer-events-none group-hover:opacity-40 transition-opacity">
+                                </div>
+
+                                <!-- Hover Scroll Hint Indicator -->
+                                <div
+                                    class="absolute top-3 right-3 bg-slate-900/85 text-cyan-300 border border-cyan-400/30 text-[10px] font-mono px-2.5 py-1 rounded-full backdrop-blur-md flex items-center gap-1.5 shadow-md group-hover:opacity-0 transition-opacity">
+                                    <svg class="w-3.5 h-3.5 animate-bounce" fill="none" stroke="currentColor"
+                                        viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+                                    </svg>
+                                    <span>Hover to Scroll Page</span>
+                                </div>
+                            </div>
+
+                            <div
+                                class="absolute bottom-6 left-6 right-6 flex items-center justify-between pointer-events-none z-10">
+                                <span
+                                    class="bg-cyan-600/95 text-white font-mono text-xs px-3 py-1.5 rounded-lg font-semibold flex items-center gap-2 shadow-lg backdrop-blur-md">
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z">
+                                        </path>
+                                    </svg>
+                                    8 Production Screenshots Gallery
+                                </span>
+                                <span
+                                    class="bg-slate-900/90 text-cyan-300 border border-cyan-400/40 text-xs font-mono px-3 py-1 rounded-lg backdrop-blur-md">
+                                    Click to Enlarge &amp; Inspect →
+                                </span>
+                            </div>
+                        </div>
+
+                        <!-- Right Column: System Specs, Highlights, and CTAs -->
+                        <div
+                            class="lg:col-span-5 p-6 sm:p-8 flex flex-col justify-between bg-white border-t lg:border-t-0 lg:border-l border-slate-200">
+                            <div>
+                                <div class="flex items-center justify-between gap-2 mb-3">
+                                    <span
+                                        class="px-2.5 py-0.5 rounded-full text-xs font-mono font-medium bg-cyan-100 text-cyan-800 border border-cyan-200">Commercial
+                                        Studio &amp; Media</span>
+                                    <span class="text-xs font-mono text-slate-500">Full-Stack • Client Portal</span>
+                                </div>
+                                <h3 class="text-2xl font-extrabold text-slate-900 tracking-tight mb-3">
+                                    Pop Commercial Photograph
+                                </h3>
+                                <p class="text-slate-600 text-sm leading-relaxed mb-6">
+                                    End-to-end commercial photography studio platform featuring an editorial portfolio
+                                    showcase, interactive rate calculator, staff workspace, client authentication, and
+                                    publication journal.
+                                </p>
+
+                                <!-- Architectural Highlights -->
+                                <div class="space-y-3 mb-6 bg-slate-50 p-4 rounded-xl border border-slate-200 text-xs">
+                                    <div class="flex items-start gap-2.5 text-slate-700">
+                                        <span class="text-cyan-600 font-bold mt-0.5">▹</span>
+                                        <span><strong>Editorial Showcase &amp; Journal:</strong> High-resolution media
+                                            presentation and behind-the-scenes production journal for creative
+                                            campaigns.</span>
+                                    </div>
+                                    <div class="flex items-start gap-2.5 text-slate-700">
+                                        <span class="text-cyan-600 font-bold mt-0.5">▹</span>
+                                        <span><strong>Commercial Pricing &amp; Bookings:</strong> Tiered package pricing
+                                            matrices with shoot specifications, deliverables breakdown, and inquiry
+                                            capture.</span>
+                                    </div>
+                                    <div class="flex items-start gap-2.5 text-slate-700">
+                                        <span class="text-cyan-600 font-bold mt-0.5">▹</span>
+                                        <span><strong>Staff Operations &amp; Client Auth:</strong> Dedicated staff
+                                            operations portal paired with client sign-in and account registration
+                                            flows.</span>
+                                    </div>
+                                </div>
+
+                                <!-- Tech Stack Chips -->
+                                <div class="flex flex-wrap gap-1.5 mb-6 text-xs font-mono text-slate-600">
+                                    <span
+                                        class="bg-cyan-50 text-cyan-800 border border-cyan-100 px-2.5 py-1 rounded font-semibold">Full-Stack</span>
+                                    <span
+                                        class="bg-slate-100 text-slate-700 border border-slate-200 px-2.5 py-1 rounded">JavaScript</span>
+                                    <span
+                                        class="bg-blue-50 text-blue-700 border border-blue-100 px-2.5 py-1 rounded">REST
+                                        API</span>
+                                    <span
+                                        class="bg-purple-50 text-purple-700 border border-purple-100 px-2.5 py-1 rounded">Tailwind
+                                        CSS</span>
+                                    <span
+                                        class="bg-emerald-50 text-emerald-700 border border-emerald-100 px-2.5 py-1 rounded">Auth
+                                        &amp; RBAC</span>
+                                </div>
+                            </div>
+
+                            <!-- Action CTAs -->
+                            <div
+                                class="flex flex-wrap items-center gap-3 pt-4 border-t border-slate-100 font-mono text-xs">
+                                <button type="button" onclick="openProjectModal('pop-commercial-photograph')"
+                                    class="bg-cyan-600 hover:bg-cyan-700 text-white px-5 py-2.5 rounded-full font-medium transition-all hover:scale-105 shadow-sm flex items-center gap-2 cursor-pointer">
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z">
+                                        </path>
+                                    </svg>
+                                    Inspect System (8 Screenshots)
+                                </button>
+                                <a href="https://github.com/SokThavireak/pop-commercial-photograph" target="_blank"
+                                    class="bg-white hover:bg-slate-100 text-slate-700 border border-slate-300 px-4 py-2.5 rounded-full transition-all hover:scale-105 shadow-2xs flex items-center gap-1.5">
+                                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                                        <path fill-rule="evenodd" clip-rule="evenodd"
+                                            d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z">
+                                        </path>
+                                    </svg>
+                                    GitHub
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Bottom Slide Pagination & Quick Jump Bar to make slide navigation effortless -->
+            <div
+                class="bg-slate-900 border-t border-slate-800 px-6 py-4 flex flex-wrap items-center justify-between gap-4 select-none">
                 <div class="flex items-center gap-3">
-                    <span id="slider-counter"
-                        class="text-xs font-mono font-bold text-slate-600 bg-white px-3 py-1.5 rounded-full border border-slate-200 shadow-2xs">
-                        01 / 06
-                    </span>
                     <button type="button" onclick="prevProjectSlide()"
-                        class="w-10 h-10 rounded-full bg-white hover:bg-slate-100 text-slate-700 border border-slate-300 flex items-center justify-center transition-all hover:scale-105 shadow-2xs cursor-pointer"
-                        aria-label="Previous Project">
+                        class="px-4 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-mono font-medium border border-slate-700 flex items-center gap-2 transition-all hover:scale-105 cursor-pointer shadow-sm">
                         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7">
                             </path>
                         </svg>
+                        <span>Previous Project</span>
                     </button>
                     <button type="button" onclick="nextProjectSlide()"
-                        class="w-10 h-10 rounded-full bg-slate-900 hover:bg-blue-600 text-white flex items-center justify-center transition-all hover:scale-105 shadow-xs cursor-pointer"
-                        aria-label="Next Project">
+                        class="px-4 py-2 rounded-xl bg-blue-600 hover:bg-blue-500 text-white text-xs font-mono font-medium flex items-center gap-2 transition-all hover:scale-105 cursor-pointer shadow-md shadow-blue-500/20">
+                        <span>Next Project</span>
                         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7">
                             </path>
                         </svg>
                     </button>
                 </div>
-            </div>
 
-            <!-- Full-Page Slide Container (macOS Style Frame) -->
-            <div class="bg-white rounded-2xl sm:rounded-3xl border border-slate-200 shadow-xl overflow-hidden">
-                <!-- macOS Mockup Chrome Header -->
-                <div
-                    class="flex items-center justify-between px-5 py-3 bg-slate-900 border-b border-slate-800 text-xs font-mono select-none">
-                    <div class="flex items-center gap-2">
-                        <span class="w-3 h-3 rounded-full bg-[#ff5f56] inline-block"></span>
-                        <span class="w-3 h-3 rounded-full bg-[#ffbd2e] inline-block"></span>
-                        <span class="w-3 h-3 rounded-full bg-[#27c93f] inline-block"></span>
-                        <span id="window-frame-url"
-                            class="ml-2 text-slate-400 text-[11px] hidden sm:inline">hrms.internal.app — Executive Admin
-                            Console</span>
-                    </div>
-                    <div class="flex items-center gap-2">
-                        <span id="window-frame-badge"
-                            class="text-xs font-mono text-blue-400 bg-blue-950/80 px-2.5 py-0.5 rounded border border-blue-800/60 font-semibold">Project
-                            01 / 06</span>
-                        <span id="window-frame-status"
-                            class="text-emerald-400 text-xs flex items-center gap-1 font-mono"><span
-                                class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>Live</span>
-                    </div>
-                </div>
-
-                <!-- In-Card Project Navigation Tabs Sub-Header -->
-                <div class="bg-[#0b101b] border-b border-slate-800/90 px-3 sm:px-6 py-2 overflow-x-auto no-scrollbar">
-                    <div
-                        class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-2 sm:gap-2.5 min-w-[840px] lg:min-w-0">
-                        <button type="button" onclick="goToProjectSlide(0)" data-tab-index="0"
-                            class="slide-tab-item tab-active text-left px-3 py-2 rounded-lg cursor-pointer overflow-hidden group">
-                            <div class="flex items-center justify-between mb-0.5">
-                                <span
-                                    class="tab-index-badge text-[10px] font-mono font-bold px-1.5 py-0.5 rounded bg-slate-800 text-slate-300">01</span>
-                                <span
-                                    class="text-[10px] font-mono text-blue-400 font-semibold tracking-wider">PROD</span>
-                            </div>
-                            <div class="font-bold text-xs truncate">Full-Stack HRMS</div>
-                            <div class="text-[10px] text-slate-400 font-mono truncate">Spring Boot 3 • React</div>
-                            <div class="absolute bottom-0 left-0 right-0 h-[2px] bg-slate-800/50">
-                                <div class="tab-progress-bar h-full bg-blue-500 w-0"></div>
-                            </div>
-                        </button>
-                        <button type="button" onclick="goToProjectSlide(1)" data-tab-index="1"
-                            class="slide-tab-item text-left px-3 py-2 rounded-lg cursor-pointer overflow-hidden group">
-                            <div class="flex items-center justify-between mb-0.5">
-                                <span
-                                    class="tab-index-badge text-[10px] font-mono font-bold px-1.5 py-0.5 rounded bg-slate-800 text-slate-400">02</span>
-                                <span
-                                    class="text-[10px] font-mono text-purple-400 font-semibold tracking-wider">STABLE</span>
-                            </div>
-                            <div class="font-bold text-xs truncate">Sushi Store &amp; POS</div>
-                            <div class="text-[10px] text-slate-500 font-mono truncate">Node.js • React • PayWay</div>
-                            <div class="absolute bottom-0 left-0 right-0 h-[2px] bg-slate-800/50">
-                                <div class="tab-progress-bar h-full bg-purple-500 w-0"></div>
-                            </div>
-                        </button>
-                        <button type="button" onclick="goToProjectSlide(2)" data-tab-index="2"
-                            class="slide-tab-item text-left px-3 py-2 rounded-lg cursor-pointer overflow-hidden group">
-                            <div class="flex items-center justify-between mb-0.5">
-                                <span
-                                    class="tab-index-badge text-[10px] font-mono font-bold px-1.5 py-0.5 rounded bg-slate-800 text-slate-400">03</span>
-                                <span
-                                    class="text-[10px] font-mono text-emerald-400 font-semibold tracking-wider">LIVE</span>
-                            </div>
-                            <div class="font-bold text-xs truncate">SFL Cambodia Portal</div>
-                            <div class="text-[10px] text-slate-500 font-mono truncate">HTML5 • CSS3 • Bootstrap</div>
-                            <div class="absolute bottom-0 left-0 right-0 h-[2px] bg-slate-800/50">
-                                <div class="tab-progress-bar h-full bg-emerald-500 w-0"></div>
-                            </div>
-                        </button>
-                        <button type="button" onclick="goToProjectSlide(3)" data-tab-index="3"
-                            class="slide-tab-item text-left px-3 py-2 rounded-lg cursor-pointer overflow-hidden group">
-                            <div class="flex items-center justify-between mb-0.5">
-                                <span
-                                    class="tab-index-badge text-[10px] font-mono font-bold px-1.5 py-0.5 rounded bg-slate-800 text-slate-400">04</span>
-                                <span
-                                    class="text-[10px] font-mono text-amber-400 font-semibold tracking-wider">BUILD</span>
-                            </div>
-                            <div class="font-bold text-xs truncate">Pidan Silk Inventory</div>
-                            <div class="text-[10px] text-slate-500 font-mono truncate">Nuxt 3 • NestJS • Docker</div>
-                            <div class="absolute bottom-0 left-0 right-0 h-[2px] bg-slate-800/50">
-                                <div class="tab-progress-bar h-full bg-amber-500 w-0"></div>
-                            </div>
-                        </button>
-                        <button type="button" onclick="goToProjectSlide(4)" data-tab-index="4"
-                            class="slide-tab-item text-left px-3 py-2 rounded-lg cursor-pointer overflow-hidden group">
-                            <div class="flex items-center justify-between mb-0.5">
-                                <span
-                                    class="tab-index-badge text-[10px] font-mono font-bold px-1.5 py-0.5 rounded bg-slate-800 text-slate-400">05</span>
-                                <span
-                                    class="text-[10px] font-mono text-rose-400 font-semibold tracking-wider">NEW</span>
-                            </div>
-                            <div class="font-bold text-xs truncate">Omnichannel POS &amp; E-C</div>
-                            <div class="text-[10px] text-slate-400 font-mono truncate">NestJS • React • RBAC</div>
-                            <div class="absolute bottom-0 left-0 right-0 h-[2px] bg-slate-800/50">
-                                <div class="tab-progress-bar h-full bg-rose-500 w-0"></div>
-                            </div>
-                        </button>
-                        <button type="button" onclick="goToProjectSlide(5)" data-tab-index="5"
-                            class="slide-tab-item text-left px-3 py-2 rounded-lg cursor-pointer overflow-hidden group">
-                            <div class="flex items-center justify-between mb-0.5">
-                                <span
-                                    class="tab-index-badge text-[10px] font-mono font-bold px-1.5 py-0.5 rounded bg-slate-800 text-slate-400">06</span>
-                                <span
-                                    class="text-[10px] font-mono text-cyan-400 font-semibold tracking-wider">STUDIO</span>
-                            </div>
-                            <div class="font-bold text-xs truncate">Pop Commercial Photo</div>
-                            <div class="text-[10px] text-slate-400 font-mono truncate">Full-Stack • Studio Portal</div>
-                            <div class="absolute bottom-0 left-0 right-0 h-[2px] bg-slate-800/50">
-                                <div class="tab-progress-bar h-full bg-cyan-400 w-0"></div>
-                            </div>
-                        </button>
-                    </div>
-                </div>
-
-                <!-- Slide Viewport (Project Content Deck) -->
-                <div id="project-slides-viewport" class="relative">
-
-                    <!-- SLIDE 0: Full-Stack HRMS Platform -->
-                    <div id="project-slide-0" class="project-slide slide-active">
-                        <div class="grid lg:grid-cols-12 gap-0">
-                            <!-- Left Column: Interactive Screenshot Preview with inspection trigger -->
-                            <div onclick="openProjectModal('hrms')"
-                                class="lg:col-span-7 bg-slate-950 relative overflow-hidden group cursor-pointer min-h-[320px] sm:min-h-[440px] flex items-center justify-center p-4">
-                                <img src="img/HR/HR user/{A5523F21-E004-4C74-8803-5C5AF29BF1BE}.png"
-                                    alt="Full-Stack HRMS Admin Dashboard"
-                                    class="w-full h-full object-cover object-top rounded-xl border border-slate-800/80 group-hover:scale-[1.02] transition-transform duration-500 shadow-2xl"
-                                    decoding="async">
-                                <div
-                                    class="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-transparent to-transparent opacity-80 group-hover:opacity-60 transition-opacity">
-                                </div>
-
-                                <div class="absolute bottom-4 left-4 right-4 flex items-center justify-between">
-                                    <span
-                                        class="bg-blue-600 text-white font-mono text-xs px-3 py-1.5 rounded-lg font-semibold flex items-center gap-2 shadow-lg backdrop-blur-md">
-                                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                                d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z">
-                                            </path>
-                                        </svg>
-                                        13 Production Screenshots Gallery
-                                    </span>
-                                    <span
-                                        class="bg-slate-900/90 text-blue-300 border border-blue-400/40 text-xs font-mono px-3 py-1 rounded-lg backdrop-blur-md">
-                                        Click to Enlarge &amp; Inspect →
-                                    </span>
-                                </div>
-                            </div>
-
-                            <!-- Right Column: System Specs, Highlights, and CTAs -->
-                            <div
-                                class="lg:col-span-5 p-6 sm:p-8 flex flex-col justify-between bg-white border-t lg:border-t-0 lg:border-l border-slate-200">
-                                <div>
-                                    <div class="flex items-center justify-between gap-2 mb-3">
-                                        <span
-                                            class="px-2.5 py-0.5 rounded-full text-xs font-mono font-medium bg-blue-100 text-blue-700 border border-blue-200">Enterprise
-                                            HR Suite</span>
-                                        <span class="text-xs font-mono text-slate-500">Java 17 • Spring Boot 3</span>
-                                    </div>
-                                    <h3 class="text-2xl font-extrabold text-slate-900 tracking-tight mb-3">
-                                         Full-Stack HRMS Platform
-                                    </h3>
-                                    <p class="text-slate-600 text-sm leading-relaxed mb-6">
-                                        Decoupled enterprise human resource suite engineered with automated salary
-                                        calculation rules, multi-tier leave approval lifecycles, and high-precision
-                                        daily attendance time-logging.
-                                    </p>
-
-                                    <!-- Architectural Highlights -->
-                                    <div
-                                        class="space-y-3 mb-6 bg-slate-50 p-4 rounded-xl border border-slate-200 text-xs">
-                                        <div class="flex items-start gap-2.5 text-slate-700">
-                                            <span class="text-blue-600 font-bold mt-0.5">▹</span>
-                                            <span><strong>Stateless JWT &amp; RBAC:</strong> HMAC-SHA256 authenticated
-                                                routes segregating Admin, HR Viewer, and Employee portal
-                                                dashboards.</span>
-                                        </div>
-                                        <div class="flex items-start gap-2.5 text-slate-700">
-                                            <span class="text-blue-600 font-bold mt-0.5">▹</span>
-                                            <span><strong>Automated Payroll Engine:</strong> Computes base wages,
-                                                overtime tiers, and deductions with real-time draft/paid status
-                                                flags.</span>
-                                        </div>
-                                        <div class="flex items-start gap-2.5 text-slate-700">
-                                            <span class="text-blue-600 font-bold mt-0.5">▹</span>
-                                            <span><strong>Relational Integrity:</strong> PostgreSQL database with
-                                                normalized entities and indexed queries for sub-second retrieval.</span>
-                                        </div>
-                                    </div>
-
-                                    <!-- Tech Stack Chips -->
-                                    <div class="flex flex-wrap gap-1.5 mb-6 text-xs font-mono text-slate-600">
-                                        <span
-                                            class="bg-blue-50 text-blue-700 border border-blue-100 px-2.5 py-1 rounded">Java
-                                            17</span>
-                                        <span
-                                            class="bg-blue-50 text-blue-700 border border-blue-100 px-2.5 py-1 rounded">Spring
-                                            Boot 3</span>
-                                        <span
-                                            class="bg-slate-100 text-slate-700 border border-slate-200 px-2.5 py-1 rounded">React
-                                            18</span>
-                                        <span
-                                            class="bg-slate-100 text-slate-700 border border-slate-200 px-2.5 py-1 rounded">JWT
-                                            RBAC</span>
-                                        <span
-                                            class="bg-slate-100 text-slate-700 border border-slate-200 px-2.5 py-1 rounded">PostgreSQL</span>
-                                    </div>
-                                </div>
-
-                                <!-- Action CTAs -->
-                                <div
-                                    class="flex flex-wrap items-center gap-3 pt-4 border-t border-slate-100 font-mono text-xs">
-                                    <button type="button" onclick="openProjectModal('hrms')"
-                                        class="bg-blue-600 hover:bg-blue-700 text-white px-5 py-2.5 rounded-full font-medium transition-all hover:scale-105 shadow-sm flex items-center gap-2 cursor-pointer">
-                                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                                d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                                d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z">
-                                            </path>
-                                        </svg>
-                                        Inspect System (13 Screenshots)
-                                    </button>
-                                    <a href="https://github.com/anhahseven/HR_System" target="_blank"
-                                        class="bg-white hover:bg-slate-100 text-slate-700 border border-slate-300 px-4 py-2.5 rounded-full transition-all hover:scale-105 shadow-2xs flex items-center gap-1.5">
-                                        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-                                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                                d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z">
-                                            </path>
-                                        </svg>
-                                        GitHub
-                                    </a>
-                                    <a href="https://hr-system-one-hazel.vercel.app/" target="_blank" rel="noopener noreferrer"
-                                        class="bg-emerald-600 hover:bg-emerald-700 text-white px-4 py-2.5 rounded-full transition-all hover:scale-105 shadow-2xs flex items-center gap-1.5 font-medium">
-                                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                                 d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
-                                        </svg>
-                                        Live Demo
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- SLIDE 1: Sushi Store & POS Terminal -->
-                    <div id="project-slide-1" class="project-slide">
-                        <div class="grid lg:grid-cols-12 gap-0">
-                            <!-- Left Column: Image -->
-                            <div onclick="openProjectModal('sushi-store')"
-                                class="lg:col-span-7 bg-slate-950 relative overflow-hidden group cursor-pointer min-h-[320px] sm:min-h-[440px] flex items-center justify-center p-4">
-                                <img src="img/Screenshot 2026-09-14 134028.png" alt="Murakami Sushi Store & POS Preview"
-                                    class="w-full h-full object-cover object-top rounded-xl border border-slate-800/80 group-hover:scale-[1.02] transition-transform duration-500 shadow-2xl"
-                                    loading="lazy" decoding="async">
-                                <div
-                                    class="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-transparent to-transparent opacity-80 group-hover:opacity-60 transition-opacity">
-                                </div>
-
-                                <div class="absolute bottom-4 left-4 right-4 flex items-center justify-between">
-                                    <span
-                                        class="bg-purple-600 text-white font-mono text-xs px-3 py-1.5 rounded-lg font-semibold flex items-center gap-2 shadow-lg backdrop-blur-md">
-                                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                                d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z">
-                                            </path>
-                                        </svg>
-                                        8 Production Screenshots Gallery
-                                    </span>
-                                    <span
-                                        class="bg-slate-900/90 text-purple-300 border border-purple-400/40 text-xs font-mono px-3 py-1 rounded-lg backdrop-blur-md">
-                                        Click to Enlarge &amp; Inspect →
-                                    </span>
-                                </div>
-                            </div>
-
-                            <!-- Right Column: Specs -->
-                            <div
-                                class="lg:col-span-5 p-6 sm:p-8 flex flex-col justify-between bg-white border-t lg:border-t-0 lg:border-l border-slate-200">
-                                <div>
-                                    <div class="flex items-center justify-between gap-2 mb-3">
-                                        <span
-                                            class="px-2.5 py-0.5 rounded-full text-xs font-mono font-medium bg-purple-100 text-purple-700 border border-purple-200">Commerce
-                                            &amp; POS</span>
-                                        <span class="text-xs font-mono text-slate-500">Node.js • React • PayWay</span>
-                                    </div>
-                                    <h3 class="text-2xl font-extrabold text-slate-900 tracking-tight mb-3">
-                                        Sushi Store &amp; POS Terminal
-                                    </h3>
-                                    <p class="text-slate-600 text-sm leading-relaxed mb-6">
-                                        Full-stack restaurant commerce system featuring dedicated cashier point-of-sale
-                                        checkout, live SKU search, ABA PayWay QR banking integration, and real-time
-                                        inventory decrements.
-                                    </p>
-
-                                    <div
-                                        class="space-y-3 mb-6 bg-slate-50 p-4 rounded-xl border border-slate-200 text-xs">
-                                        <div class="flex items-start gap-2.5 text-slate-700">
-                                            <span class="text-purple-600 font-bold mt-0.5">▹</span>
-                                            <span><strong>Point of Sale:</strong> Cashier checkout module with item
-                                                lookup, operator tracking, and real-time transaction
-                                                reconciliation.</span>
-                                        </div>
-                                        <div class="flex items-start gap-2.5 text-slate-700">
-                                            <span class="text-purple-600 font-bold mt-0.5">▹</span>
-                                            <span><strong>ABA PayWay Gateway:</strong> Integrated digital banking QR
-                                                payment processing and order receipt generation.</span>
-                                        </div>
-                                        <div class="flex items-start gap-2.5 text-slate-700">
-                                            <span class="text-purple-600 font-bold mt-0.5">▹</span>
-                                            <span><strong>Cloudinary CDN:</strong> Automated image transformations and
-                                                responsive asset delivery for high-resolution menu items.</span>
-                                        </div>
-                                    </div>
-
-                                    <div class="flex flex-wrap gap-1.5 mb-6 text-xs font-mono text-slate-600">
-                                        <span
-                                            class="bg-purple-50 text-purple-700 border border-purple-100 px-2.5 py-1 rounded">Node.js</span>
-                                        <span
-                                            class="bg-purple-50 text-purple-700 border border-purple-100 px-2.5 py-1 rounded">Express.js</span>
-                                        <span
-                                            class="bg-slate-100 text-slate-700 border border-slate-200 px-2.5 py-1 rounded">React
-                                            SPA</span>
-                                        <span
-                                            class="bg-slate-100 text-slate-700 border border-slate-200 px-2.5 py-1 rounded">PostgreSQL</span>
-                                        <span
-                                            class="bg-slate-100 text-slate-700 border border-slate-200 px-2.5 py-1 rounded">ABA
-                                            PayWay</span>
-                                    </div>
-                                </div>
-
-                                <div
-                                    class="flex flex-wrap items-center gap-3 pt-4 border-t border-slate-100 font-mono text-xs">
-                                    <button type="button" onclick="openProjectModal('sushi-store')"
-                                        class="bg-purple-600 hover:bg-purple-700 text-white px-5 py-2.5 rounded-full font-medium transition-all hover:scale-105 shadow-sm flex items-center gap-2 cursor-pointer">
-                                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                                d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                                d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z">
-                                            </path>
-                                        </svg>
-                                        Inspect System (8 Screenshots)
-                                    </button>
-                                    <a href="https://github.com/anhahseven/sushi-store" target="_blank"
-                                        class="bg-white hover:bg-slate-100 text-slate-700 border border-slate-300 px-4 py-2.5 rounded-full transition-all hover:scale-105 shadow-2xs flex items-center gap-1.5">
-                                        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-                                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                                d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z">
-                                            </path>
-                                        </svg>
-                                        GitHub
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- SLIDE 2: SFL Cambodia Platform -->
-                    <div id="project-slide-2" class="project-slide">
-                        <div class="grid lg:grid-cols-12 gap-0">
-                            <!-- Left Column: Visual Banner -->
-                            <div onclick="openProjectModal('sfl')"
-                                class="lg:col-span-7 bg-gradient-to-br from-emerald-900 via-teal-950 to-slate-900 relative overflow-hidden group cursor-pointer min-h-[320px] sm:min-h-[440px] flex flex-col justify-between p-8 text-white">
-                                <div class="flex justify-between items-start">
-                                    <span
-                                        class="bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 font-mono text-xs px-3 py-1 rounded-md">
-                                        Institutional Portal
-                                    </span>
-                                    <span
-                                        class="text-xs font-mono text-emerald-300 bg-slate-900/80 px-3 py-1 rounded-full border border-emerald-500/30">
-                                        sflcambodia.com
-                                    </span>
-                                </div>
-
-                                <div class="space-y-3 my-auto">
-                                    <div
-                                        class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-mono bg-emerald-400/10 text-emerald-300 border border-emerald-400/20">
-                                        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-                                        <span>High-Performance Responsive Delivery</span>
-                                    </div>
-                                    <h4 class="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">
-                                        Zero-Bloat Mobile Academic Platform
-                                    </h4>
-                                    <p class="text-slate-300 text-xs sm:text-sm max-w-lg leading-relaxed">
-                                        Architected with clean semantic HTML5, modern CSS3 layout rules, and lightweight
-                                        JavaScript to guarantee sub-second page loads across low-bandwidth cellular
-                                        networks.
-                                    </p>
-                                </div>
-
-                                <div
-                                    class="flex justify-between items-center pt-4 border-t border-emerald-500/20 text-xs font-mono text-emerald-300">
-                                    <span>Verified Production Domain</span>
-                                    <span class="group-hover:translate-x-1 transition-transform">Click to View Specs
-                                        &amp; Architecture →</span>
-                                </div>
-                            </div>
-
-                            <!-- Right Column: Specs -->
-                            <div
-                                class="lg:col-span-5 p-6 sm:p-8 flex flex-col justify-between bg-white border-t lg:border-t-0 lg:border-l border-slate-200">
-                                <div>
-                                    <div class="flex items-center justify-between gap-2 mb-3">
-                                        <span
-                                            class="px-2.5 py-0.5 rounded-full text-xs font-mono font-medium bg-emerald-100 text-emerald-700 border border-emerald-200">Client
-                                            Web Platform</span>
-                                        <span class="text-xs font-mono text-slate-500">HTML5 • CSS3 • Bootstrap 5</span>
-                                    </div>
-                                    <h3 class="text-2xl font-extrabold text-slate-900 tracking-tight mb-3">
-                                        SFL Cambodia Interface
-                                    </h3>
-                                    <p class="text-slate-600 text-sm leading-relaxed mb-6">
-                                        Responsive institutional web portal developed for an international school.
-                                        Focused on mobile accessibility, sub-second load times, and structured
-                                        prospective student inquiry pipelines.
-                                    </p>
-
-                                    <div
-                                        class="space-y-3 mb-6 bg-slate-50 p-4 rounded-xl border border-slate-200 text-xs">
-                                        <div class="flex items-start gap-2.5 text-slate-700">
-                                            <span class="text-emerald-600 font-bold mt-0.5">▹</span>
-                                            <span><strong>Performance:</strong> Sub-second load speeds achieved through
-                                                lean zero-dependency vanilla scripting and optimized CSS assets.</span>
-                                        </div>
-                                        <div class="flex items-start gap-2.5 text-slate-700">
-                                            <span class="text-emerald-600 font-bold mt-0.5">▹</span>
-                                            <span><strong>Cross-Browser Viewports:</strong> Tested for touch
-                                                accessibility and typography hierarchy from mobile phones to high-DPI
-                                                displays.</span>
-                                        </div>
-                                        <div class="flex items-start gap-2.5 text-slate-700">
-                                            <span class="text-emerald-600 font-bold mt-0.5">▹</span>
-                                            <span><strong>SSL &amp; Custom Domain:</strong> Production hosting with
-                                                automatic SSL/TLS encryption and DNS management.</span>
-                                        </div>
-                                    </div>
-
-                                    <div class="flex flex-wrap gap-1.5 mb-6 text-xs font-mono text-slate-600">
-                                        <span
-                                            class="bg-emerald-50 text-emerald-700 border border-emerald-100 px-2.5 py-1 rounded">HTML5</span>
-                                        <span
-                                            class="bg-emerald-50 text-emerald-700 border border-emerald-100 px-2.5 py-1 rounded">CSS3</span>
-                                        <span
-                                            class="bg-slate-100 text-slate-700 border border-slate-200 px-2.5 py-1 rounded">JavaScript</span>
-                                        <span
-                                            class="bg-slate-100 text-slate-700 border border-slate-200 px-2.5 py-1 rounded">Bootstrap
-                                            5</span>
-                                        <span
-                                            class="bg-slate-100 text-slate-700 border border-slate-200 px-2.5 py-1 rounded">SEO</span>
-                                    </div>
-                                </div>
-
-                                <div
-                                    class="flex flex-wrap items-center gap-3 pt-4 border-t border-slate-100 font-mono text-xs">
-                                    <button type="button" onclick="openProjectModal('sfl')"
-                                        class="bg-emerald-600 hover:bg-emerald-700 text-white px-5 py-2.5 rounded-full font-medium transition-all hover:scale-105 shadow-sm flex items-center gap-2 cursor-pointer">
-                                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                                d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                                d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z">
-                                            </path>
-                                        </svg>
-                                        Project Details &amp; Architecture
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- SLIDE 3: Pidan Khmer Silk Inventory System -->
-                    <div id="project-slide-3" class="project-slide">
-                        <div class="grid lg:grid-cols-12 gap-0">
-                            <!-- Left Column: Visual Banner -->
-                            <div onclick="openProjectModal('pidan-silk')"
-                                class="lg:col-span-7 bg-gradient-to-br from-amber-950 via-slate-900 to-indigo-950 relative overflow-hidden group cursor-pointer min-h-[320px] sm:min-h-[440px] flex flex-col justify-between p-8 text-white">
-                                <div class="flex justify-between items-start">
-                                    <span
-                                        class="bg-amber-500/20 text-amber-300 border border-amber-500/30 font-mono text-xs px-3 py-1 rounded-md flex items-center gap-1.5">
-                                        <span>🧵</span> Traditional Pidan Khmer Silk
-                                    </span>
-                                    <span
-                                        class="text-xs font-mono text-amber-300 bg-slate-900/80 px-3 py-1 rounded-full border border-amber-500/30 flex items-center gap-1">
-                                        <span class="w-1.5 h-1.5 rounded-full bg-amber-400 animate-pulse"></span> Active
-                                        Engineering
-                                    </span>
-                                </div>
-
-                                <div class="space-y-3 my-auto">
-                                    <div
-                                        class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-mono bg-amber-400/10 text-amber-300 border border-amber-400/20">
-                                        <span>⚡</span>
-                                        <span>Docker Compose • Nuxt 3 SSR • NestJS Microservices</span>
-                                    </div>
-                                    <h4 class="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">
-                                        Artisan Textile ERP &amp; Warehouse Inventory
-                                    </h4>
-                                    <p class="text-slate-300 text-xs sm:text-sm max-w-lg leading-relaxed">
-                                        Multi-container architecture orchestrating Nuxt.js SSR presentation, NestJS
-                                        domain business services, Redis caching, and PostgreSQL relational database
-                                        within an isolated Docker network.
-                                    </p>
-                                </div>
-
-                                <div
-                                    class="flex justify-between items-center pt-4 border-t border-amber-500/20 text-xs font-mono text-amber-300">
-                                    <span>Multi-Variant Silk SKU Tracking</span>
-                                    <span class="group-hover:translate-x-1 transition-transform">Click to Inspect
-                                        Architecture Console →</span>
-                                </div>
-                            </div>
-
-                            <!-- Right Column: Specs -->
-                            <div
-                                class="lg:col-span-5 p-6 sm:p-8 flex flex-col justify-between bg-white border-t lg:border-t-0 lg:border-l border-slate-200">
-                                <div>
-                                    <div class="flex items-center justify-between gap-2 mb-3">
-                                        <span
-                                            class="px-2.5 py-0.5 rounded-full text-xs font-mono font-medium bg-amber-100 text-amber-800 border border-amber-200">Shop
-                                            Inventory &amp; ERP</span>
-                                        <span class="text-xs font-mono text-slate-500">Nuxt 3 • NestJS • Docker</span>
-                                    </div>
-                                    <h3 class="text-2xl font-extrabold text-slate-900 tracking-tight mb-3">
-                                        Pidan Khmer Silk Inventory
-                                    </h3>
-                                    <p class="text-slate-600 text-sm leading-relaxed mb-6">
-                                        Custom inventory management system designed for authentic Cambodian handwoven
-                                        silk. Tracks raw silk thread batches, artisan consignments, barcode scanning,
-                                        and multi-location showroom transfers.
-                                    </p>
-
-                                    <div
-                                        class="space-y-3 mb-6 bg-slate-50 p-4 rounded-xl border border-slate-200 text-xs">
-                                        <div class="flex items-start gap-2.5 text-slate-700">
-                                            <span class="text-amber-600 font-bold mt-0.5">▹</span>
-                                            <span><strong>Modular NestJS:</strong> Clean architecture with Dependency
-                                                Injection, class-validator DTOs, and transactional ledger
-                                                operations.</span>
-                                        </div>
-                                        <div class="flex items-start gap-2.5 text-slate-700">
-                                            <span class="text-amber-600 font-bold mt-0.5">▹</span>
-                                            <span><strong>Containerization:</strong> Docker Compose runtime
-                                                orchestrating client SSR, API gateway, PostgreSQL, and Redis
-                                                caching.</span>
-                                        </div>
-                                        <div class="flex items-start gap-2.5 text-slate-700">
-                                            <span class="text-amber-600 font-bold mt-0.5">▹</span>
-                                            <span><strong>Artisan Consignment:</strong> Tracks individual weaving
-                                                credits, tapestry dimensions, dye formulations, and retail sales.</span>
-                                        </div>
-                                    </div>
-
-                                    <div class="flex flex-wrap gap-1.5 mb-6 text-xs font-mono text-slate-600">
-                                        <span
-                                            class="bg-amber-50 text-amber-800 border border-amber-100 px-2.5 py-1 rounded font-semibold">Docker</span>
-                                        <span
-                                            class="bg-emerald-50 text-emerald-700 border border-emerald-100 px-2.5 py-1 rounded font-semibold">Nuxt
-                                            3</span>
-                                        <span
-                                            class="bg-red-50 text-red-700 border border-red-100 px-2.5 py-1 rounded font-semibold">NestJS</span>
-                                        <span
-                                            class="bg-blue-50 text-blue-700 border border-blue-100 px-2.5 py-1 rounded">TypeScript</span>
-                                        <span
-                                            class="bg-slate-100 text-slate-700 border border-slate-200 px-2.5 py-1 rounded">PostgreSQL</span>
-                                        <span
-                                            class="bg-slate-100 text-slate-700 border border-slate-200 px-2.5 py-1 rounded">Redis</span>
-                                    </div>
-                                </div>
-
-                                <div
-                                    class="flex flex-wrap items-center gap-3 pt-4 border-t border-slate-100 font-mono text-xs">
-                                    <button type="button" onclick="openProjectModal('pidan-silk')"
-                                        class="bg-gradient-to-r from-amber-600 to-amber-700 hover:from-amber-700 hover:to-amber-800 text-white px-5 py-2.5 rounded-full font-medium transition-all hover:scale-105 shadow-sm flex items-center gap-2 cursor-pointer">
-                                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                                d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                                d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z">
-                                            </path>
-                                        </svg>
-                                        Inspect Architecture &amp; Stack
-                                    </button>
-                                    <span
-                                        class="bg-amber-50 text-amber-800 border border-amber-200/80 px-3 py-2 rounded-full flex items-center gap-1.5">
-                                        <span class="w-2 h-2 rounded-full bg-amber-500 animate-ping"></span>
-                                        Active Development
-                                    </span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- SLIDE 4: Omnichannel POS & E-Commerce Platform -->
-                    <div id="project-slide-4" class="project-slide">
-                        <div class="grid lg:grid-cols-12 gap-0">
-                            <!-- Left Column: Interactive Screenshot Preview with inspection trigger -->
-                            <div onclick="openProjectModal('pos-and-ecommerce')"
-                                class="lg:col-span-7 bg-slate-950 relative overflow-hidden group cursor-pointer min-h-[320px] sm:min-h-[440px] flex items-center justify-center p-4">
-                                <img src="img/POS and E-C/Screenshot 2026-10-17 010929.png"
-                                    alt="Omnichannel POS and E-Commerce System Preview"
-                                    class="w-full h-full object-cover object-top rounded-xl border border-slate-800/80 group-hover:scale-[1.02] transition-transform duration-500 shadow-2xl"
-                                    loading="lazy" decoding="async">
-                                <div
-                                    class="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-transparent to-transparent opacity-80 group-hover:opacity-60 transition-opacity">
-                                </div>
-
-                                <div class="absolute bottom-4 left-4 right-4 flex items-center justify-between">
-                                    <span
-                                        class="bg-rose-600 text-white font-mono text-xs px-3 py-1.5 rounded-lg font-semibold flex items-center gap-2 shadow-lg backdrop-blur-md">
-                                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                                d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z">
-                                            </path>
-                                        </svg>
-                                        19 Production Screenshots Gallery
-                                    </span>
-                                    <span
-                                        class="bg-slate-900/90 text-rose-300 border border-rose-400/40 text-xs font-mono px-3 py-1 rounded-lg backdrop-blur-md">
-                                        Click to Enlarge &amp; Inspect →
-                                    </span>
-                                </div>
-                            </div>
-
-                            <!-- Right Column: System Specs, Highlights, and CTAs -->
-                            <div
-                                class="lg:col-span-5 p-6 sm:p-8 flex flex-col justify-between bg-white border-t lg:border-t-0 lg:border-l border-slate-200">
-                                <div>
-                                    <div class="flex items-center justify-between gap-2 mb-3">
-                                        <span
-                                            class="px-2.5 py-0.5 rounded-full text-xs font-mono font-medium bg-rose-100 text-rose-700 border border-rose-200">Omnichannel
-                                            Retail &amp; POS</span>
-                                        <span class="text-xs font-mono text-slate-500">NestJS • React SPA • RBAC</span>
-                                    </div>
-                                    <h3 class="text-2xl font-extrabold text-slate-900 tracking-tight mb-3">
-                                        Omnichannel POS &amp; E-Commerce
-                                    </h3>
-                                    <p class="text-slate-600 text-sm leading-relaxed mb-6">
-                                        Unified enterprise retail platform synchronizing customer web storefront
-                                        purchases with physical cashier point-of-sale checkout counters, live stock
-                                        movement ledgers, and comprehensive role-based access control.
-                                    </p>
-
-                                    <!-- Architectural Highlights -->
-                                    <div
-                                        class="space-y-3 mb-6 bg-slate-50 p-4 rounded-xl border border-slate-200 text-xs">
-                                        <div class="flex items-start gap-2.5 text-slate-700">
-                                            <span class="text-rose-600 font-bold mt-0.5">▹</span>
-                                            <span><strong>Unified Inventory Sync:</strong> Real-time inventory parity
-                                                preventing overselling across online web storefronts and physical
-                                                cashier POS terminals.</span>
-                                        </div>
-                                        <div class="flex items-start gap-2.5 text-slate-700">
-                                            <span class="text-rose-600 font-bold mt-0.5">▹</span>
-                                            <span><strong>Operations Hub &amp; Restock Ledger:</strong> Immutable
-                                                inventory history ledger tracking restocks, counter sales, order
-                                                pickups, and lot intakes in real time.</span>
-                                        </div>
-                                        <div class="flex items-start gap-2.5 text-slate-700">
-                                            <span class="text-rose-600 font-bold mt-0.5">▹</span>
-                                            <span><strong>4-Tier RBAC &amp; Audit Trail:</strong> Stateless JWT
-                                                authentication enforcing distinct privilege boundaries across Owner,
-                                                Admin, Cashier, and Customer roles.</span>
-                                        </div>
-                                    </div>
-
-                                    <!-- Tech Stack Chips -->
-                                    <div class="flex flex-wrap gap-1.5 mb-6 text-xs font-mono text-slate-600">
-                                        <span
-                                            class="bg-rose-50 text-rose-700 border border-rose-100 px-2.5 py-1 rounded font-semibold">NestJS</span>
-                                        <span
-                                            class="bg-slate-100 text-slate-700 border border-slate-200 px-2.5 py-1 rounded">TypeScript</span>
-                                        <span
-                                            class="bg-blue-50 text-blue-700 border border-blue-100 px-2.5 py-1 rounded">React
-                                            SPA</span>
-                                        <span
-                                            class="bg-purple-50 text-purple-700 border border-purple-100 px-2.5 py-1 rounded">Tailwind
-                                            CSS</span>
-                                        <span
-                                            class="bg-emerald-50 text-emerald-700 border border-emerald-100 px-2.5 py-1 rounded">PostgreSQL</span>
-                                        <span
-                                            class="bg-slate-100 text-slate-700 border border-slate-200 px-2.5 py-1 rounded">JWT
-                                            &amp; RBAC</span>
-                                    </div>
-                                </div>
-
-                                <!-- Action CTAs -->
-                                <div
-                                    class="flex flex-wrap items-center gap-3 pt-4 border-t border-slate-100 font-mono text-xs">
-                                    <button type="button" onclick="openProjectModal('pos-and-ecommerce')"
-                                        class="bg-rose-600 hover:bg-rose-700 text-white px-5 py-2.5 rounded-full font-medium transition-all hover:scale-105 shadow-sm flex items-center gap-2 cursor-pointer">
-                                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                                d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                                d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z">
-                                            </path>
-                                        </svg>
-                                        Inspect System (19 Screenshots)
-                                    </button>
-                                    <a href="https://github.com/SokThavireak/pos-and-ecommerce" target="_blank"
-                                        class="bg-white hover:bg-slate-100 text-slate-700 border border-slate-300 px-4 py-2.5 rounded-full transition-all hover:scale-105 shadow-2xs flex items-center gap-1.5">
-                                        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-                                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                                d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z">
-                                            </path>
-                                        </svg>
-                                        GitHub
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- SLIDE 5: Pop Commercial Photograph Studio Platform -->
-                    <div id="project-slide-5" class="project-slide">
-                        <div class="grid lg:grid-cols-12 gap-0">
-                            <!-- Left Column: Interactive Screenshot Preview with smooth hover-scroll -->
-                            <div onclick="openProjectModal('pop-commercial-photograph')"
-                                class="lg:col-span-7 bg-slate-950 relative overflow-hidden group cursor-pointer min-h-[340px] sm:min-h-[460px] max-h-[480px] flex items-start justify-center p-4">
-                                <div class="w-full h-full overflow-hidden rounded-xl border border-slate-800/80 shadow-2xl relative bg-slate-900">
-                                    <img src="img/pop-commercial-photograph/localhost_3000_.png"
-                                        alt="Pop Commercial Photograph Studio Preview"
-                                        class="hover-scroll-img w-full select-none"
-                                        loading="lazy" decoding="async">
-                                    
-                                    <div
-                                        class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent pointer-events-none group-hover:opacity-40 transition-opacity">
-                                    </div>
-                                    
-                                    <!-- Hover Scroll Hint Indicator -->
-                                    <div class="absolute top-3 right-3 bg-slate-900/85 text-cyan-300 border border-cyan-400/30 text-[10px] font-mono px-2.5 py-1 rounded-full backdrop-blur-md flex items-center gap-1.5 shadow-md group-hover:opacity-0 transition-opacity">
-                                        <svg class="w-3.5 h-3.5 animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
-                                        </svg>
-                                        <span>Hover to Scroll Page</span>
-                                    </div>
-                                </div>
-
-                                <div class="absolute bottom-6 left-6 right-6 flex items-center justify-between pointer-events-none z-10">
-                                    <span
-                                        class="bg-cyan-600/95 text-white font-mono text-xs px-3 py-1.5 rounded-lg font-semibold flex items-center gap-2 shadow-lg backdrop-blur-md">
-                                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                                d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z">
-                                            </path>
-                                        </svg>
-                                        8 Production Screenshots Gallery
-                                    </span>
-                                    <span
-                                        class="bg-slate-900/90 text-cyan-300 border border-cyan-400/40 text-xs font-mono px-3 py-1 rounded-lg backdrop-blur-md">
-                                        Click to Enlarge &amp; Inspect →
-                                    </span>
-                                </div>
-                            </div>
-
-                            <!-- Right Column: System Specs, Highlights, and CTAs -->
-                            <div
-                                class="lg:col-span-5 p-6 sm:p-8 flex flex-col justify-between bg-white border-t lg:border-t-0 lg:border-l border-slate-200">
-                                <div>
-                                    <div class="flex items-center justify-between gap-2 mb-3">
-                                        <span
-                                            class="px-2.5 py-0.5 rounded-full text-xs font-mono font-medium bg-cyan-100 text-cyan-800 border border-cyan-200">Commercial
-                                            Studio &amp; Media</span>
-                                        <span class="text-xs font-mono text-slate-500">Full-Stack • Client Portal</span>
-                                    </div>
-                                    <h3 class="text-2xl font-extrabold text-slate-900 tracking-tight mb-3">
-                                        Pop Commercial Photograph
-                                    </h3>
-                                    <p class="text-slate-600 text-sm leading-relaxed mb-6">
-                                        End-to-end commercial photography studio platform featuring an editorial portfolio showcase, interactive rate calculator, staff workspace, client authentication, and publication journal.
-                                    </p>
-
-                                    <!-- Architectural Highlights -->
-                                    <div
-                                        class="space-y-3 mb-6 bg-slate-50 p-4 rounded-xl border border-slate-200 text-xs">
-                                        <div class="flex items-start gap-2.5 text-slate-700">
-                                            <span class="text-cyan-600 font-bold mt-0.5">▹</span>
-                                            <span><strong>Editorial Showcase &amp; Journal:</strong> High-resolution media presentation and behind-the-scenes production journal for creative campaigns.</span>
-                                        </div>
-                                        <div class="flex items-start gap-2.5 text-slate-700">
-                                            <span class="text-cyan-600 font-bold mt-0.5">▹</span>
-                                            <span><strong>Commercial Pricing &amp; Bookings:</strong> Tiered package pricing matrices with shoot specifications, deliverables breakdown, and inquiry capture.</span>
-                                        </div>
-                                        <div class="flex items-start gap-2.5 text-slate-700">
-                                            <span class="text-cyan-600 font-bold mt-0.5">▹</span>
-                                            <span><strong>Staff Operations &amp; Client Auth:</strong> Dedicated staff operations portal paired with client sign-in and account registration flows.</span>
-                                        </div>
-                                    </div>
-
-                                    <!-- Tech Stack Chips -->
-                                    <div class="flex flex-wrap gap-1.5 mb-6 text-xs font-mono text-slate-600">
-                                        <span
-                                            class="bg-cyan-50 text-cyan-800 border border-cyan-100 px-2.5 py-1 rounded font-semibold">Full-Stack</span>
-                                        <span
-                                            class="bg-slate-100 text-slate-700 border border-slate-200 px-2.5 py-1 rounded">JavaScript</span>
-                                        <span
-                                            class="bg-blue-50 text-blue-700 border border-blue-100 px-2.5 py-1 rounded">REST API</span>
-                                        <span
-                                            class="bg-purple-50 text-purple-700 border border-purple-100 px-2.5 py-1 rounded">Tailwind CSS</span>
-                                        <span
-                                            class="bg-emerald-50 text-emerald-700 border border-emerald-100 px-2.5 py-1 rounded">Auth &amp; RBAC</span>
-                                    </div>
-                                </div>
-
-                                <!-- Action CTAs -->
-                                <div
-                                    class="flex flex-wrap items-center gap-3 pt-4 border-t border-slate-100 font-mono text-xs">
-                                    <button type="button" onclick="openProjectModal('pop-commercial-photograph')"
-                                        class="bg-cyan-600 hover:bg-cyan-700 text-white px-5 py-2.5 rounded-full font-medium transition-all hover:scale-105 shadow-sm flex items-center gap-2 cursor-pointer">
-                                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                                d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                                d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z">
-                                            </path>
-                                        </svg>
-                                        Inspect System (8 Screenshots)
-                                    </button>
-                                    <a href="https://github.com/SokThavireak/pop-commercial-photograph" target="_blank"
-                                        class="bg-white hover:bg-slate-100 text-slate-700 border border-slate-300 px-4 py-2.5 rounded-full transition-all hover:scale-105 shadow-2xs flex items-center gap-1.5">
-                                        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-                                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                                d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z">
-                                            </path>
-                                        </svg>
-                                        GitHub
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-
-                <!-- Bottom Slide Pagination & Quick Jump Bar to make slide navigation effortless -->
-                <div class="bg-slate-900 border-t border-slate-800 px-6 py-4 flex flex-wrap items-center justify-between gap-4 select-none">
-                    <div class="flex items-center gap-3">
-                        <button type="button" onclick="prevProjectSlide()"
-                            class="px-4 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-mono font-medium border border-slate-700 flex items-center gap-2 transition-all hover:scale-105 cursor-pointer shadow-sm">
-                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
-                            </svg>
-                            <span>Previous Project</span>
-                        </button>
-                        <button type="button" onclick="nextProjectSlide()"
-                            class="px-4 py-2 rounded-xl bg-blue-600 hover:bg-blue-500 text-white text-xs font-mono font-medium flex items-center gap-2 transition-all hover:scale-105 cursor-pointer shadow-md shadow-blue-500/20">
-                            <span>Next Project</span>
-                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-                            </svg>
-                        </button>
-                    </div>
-
-                    <!-- Slide Indicator Dots -->
-                    <div class="flex items-center gap-2">
-                        <span class="text-xs font-mono text-slate-400 mr-1 hidden sm:inline">Jump to:</span>
-                        <div class="flex items-center gap-1.5" id="slide-indicator-dots">
-                            <button type="button" onclick="goToProjectSlide(0)" title="01 HRMS" class="w-2.5 h-2.5 rounded-full bg-blue-500 transition-all cursor-pointer"></button>
-                            <button type="button" onclick="goToProjectSlide(1)" title="02 Sushi Store" class="w-2.5 h-2.5 rounded-full bg-slate-700 hover:bg-slate-500 transition-all cursor-pointer"></button>
-                            <button type="button" onclick="goToProjectSlide(2)" title="03 SFL Cambodia" class="w-2.5 h-2.5 rounded-full bg-slate-700 hover:bg-slate-500 transition-all cursor-pointer"></button>
-                            <button type="button" onclick="goToProjectSlide(3)" title="04 Pidan Silk" class="w-2.5 h-2.5 rounded-full bg-slate-700 hover:bg-slate-500 transition-all cursor-pointer"></button>
-                            <button type="button" onclick="goToProjectSlide(4)" title="05 Omnichannel POS" class="w-2.5 h-2.5 rounded-full bg-slate-700 hover:bg-slate-500 transition-all cursor-pointer"></button>
-                            <button type="button" onclick="goToProjectSlide(5)" title="06 Pop Commercial" class="w-2.5 h-2.5 rounded-full bg-slate-700 hover:bg-slate-500 transition-all cursor-pointer"></button>
-                        </div>
+                <!-- Slide Indicator Dots -->
+                <div class="flex items-center gap-2">
+                    <span class="text-xs font-mono text-slate-400 mr-1 hidden sm:inline">Jump to:</span>
+                    <div class="flex items-center gap-1.5" id="slide-indicator-dots">
+                        <button type="button" onclick="goToProjectSlide(0)" title="01 HRMS"
+                            class="w-2.5 h-2.5 rounded-full bg-blue-500 transition-all cursor-pointer"></button>
+                        <button type="button" onclick="goToProjectSlide(1)" title="02 Sushi Store"
+                            class="w-2.5 h-2.5 rounded-full bg-slate-700 hover:bg-slate-500 transition-all cursor-pointer"></button>
+                        <button type="button" onclick="goToProjectSlide(2)" title="03 SFL Cambodia"
+                            class="w-2.5 h-2.5 rounded-full bg-slate-700 hover:bg-slate-500 transition-all cursor-pointer"></button>
+                        <button type="button" onclick="goToProjectSlide(3)" title="04 Pidan Silk"
+                            class="w-2.5 h-2.5 rounded-full bg-slate-700 hover:bg-slate-500 transition-all cursor-pointer"></button>
+                        <button type="button" onclick="goToProjectSlide(4)" title="05 Omnichannel POS"
+                            class="w-2.5 h-2.5 rounded-full bg-slate-700 hover:bg-slate-500 transition-all cursor-pointer"></button>
+                        <button type="button" onclick="goToProjectSlide(5)" title="06 Pop Commercial"
+                            class="w-2.5 h-2.5 rounded-full bg-slate-700 hover:bg-slate-500 transition-all cursor-pointer"></button>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>

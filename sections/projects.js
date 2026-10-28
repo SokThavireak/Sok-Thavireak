@@ -288,7 +288,7 @@ window.PORTFOLIO_SECTIONS_DATA['projects'] = `
                                              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                                  d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
                                         </svg>
-                                        Live Demo
+                                        Live
                                     </a>
                                 </div>
                             </div>
@@ -393,7 +393,7 @@ window.PORTFOLIO_SECTIONS_DATA['projects'] = `
                                         </svg>
                                         Inspect System (8 Screenshots)
                                     </button>
-                                    <a href="https://github.com/anhahseven/sushi-store" target="_blank"
+                                    <a href="https://github.com/SokThavireak/sushi_store" target="_blank"
                                         class="bg-white hover:bg-slate-100 text-slate-700 border border-slate-300 px-4 py-2.5 rounded-full transition-all hover:scale-105 shadow-2xs flex items-center gap-1.5">
                                         <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
                                             <path fill-rule="evenodd" clip-rule="evenodd"
@@ -401,6 +401,14 @@ window.PORTFOLIO_SECTIONS_DATA['projects'] = `
                                             </path>
                                         </svg>
                                         GitHub
+                                    </a>
+                                    <a href="https://hr-system-one-hazel.vercel.app/" target="_blank" rel="noopener noreferrer"
+                                        class="bg-emerald-600 hover:bg-emerald-700 text-white px-4 py-2.5 rounded-full transition-all hover:scale-105 shadow-2xs flex items-center gap-1.5 font-medium">
+                                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                 d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                                        </svg>
+                                        Live
                                     </a>
                                 </div>
                             </div>
@@ -764,7 +772,7 @@ window.PORTFOLIO_SECTIONS_DATA['projects'] = `
                                              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                                  d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
                                         </svg>
-                                        Live Demo
+                                        Live
                                     </a>
                                 </div>
                             </div>
@@ -776,7 +784,7 @@ window.PORTFOLIO_SECTIONS_DATA['projects'] = `
                         <div class="grid lg:grid-cols-12 gap-0">
                             <!-- Left Column: Interactive Screenshot Preview with smooth hover-scroll -->
                             <div onclick="openProjectModal('pop-commercial-photograph')"
-                                class="lg:col-span-7 bg-slate-950 relative overflow-hidden group cursor-pointer min-h-[340px] sm:min-h-[460px] max-h-[480px] flex items-start justify-center p-4">
+                                class="lg:col-span-7 bg-slate-950 relative overflow-hidden group cursor-pointer min-h-[320px] sm:min-h-[440px] flex items-start justify-center p-4">
                                 <div class="w-full h-full overflow-hidden rounded-xl border border-slate-800/80 shadow-2xl relative bg-slate-900">
                                     <img src="img/pop-commercial-photograph/localhost_3000_.png"
                                         alt="Pop Commercial Photograph Studio Preview"

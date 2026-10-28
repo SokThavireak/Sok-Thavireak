@@ -186,6 +186,21 @@ body {
     transform: scale(1) translateY(0);
 }
 
+/* Force equal height and prevent card height jumping across slides */
+#project-slides-viewport {
+    min-height: 520px;
+}
+
+@media (min-width: 1024px) {
+    #project-slides-viewport {
+        min-height: 540px;
+    }
+
+    .project-slide > .grid {
+        min-height: 540px;
+    }
+}
+
 .slide-tab-item {
     position: relative;
     background: transparent;

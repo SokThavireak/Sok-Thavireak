@@ -277,8 +277,7 @@
                                 class="w-full h-full overflow-y-auto overflow-x-hidden flex items-start justify-center modal-scrollable-preview">
                                 <img id="gallery-main-img" src="" alt="Project Screenshot"
                                     class="max-w-full h-auto object-contain transition-opacity duration-200 cursor-zoom-in rounded-lg shadow-sm"
-                                    loading="lazy" decoding="async"
-                                    onclick="openLightbox()">
+                                    loading="lazy" decoding="async" onclick="openLightbox()">
                             </div>
 
                             <!-- Navigation Arrows -->
@@ -441,7 +440,7 @@
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                 d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
                         </svg>
-                        <span>Live Demo</span>
+                        <span>Live</span>
                     </a>
                     <a id="modal-github-btn" href="#" target="_blank"
                         class="inline-flex items-center gap-1.5 bg-white hover:bg-slate-100 text-slate-700 border border-slate-300 font-mono text-xs px-4 py-2 rounded-full transition-all duration-200 hover:scale-105 shadow-xs">
@@ -469,10 +468,10 @@
         </button>
         <div class="max-w-6xl w-full max-h-[94vh] flex flex-col items-center justify-center cursor-default"
             onclick="event.stopPropagation()">
-            <div class="w-full max-h-[82vh] overflow-y-auto overflow-x-hidden modal-scrollable-preview flex justify-center bg-slate-900/60 p-2 sm:p-4 rounded-2xl border border-slate-800 shadow-2xl">
+            <div
+                class="w-full max-h-[82vh] overflow-y-auto overflow-x-hidden modal-scrollable-preview flex justify-center bg-slate-900/60 p-2 sm:p-4 rounded-2xl border border-slate-800 shadow-2xl">
                 <img id="lightbox-img" src="" alt="Zoomed Screenshot"
-                    class="max-w-full h-auto object-contain rounded-xl shadow-2xl"
-                    loading="lazy" decoding="async">
+                    class="max-w-full h-auto object-contain rounded-xl shadow-2xl" loading="lazy" decoding="async">
             </div>
             <p id="lightbox-caption"
                 class="text-center text-xs font-mono text-slate-300 mt-3 bg-slate-900/90 px-4 py-1.5 rounded-full border border-slate-700/80 max-w-2xl truncate">
