@@ -3,7 +3,7 @@
  * Implements a Cache-First strategy for images to achieve instant loading.
  */
 
-const CACHE_NAME = 'portfolio-static-v1';
+const CACHE_NAME = 'portfolio-static-v2';
 const IMAGE_CACHE_NAME = 'portfolio-images-v1';
 
 const STATIC_ASSETS = [
