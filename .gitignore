@@ -1,5 +1,53 @@
+# ============================================
+# Sok Thavireak Portfolio - .gitignore
+# ============================================
+
+# Local Backups & Heavy Assets
+img_original_backup/
+*.bak
+*.backup
+
+# Maintenance & Compression Scripts
+compress_images.py
+optimize_images.py
+test_*
+temp_*
+
+# Operating System Files
 .DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
 Thumbs.db
-*.log
+ehthumbs.db
+desktop.ini
+
+# Editor & IDE Configuration
 .vscode/
 .idea/
+*.sublime-project
+*.sublime-workspace
+*.swp
+*.swo
+
+# Node & Package Managers
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Python & Build Artifacts
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+env/
+venv/
+.venv/
+
+# Environment Variables & Secrets
+.env
+.env.local
+.env.*.local

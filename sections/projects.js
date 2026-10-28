@@ -176,7 +176,8 @@ window.PORTFOLIO_SECTIONS_DATA['projects'] = `
                                 class="lg:col-span-7 bg-slate-950 relative overflow-hidden group cursor-pointer min-h-[320px] sm:min-h-[440px] flex items-center justify-center p-4">
                                 <img src="img/HR/HR user/{A5523F21-E004-4C74-8803-5C5AF29BF1BE}.png"
                                     alt="Full-Stack HRMS Admin Dashboard"
-                                    class="w-full h-full object-cover object-top rounded-xl border border-slate-800/80 group-hover:scale-[1.02] transition-transform duration-500 shadow-2xl">
+                                    class="w-full h-full object-cover object-top rounded-xl border border-slate-800/80 group-hover:scale-[1.02] transition-transform duration-500 shadow-2xl"
+                                    decoding="async">
                                 <div
                                     class="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-transparent to-transparent opacity-80 group-hover:opacity-60 transition-opacity">
                                 </div>
@@ -301,7 +302,8 @@ window.PORTFOLIO_SECTIONS_DATA['projects'] = `
                             <div onclick="openProjectModal('sushi-store')"
                                 class="lg:col-span-7 bg-slate-950 relative overflow-hidden group cursor-pointer min-h-[320px] sm:min-h-[440px] flex items-center justify-center p-4">
                                 <img src="img/Screenshot 2026-09-14 134028.png" alt="Murakami Sushi Store & POS Preview"
-                                    class="w-full h-full object-cover object-top rounded-xl border border-slate-800/80 group-hover:scale-[1.02] transition-transform duration-500 shadow-2xl">
+                                    class="w-full h-full object-cover object-top rounded-xl border border-slate-800/80 group-hover:scale-[1.02] transition-transform duration-500 shadow-2xl"
+                                    loading="lazy" decoding="async">
                                 <div
                                     class="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-transparent to-transparent opacity-80 group-hover:opacity-60 transition-opacity">
                                 </div>
@@ -648,7 +650,8 @@ window.PORTFOLIO_SECTIONS_DATA['projects'] = `
                                 class="lg:col-span-7 bg-slate-950 relative overflow-hidden group cursor-pointer min-h-[320px] sm:min-h-[440px] flex items-center justify-center p-4">
                                 <img src="img/POS and E-C/Screenshot 2026-10-17 010929.png"
                                     alt="Omnichannel POS and E-Commerce System Preview"
-                                    class="w-full h-full object-cover object-top rounded-xl border border-slate-800/80 group-hover:scale-[1.02] transition-transform duration-500 shadow-2xl">
+                                    class="w-full h-full object-cover object-top rounded-xl border border-slate-800/80 group-hover:scale-[1.02] transition-transform duration-500 shadow-2xl"
+                                    loading="lazy" decoding="async">
                                 <div
                                     class="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-transparent to-transparent opacity-80 group-hover:opacity-60 transition-opacity">
                                 </div>
@@ -769,7 +772,8 @@ window.PORTFOLIO_SECTIONS_DATA['projects'] = `
                                 <div class="w-full h-full overflow-hidden rounded-xl border border-slate-800/80 shadow-2xl relative bg-slate-900">
                                     <img src="img/pop-commercial-photograph/localhost_3000_.png"
                                         alt="Pop Commercial Photograph Studio Preview"
-                                        class="hover-scroll-img w-full select-none">
+                                        class="hover-scroll-img w-full select-none"
+                                        loading="lazy" decoding="async">
                                     
                                     <div
                                         class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent pointer-events-none group-hover:opacity-40 transition-opacity">

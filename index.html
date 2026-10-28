@@ -277,6 +277,7 @@
                                 class="w-full h-full overflow-y-auto overflow-x-hidden flex items-start justify-center modal-scrollable-preview">
                                 <img id="gallery-main-img" src="" alt="Project Screenshot"
                                     class="max-w-full h-auto object-contain transition-opacity duration-200 cursor-zoom-in rounded-lg shadow-sm"
+                                    loading="lazy" decoding="async"
                                     onclick="openLightbox()">
                             </div>
 
@@ -470,7 +471,8 @@
             onclick="event.stopPropagation()">
             <div class="w-full max-h-[82vh] overflow-y-auto overflow-x-hidden modal-scrollable-preview flex justify-center bg-slate-900/60 p-2 sm:p-4 rounded-2xl border border-slate-800 shadow-2xl">
                 <img id="lightbox-img" src="" alt="Zoomed Screenshot"
-                    class="max-w-full h-auto object-contain rounded-xl shadow-2xl">
+                    class="max-w-full h-auto object-contain rounded-xl shadow-2xl"
+                    loading="lazy" decoding="async">
             </div>
             <p id="lightbox-caption"
                 class="text-center text-xs font-mono text-slate-300 mt-3 bg-slate-900/90 px-4 py-1.5 rounded-full border border-slate-700/80 max-w-2xl truncate">
@@ -488,6 +490,17 @@
     <!-- Modular Application Logic & Project Catalog Data -->
     <script src="js/projects-data.js"></script>
     <script src="js/main.js"></script>
+
+    <!-- High-Performance Image & Asset Cache Registration (Service Worker) -->
+    <script>
+        if ('serviceWorker' in navigator && (window.location.protocol.startsWith('http') || window.location.protocol === 'https:')) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('./sw.js')
+                    .then(() => console.log('⚡ Image cache Service Worker active'))
+                    .catch((err) => console.debug('Service Worker bypassed:', err));
+            });
+        }
+    </script>
 </body>
 
 </html>

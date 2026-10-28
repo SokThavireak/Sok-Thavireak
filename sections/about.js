@@ -97,7 +97,8 @@ window.PORTFOLIO_SECTIONS_DATA['about'] = `
                     <div
                         class="relative w-full h-full rounded-full overflow-hidden bg-slate-100 flex items-center justify-center border border-slate-200/60">
                         <img src="img/developer_photo.png?v=1" alt="Sok Thavireak"
-                            class="w-full h-full object-cover object-top scale-[1.05] hover:scale-110 transition-transform duration-500">
+                            class="w-full h-full object-cover object-top scale-[1.05] hover:scale-110 transition-transform duration-500"
+                            loading="eager" decoding="async" fetchpriority="high">
                     </div>
                 </div>
 
