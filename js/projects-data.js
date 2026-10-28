@@ -287,7 +287,7 @@ const projectsData = {
         themeAccent: '#e11d48',
         themeGlow: 'rgba(225, 29, 72, 0.45)',
         liveBtnClass: 'bg-rose-600 hover:bg-rose-700 text-white',
-        liveUrl: null,
+        liveUrl: 'https://pos-and-ecommerce.vercel.app/',
         githubUrl: 'https://github.com/SokThavireak/pos-and-ecommerce',
         description: 'An omnichannel retail commerce engine and cashier point-of-sale system built with NestJS, React SPA, Tailwind CSS, and PostgreSQL. Features real-time multi-channel inventory synchronization between online customer storefronts and physical checkout counters, immutable stock movement audit ledgers, barcode scanning, order pickup workflows, and 4-tier role-based access control (Owner, Admin, Cashier, Customer).',
         features: [
