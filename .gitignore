@@ -12,6 +12,7 @@ compress_images.py
 optimize_images.py
 test_*
 temp_*
+fix_cards.py
 
 # Operating System Files
 .DS_Store
