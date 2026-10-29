@@ -634,4 +634,49 @@ window.addEventListener('keydown', (e) => {
             }
         }
     }
+
+    // Keyboard shortcut 'w' to toggle Wireframe Mode
+    if ((e.key === 'w' || e.key === 'W') && !['INPUT', 'TEXTAREA'].includes(document.activeElement.tagName)) {
+        toggleWireframeMode();
+    }
 });
+
+// ==========================================================================
+// 7. Wireframe / Blueprint Mode Controller (Inspired by wireframee.framer.website)
+// ==========================================================================
+function initWireframeMode() {
+    const saved = localStorage.getItem('portfolio_wireframe_mode');
+    if (saved === 'true') {
+        setWireframeMode(true);
+    }
+}
+
+function toggleWireframeMode() {
+    const isWireframe = document.documentElement.classList.contains('mode-wireframe');
+    setWireframeMode(!isWireframe);
+}
+
+function setWireframeMode(enable) {
+    const root = document.documentElement;
+    const btnText = document.getElementById('wireframe-btn-text');
+    const navLabel = document.getElementById('wireframe-nav-label');
+    const navIcon = document.getElementById('wireframe-nav-icon');
+
+    if (enable) {
+        root.classList.add('mode-wireframe');
+        localStorage.setItem('portfolio_wireframe_mode', 'true');
+        if (btnText) btnText.textContent = '✨ Hi-Fi Mode';
+        if (navLabel) navLabel.textContent = 'Hi-Fi';
+        if (navIcon) navIcon.textContent = '✨';
+    } else {
+        root.classList.remove('mode-wireframe');
+        localStorage.setItem('portfolio_wireframe_mode', 'false');
+        if (btnText) btnText.textContent = '📐 Wireframe Mode';
+        if (navLabel) navLabel.textContent = 'Wireframe';
+        if (navIcon) navIcon.textContent = '📐';
+    }
+}
+
+// Auto-initialize wireframe mode state on page load
+document.addEventListener('DOMContentLoaded', initWireframeMode);
+

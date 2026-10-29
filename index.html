@@ -112,6 +112,12 @@
                     </svg>
                     Resume (PDF)
                 </a>
+                <button type="button" onclick="toggleWireframeMode()" id="wireframe-nav-toggle"
+                    class="px-3 py-1.5 text-xs font-mono font-medium border border-slate-300 hover:border-slate-800 text-slate-700 hover:text-slate-900 rounded-full transition-all duration-200 shadow-2xs flex items-center gap-1.5 cursor-pointer bg-slate-50 hover:bg-slate-100"
+                    title="Toggle Wireframe / Blueprint Mode">
+                    <span id="wireframe-nav-icon">📐</span>
+                    <span id="wireframe-nav-label">Wireframe</span>
+                </button>
                 <a href="#projects"
                     class="px-4 py-1.5 text-xs font-mono font-medium bg-slate-900 hover:bg-blue-600 text-white rounded-full transition-all duration-200 hover:scale-105 shadow-xs">
                     View Systems →
@@ -137,6 +143,14 @@
                     <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
                     <span>Open for Opportunities</span>
                 </div>
+                <button type="button" onclick="toggleWireframeMode()"
+                    class="w-full text-left py-2 px-3 rounded-lg border border-slate-200 text-xs font-mono font-medium flex items-center justify-between text-slate-700 bg-slate-50">
+                    <span class="flex items-center gap-2">
+                        <span>📐</span>
+                        <span>Wireframe / Hi-Fi View</span>
+                    </span>
+                    <span class="text-[10px] bg-slate-200 px-2 py-0.5 rounded font-mono">Toggle</span>
+                </button>
                 <a href="#about" class="mobile-nav-link text-slate-600 hover:text-blue-600 transition-colors">About</a>
                 <a href="#skills" class="mobile-nav-link text-slate-600 hover:text-blue-600 transition-colors">Technical
                     Stack</a>
@@ -478,6 +492,15 @@
                 Caption</p>
         </div>
     </div>
+
+    <!-- Floating Wireframe / Hi-Fi Mode Switcher (Inspired by wireframee.framer.website) -->
+    <button type="button" onclick="toggleWireframeMode()" id="wireframe-floating-btn"
+        class="wireframe-floating-toggle px-4 py-2.5 rounded-full font-mono text-xs font-semibold flex items-center gap-2 cursor-pointer"
+        aria-label="Toggle Wireframe or Hi-Fi mode">
+        <span class="inline-block animate-pulse">📐</span>
+        <span id="wireframe-btn-text">Wireframe Mode</span>
+        <span class="text-[10px] opacity-60 ml-0.5 border-l border-current pl-2">ESC / W</span>
+    </button>
 
     <!-- Modular Sections Content (Loads 5 distinct section files cleanly without CORS errors) -->
     <script src="sections/about.js"></script>

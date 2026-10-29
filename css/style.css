@@ -325,3 +325,101 @@ body {
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08), 0 1px 2px rgba(0, 0, 0, 0.04);
     font-weight: 600;
 }
+
+/* ==========================================================================
+   Wireframe / Blueprint Mode (Inspired by wireframee.framer.website)
+   ========================================================================== */
+.wireframe-only {
+    display: none !important;
+}
+
+html.mode-wireframe .wireframe-only {
+    display: flex !important;
+}
+
+html.mode-wireframe .hifi-only {
+    display: none !important;
+}
+
+/* Wireframe Aesthetic Overrides */
+html.mode-wireframe {
+    filter: grayscale(1) contrast(1.1);
+}
+
+html.mode-wireframe body {
+    background-color: #f8fafc !important;
+}
+
+/* Blueprint Grid Replacement */
+html.mode-wireframe .bg-engineering-grid {
+    background-image: 
+        linear-gradient(to right, rgba(100, 116, 139, 0.18) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(100, 116, 139, 0.18) 1px, transparent 1px) !important;
+    background-size: 20px 20px !important;
+}
+
+/* Wireframe Cross Overlay for images */
+.wireframe-cross-overlay {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 25;
+    background: 
+        linear-gradient(to top right, transparent calc(50% - 1px), rgba(71, 85, 105, 0.7) 50%, transparent calc(50% + 1px)),
+        linear-gradient(to bottom right, transparent calc(50% - 1px), rgba(71, 85, 105, 0.7) 50%, transparent calc(50% + 1px));
+    border: 1.5px dashed rgba(71, 85, 105, 0.8);
+    display: none;
+}
+
+html.mode-wireframe .wireframe-cross-overlay {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Wireframe Sticky Notes / Comments */
+.wireframe-sticky-note {
+    position: absolute;
+    background: #fef08a;
+    color: #854d0e;
+    border: 1px solid #facc15;
+    box-shadow: 2px 4px 12px rgba(0,0,0,0.15);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    padding: 6px 10px;
+    border-radius: 4px;
+    z-index: 30;
+    display: none;
+    transform: rotate(-2deg);
+}
+
+html.mode-wireframe .wireframe-sticky-note {
+    display: flex;
+}
+
+/* Floating Wireframe Toggle Button */
+.wireframe-floating-toggle {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    z-index: 60;
+    background: #0f172a;
+    color: #f8fafc;
+    border: 1.5px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3), 0 8px 10px -6px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(12px);
+    transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.wireframe-floating-toggle:hover {
+    transform: translateY(-2px) scale(1.02);
+    box-shadow: 0 16px 32px -8px rgba(0, 0, 0, 0.4);
+}
+
+html.mode-wireframe .wireframe-floating-toggle {
+    background: #ffffff;
+    color: #0f172a;
+    border: 2px solid #0f172a;
+    box-shadow: 4px 4px 0px #0f172a;
+}
+
