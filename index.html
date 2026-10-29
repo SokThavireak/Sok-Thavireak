@@ -181,12 +181,13 @@
         }
 
         </style>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body class="grid-paper min-h-screen text-wire-900 font-sans selection:bg-yellow-200 selection:text-black relative">
 
     <!-- Collaborative Figma Cursors -->
-    <div id="collaborative-canvas" class="pointer-events-none fixed inset-0 z-30 overflow-hidden hide-on-hifi">
+    <div id="collaborative-canvas" class="pointer-events-none fixed inset-0 z-30 overflow-hidden ">
         <div class="figma-cursor top-28 left-[8%] sm:left-[18%]">
             <svg class="w-5 h-5 text-purple-600 drop-shadow-md" viewBox="0 0 24 24" fill="currentColor">
                 <path d="M4 2l16 11-7 2-3 7L4 2z"/>
@@ -255,13 +256,13 @@
 
     <!-- SECTION 1: HERO & ABOUT -->
     <section id="about" class="relative pt-12 pb-20 sm:pt-20 sm:pb-32 px-4 sm:px-6 max-w-7xl mx-auto">
-        <div class="masking-tape -top-3 left-8 rotate-[-3deg] hide-on-hifi">
+        <div class="masking-tape -top-3 left-8 rotate-[-3deg] ">
             📌 Note: "Finished product intentionally presented unfinished on purpose"
         </div>
 
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             <div class="lg:col-span-7 space-y-6 relative">
-                <div class="figma-comment-pin absolute -left-7 -top-5 w-8 h-8 rounded-full bg-blue-600 text-white flex items-center justify-center font-mono text-xs font-bold shadow-lg pointer-events-auto hide-on-hifi" title="Comment by Alex">
+                <div class="figma-comment-pin absolute -left-7 -top-5 w-8 h-8 rounded-full bg-blue-600 text-white flex items-center justify-center font-mono text-xs font-bold shadow-lg pointer-events-auto " title="Comment by Alex">
                     💬
                 </div>
 
@@ -284,7 +285,7 @@
                     Engineering resilient web systems and enterprise infrastructure with <strong class="text-wire-900 font-bold">Node.js, Express, React, PostgreSQL, NestJS, and Docker</strong>. Experienced in role-based JWT authentication, automated calculation engines, and reliable 24/7 IT network administration.
                 </p>
 
-                <div class="space-y-2 pt-1 pb-1 hide-on-hifi max-w-md opacity-75">
+                <div class="space-y-2 pt-1 pb-1 max-w-md opacity-75">
                     <div class="wire-skeleton-bar w-full"></div>
                     <div class="wire-skeleton-bar w-5/6"></div>
                     <div class="wire-skeleton-bar w-3/4"></div>
@@ -330,7 +331,7 @@
             </div>
 
             <div class="lg:col-span-5 relative">
-                <div class="masking-tape -top-5 right-4 rotate-[4deg] hide-on-hifi">
+                <div class="masking-tape -top-5 right-4 rotate-[4deg] ">
                     ✍️ "developer_portrait.slot (X)"
                 </div>
 
@@ -349,17 +350,8 @@
                         </span>
                     </div>
 
-                    <div class="wire-cross-placeholder h-72 sm:h-84 rounded-lg flex flex-col items-center justify-center p-6 border-2 border-dashed border-zinc-400 text-center relative hide-on-hifi">
-                        <div class="bg-white/95 px-4 py-2 border border-zinc-900 font-mono text-xs font-bold text-zinc-800 shadow-[2px_2px_0px_#18181b] z-10">
-                            [ 🖼️ HERO PORTRAIT PLACEHOLDER (X) ]
-                        </div>
-                        <span class="font-hand text-xl text-zinc-600 mt-2 z-10 rotate-[-2deg]">
-                            replace with high-res photo in Hi-Fi mode
-                        </span>
-                    </div>
-
-                    <div class="show-on-hifi h-72 sm:h-84 rounded-lg overflow-hidden relative shadow-inner">
-                        <img src="img/developer_photo.png" alt="Sok Thavireak" class="w-full h-full object-cover rounded-lg transform hover:scale-105 transition-transform duration-700">
+                    <div class="h-72 sm:h-84 rounded-lg overflow-hidden relative shadow-inner border border-wire-900 group-hover:scale-[1.01] transition-transform">
+                        <img src="img/profile_photo.jpg" alt="Sok Thavireak" class="w-full h-full object-cover">
                         <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent flex flex-col justify-end p-5 text-white">
                             <span class="text-xs font-mono font-bold text-cyan-400 uppercase tracking-widest">Active Engineer</span>
                             <h3 class="text-lg font-bold">Sok Thavireak</h3>
@@ -369,7 +361,7 @@
 
                     <div class="mt-4 pt-3 flex items-center justify-between text-xs font-mono text-zinc-500">
                         <span>Identity: <strong class="text-emerald-600">Verified Developer</strong></span>
-                        <span class="font-hand text-base text-zinc-700 hide-on-hifi">"press 'H' to render high-fi photo"</span>
+                        <span class="font-hand text-base text-zinc-700">"available for full-time roles"</span>
                     </div>
                 </div>
             </div>
@@ -396,7 +388,7 @@
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                 <!-- Pillar 1 -->
                 <div class="wire-box p-6 rounded-xl relative flex flex-col justify-between">
-                    <div class="masking-tape -top-3 left-4 rotate-[-2deg] hide-on-hifi">
+                    <div class="masking-tape -top-3 left-4 rotate-[-2deg] ">
                         Backend &amp; APIs
                     </div>
                     <div>
@@ -406,7 +398,7 @@
                         <h3 class="text-lg font-bold mb-2 text-heading-primary">Backend &amp; APIs</h3>
                         <p class="text-xs text-zinc-500 font-mono mb-4">Decoupled microservices, REST APIs, business logic.</p>
                         
-                        <div class="space-y-1.5 mb-4 hide-on-hifi">
+                        <div class="space-y-1.5 mb-4 ">
                             <div class="wire-skeleton-bar w-full"></div>
                             <div class="wire-skeleton-bar w-4/5"></div>
                         </div>
@@ -427,7 +419,7 @@
 
                 <!-- Pillar 2 -->
                 <div class="wire-box p-6 rounded-xl relative flex flex-col justify-between">
-                    <div class="masking-tape -top-3 left-4 rotate-[3deg] hide-on-hifi">
+                    <div class="masking-tape -top-3 left-4 rotate-[3deg] ">
                         Frontend UI
                     </div>
                     <div>
@@ -437,7 +429,7 @@
                         <h3 class="text-lg font-bold mb-2 text-heading-primary">Frontend Systems</h3>
                         <p class="text-xs text-zinc-500 font-mono mb-4">Reactive single-page apps, responsive layouts.</p>
                         
-                        <div class="space-y-1.5 mb-4 hide-on-hifi">
+                        <div class="space-y-1.5 mb-4 ">
                             <div class="wire-skeleton-bar w-full"></div>
                             <div class="wire-skeleton-bar w-3/4"></div>
                         </div>
@@ -458,7 +450,7 @@
 
                 <!-- Pillar 3 -->
                 <div class="wire-box p-6 rounded-xl relative flex flex-col justify-between">
-                    <div class="masking-tape -top-3 left-4 rotate-[-1deg] hide-on-hifi">
+                    <div class="masking-tape -top-3 left-4 rotate-[-1deg] ">
                         Data &amp; Storage
                     </div>
                     <div>
@@ -468,7 +460,7 @@
                         <h3 class="text-lg font-bold mb-2 text-heading-primary">Database &amp; Data</h3>
                         <p class="text-xs text-zinc-500 font-mono mb-4">Relational integrity, migrations, cloud persistence.</p>
                         
-                        <div class="space-y-1.5 mb-4 hide-on-hifi">
+                        <div class="space-y-1.5 mb-4 ">
                             <div class="wire-skeleton-bar w-full"></div>
                             <div class="wire-skeleton-bar w-5/6"></div>
                         </div>
@@ -489,7 +481,7 @@
 
                 <!-- Pillar 4 -->
                 <div class="wire-box p-6 rounded-xl relative flex flex-col justify-between">
-                    <div class="masking-tape -top-3 left-4 rotate-[2deg] hide-on-hifi">
+                    <div class="masking-tape -top-3 left-4 rotate-[2deg] ">
                         IT &amp; Networks
                     </div>
                     <div>
@@ -499,7 +491,7 @@
                         <h3 class="text-lg font-bold mb-2 text-heading-primary">IT &amp; Infrastructure</h3>
                         <p class="text-xs text-zinc-500 font-mono mb-4">Enterprise networks, Linux servers, surveillance.</p>
                         
-                        <div class="space-y-1.5 mb-4 hide-on-hifi">
+                        <div class="space-y-1.5 mb-4 ">
                             <div class="wire-skeleton-bar w-full"></div>
                             <div class="wire-skeleton-bar w-2/3"></div>
                         </div>
@@ -541,21 +533,18 @@
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             <!-- Project 1 -->
             <div class="wire-box rounded-xl p-5 relative flex flex-col justify-between">
-                <div class="masking-tape -top-3.5 left-6 rotate-[-2deg] hide-on-hifi">
+                <div class="masking-tape -top-3.5 left-6 rotate-[-2deg] ">
                     ✍️ "Enterprise HR Suite"
                 </div>
 
                 <div>
-                    <div class="wire-cross-placeholder h-52 rounded-lg flex items-center justify-center border border-zinc-400 mb-4 hide-on-hifi">
-                        <span class="bg-white px-3 py-1 border border-zinc-900 font-mono text-xs font-bold shadow-xs">
-                            [ HRMS ADMIN CONSOLE (X) ]
-                        </span>
-                    </div>
-
-                    <div class="show-on-hifi h-52 rounded-lg overflow-hidden mb-4 relative">
-                        <img src="img/Screenshot 2026-09-14 134145.png" alt="HRMS Platform" class="w-full h-full object-cover">
-                        <span class="absolute top-2 right-2 bg-blue-600 text-white font-mono text-[10px] font-bold px-2 py-0.5 rounded shadow-sm">Enterprise</span>
-                    </div>
+                    <div onclick="openProjectModal('hrms')" class="cursor-pointer group/img relative h-52 rounded-lg overflow-hidden border border-wire-900 shadow-sm">
+        <img src="img/Screenshot 2026-09-14 134145.png" alt="HRMS Platform" class="w-full h-full object-cover group-hover/img:scale-105 transition-transform duration-300">
+        <div class="absolute inset-0 bg-slate-950/40 opacity-0 group-hover/img:opacity-100 transition-opacity flex items-center justify-center gap-2 text-white font-mono text-xs font-bold backdrop-blur-[2px]">
+            <span>🔍 View Full Gallery (13 Screens)</span>
+        </div>
+        <span class="absolute top-2 right-2 bg-blue-600 text-white font-mono text-[10px] font-bold px-2 py-0.5 rounded shadow-sm">Enterprise</span>
+    </div>
 
                     <div class="flex flex-wrap items-center gap-1.5 mb-2">
                         <span class="tag-badge text-[10px] font-mono font-bold px-2 py-0.5 bg-zinc-100 border border-zinc-400">Java 17</span>
@@ -585,21 +574,18 @@
 
             <!-- Project 2 -->
             <div class="wire-box rounded-xl p-5 relative flex flex-col justify-between">
-                <div class="masking-tape -top-3.5 right-6 rotate-[2deg] hide-on-hifi">
+                <div class="masking-tape -top-3.5 right-6 rotate-[2deg] ">
                     ✍️ "ABA PayWay QR Checkout"
                 </div>
 
                 <div>
-                    <div class="wire-cross-placeholder h-52 rounded-lg flex items-center justify-center border border-zinc-400 mb-4 hide-on-hifi">
-                        <span class="bg-white px-3 py-1 border border-zinc-900 font-mono text-xs font-bold shadow-xs">
-                            [ SUSHI STORE POS (X) ]
-                        </span>
-                    </div>
-
-                    <div class="show-on-hifi h-52 rounded-lg overflow-hidden mb-4 relative">
-                        <img src="img/sushi-store-mu.vercel.app_ (1).png" alt="Sushi Store" class="w-full h-full object-cover">
-                        <span class="absolute top-2 right-2 bg-emerald-600 text-white font-mono text-[10px] font-bold px-2 py-0.5 rounded shadow-sm">Live Production</span>
-                    </div>
+                    <div onclick="openProjectModal('sushi-store')" class="cursor-pointer group/img relative h-52 rounded-lg overflow-hidden border border-wire-900 shadow-sm">
+        <img src="img/sushi-store-mu.vercel.app_ (1).png" alt="Sushi Store" class="w-full h-full object-cover group-hover/img:scale-105 transition-transform duration-300">
+        <div class="absolute inset-0 bg-slate-950/40 opacity-0 group-hover/img:opacity-100 transition-opacity flex items-center justify-center gap-2 text-white font-mono text-xs font-bold backdrop-blur-[2px]">
+            <span>🔍 View Full Gallery (8 Screens)</span>
+        </div>
+        <span class="absolute top-2 right-2 bg-emerald-600 text-white font-mono text-[10px] font-bold px-2 py-0.5 rounded shadow-sm">Live Production</span>
+    </div>
 
                     <div class="flex flex-wrap items-center gap-1.5 mb-2">
                         <span class="tag-badge text-[10px] font-mono font-bold px-2 py-0.5 bg-zinc-100 border border-zinc-400">Node.js</span>
@@ -629,23 +615,22 @@
 
             <!-- Project 3 -->
             <div class="wire-box rounded-xl p-5 relative flex flex-col justify-between">
-                <div class="masking-tape -top-3.5 left-6 rotate-[-1deg] hide-on-hifi">
+                <div class="masking-tape -top-3.5 left-6 rotate-[-1deg] ">
                     ✍️ "sflcambodia.com"
                 </div>
 
                 <div>
-                    <div class="wire-cross-placeholder h-52 rounded-lg flex items-center justify-center border border-zinc-400 mb-4 hide-on-hifi">
-                        <span class="bg-white px-3 py-1 border border-zinc-900 font-mono text-xs font-bold shadow-xs">
-                            [ ACADEMIC PORTAL (X) ]
-                        </span>
-                    </div>
-
-                    <div class="show-on-hifi h-52 rounded-lg overflow-hidden mb-4 relative bg-slate-900 flex items-center justify-center">
-                        <div class="p-6 text-center">
-                            <span class="text-emerald-400 font-mono text-xs font-bold uppercase tracking-wider block mb-2">Live Production Domain</span>
-                            <h4 class="text-white font-bold text-lg">sflcambodia.com</h4>
-                            <p class="text-zinc-400 text-xs mt-1">Zero-bloat institutional academic web portal</p>
-                        </div>
+                    <div onclick="openProjectModal('sfl')" class="cursor-pointer group/img relative h-52 rounded-lg overflow-hidden border border-wire-900 shadow-sm bg-slate-900 flex items-center justify-center">
+        <div class="p-6 text-center">
+            <span class="text-emerald-400 font-mono text-xs font-bold uppercase tracking-wider block mb-2">Live Production Domain</span>
+            <h4 class="text-white font-bold text-lg">sflcambodia.com</h4>
+            <p class="text-zinc-400 text-xs mt-1">Zero-bloat institutional academic web portal</p>
+        </div>
+        <div class="absolute inset-0 bg-slate-950/40 opacity-0 group-hover/img:opacity-100 transition-opacity flex items-center justify-center gap-2 text-white font-mono text-xs font-bold backdrop-blur-[2px]">
+            <span>🔍 View Specs & Architecture</span>
+        </div>
+        <span class="absolute top-2 right-2 bg-emerald-600 text-white font-mono text-[10px] font-bold px-2 py-0.5 rounded shadow-sm">Verified Domain</span>
+    </div>
                         <span class="absolute top-2 right-2 bg-emerald-600 text-white font-mono text-[10px] font-bold px-2 py-0.5 rounded shadow-sm">Verified Domain</span>
                     </div>
 
@@ -672,21 +657,18 @@
 
             <!-- Project 4 -->
             <div class="wire-box rounded-xl p-5 relative flex flex-col justify-between">
-                <div class="masking-tape -top-3.5 right-6 rotate-[3deg] hide-on-hifi">
+                <div class="masking-tape -top-3.5 right-6 rotate-[3deg] ">
                     ✍️ "Artisan Yarn ERP"
                 </div>
 
                 <div>
-                    <div class="wire-cross-placeholder h-52 rounded-lg flex items-center justify-center border border-zinc-400 mb-4 hide-on-hifi">
-                        <span class="bg-white px-3 py-1 border border-zinc-900 font-mono text-xs font-bold shadow-xs">
-                            [ TEXTILE WAREHOUSE ERP (X) ]
-                        </span>
-                    </div>
-
-                    <div class="show-on-hifi h-52 rounded-lg overflow-hidden mb-4 relative">
-                        <img src="img/photo_6275933297162523176_y.jpg" alt="Pidan Khmer Silk" class="w-full h-full object-cover">
-                        <span class="absolute top-2 right-2 bg-amber-500 text-white font-mono text-[10px] font-bold px-2 py-0.5 rounded shadow-sm">Active Engineering</span>
-                    </div>
+                    <div onclick="openProjectModal('pidan-silk')" class="cursor-pointer group/img relative h-52 rounded-lg overflow-hidden border border-wire-900 shadow-sm">
+        <img src="img/photo_6275933297162523176_y.jpg" alt="Pidan Khmer Silk" class="w-full h-full object-cover group-hover/img:scale-105 transition-transform duration-300">
+        <div class="absolute inset-0 bg-slate-950/40 opacity-0 group-hover/img:opacity-100 transition-opacity flex items-center justify-center gap-2 text-white font-mono text-xs font-bold backdrop-blur-[2px]">
+            <span>🔍 View Specs & Architecture</span>
+        </div>
+        <span class="absolute top-2 right-2 bg-amber-500 text-white font-mono text-[10px] font-bold px-2 py-0.5 rounded shadow-sm">Active Engineering</span>
+    </div>
 
                     <div class="flex flex-wrap items-center gap-1.5 mb-2">
                         <span class="tag-badge text-[10px] font-mono font-bold px-2 py-0.5 bg-zinc-100 border border-zinc-400">Docker</span>
@@ -710,23 +692,22 @@
 
             <!-- Project 5 -->
             <div class="wire-box rounded-xl p-5 relative flex flex-col justify-between">
-                <div class="masking-tape -top-3.5 left-6 rotate-[-2deg] hide-on-hifi">
+                <div class="masking-tape -top-3.5 left-6 rotate-[-2deg] ">
                     ✍️ "Multi-Store RBAC"
                 </div>
 
                 <div>
-                    <div class="wire-cross-placeholder h-52 rounded-lg flex items-center justify-center border border-zinc-400 mb-4 hide-on-hifi">
-                        <span class="bg-white px-3 py-1 border border-zinc-900 font-mono text-xs font-bold shadow-xs">
-                            [ OMNICHANNEL CHECKOUT (X) ]
-                        </span>
-                    </div>
-
-                    <div class="show-on-hifi h-52 rounded-lg overflow-hidden mb-4 relative bg-slate-900 flex items-center justify-center">
-                        <div class="p-6 text-center">
-                            <span class="text-indigo-400 font-mono text-xs font-bold uppercase tracking-wider block mb-2">Microservices Stack</span>
-                            <h4 class="text-white font-bold text-lg">Omnichannel POS Platform</h4>
-                            <p class="text-zinc-400 text-xs mt-1">Multi-Store Cashier Terminal &amp; E-Commerce</p>
-                        </div>
+                    <div onclick="openProjectModal('pos-and-ecommerce')" class="cursor-pointer group/img relative h-52 rounded-lg overflow-hidden border border-wire-900 shadow-sm bg-slate-900 flex items-center justify-center">
+        <div class="p-6 text-center">
+            <span class="text-indigo-400 font-mono text-xs font-bold uppercase tracking-wider block mb-2">Microservices Stack</span>
+            <h4 class="text-white font-bold text-lg">Omnichannel POS Platform</h4>
+            <p class="text-zinc-400 text-xs mt-1">Multi-Store Cashier Terminal & E-Commerce</p>
+        </div>
+        <div class="absolute inset-0 bg-slate-950/40 opacity-0 group-hover/img:opacity-100 transition-opacity flex items-center justify-center gap-2 text-white font-mono text-xs font-bold backdrop-blur-[2px]">
+            <span>🔍 View Full Gallery (19 Screens)</span>
+        </div>
+        <span class="absolute top-2 right-2 bg-indigo-600 text-white font-mono text-[10px] font-bold px-2 py-0.5 rounded shadow-sm">NestJS + React</span>
+    </div>
                         <span class="absolute top-2 right-2 bg-indigo-600 text-white font-mono text-[10px] font-bold px-2 py-0.5 rounded shadow-sm">NestJS + React</span>
                     </div>
 
@@ -758,21 +739,18 @@
 
             <!-- Project 6 -->
             <div class="wire-box rounded-xl p-5 relative flex flex-col justify-between">
-                <div class="masking-tape -top-3.5 right-6 rotate-[1deg] hide-on-hifi">
+                <div class="masking-tape -top-3.5 right-6 rotate-[1deg] ">
                     ✍️ "Booking Calendar"
                 </div>
 
                 <div>
-                    <div class="wire-cross-placeholder h-52 rounded-lg flex items-center justify-center border border-zinc-400 mb-4 hide-on-hifi">
-                        <span class="bg-white px-3 py-1 border border-zinc-900 font-mono text-xs font-bold shadow-xs">
-                            [ STUDIO PORTFOLIO (X) ]
-                        </span>
-                    </div>
-
-                    <div class="show-on-hifi h-52 rounded-lg overflow-hidden mb-4 relative">
-                        <img src="img/DSC_3895 copy.jpg" alt="Commercial Photo Studio" class="w-full h-full object-cover">
-                        <span class="absolute top-2 right-2 bg-purple-600 text-white font-mono text-[10px] font-bold px-2 py-0.5 rounded shadow-sm">Commercial Studio</span>
-                    </div>
+                    <div onclick="openProjectModal('pop-commercial-photograph')" class="cursor-pointer group/img relative h-52 rounded-lg overflow-hidden border border-wire-900 shadow-sm">
+        <img src="img/DSC_3895 copy.jpg" alt="Commercial Photo Studio" class="w-full h-full object-cover group-hover/img:scale-105 transition-transform duration-300">
+        <div class="absolute inset-0 bg-slate-950/40 opacity-0 group-hover/img:opacity-100 transition-opacity flex items-center justify-center gap-2 text-white font-mono text-xs font-bold backdrop-blur-[2px]">
+            <span>🔍 View Specs & Architecture</span>
+        </div>
+        <span class="absolute top-2 right-2 bg-purple-600 text-white font-mono text-[10px] font-bold px-2 py-0.5 rounded shadow-sm">Commercial Studio</span>
+    </div>
 
                     <div class="flex flex-wrap items-center gap-1.5 mb-2">
                         <span class="tag-badge text-[10px] font-mono font-bold px-2 py-0.5 bg-zinc-100 border border-zinc-400">Node.js</span>
@@ -816,7 +794,7 @@
             <div class="space-y-8">
                 <!-- Role 1 -->
                 <div class="wire-box p-6 sm:p-8 rounded-xl relative">
-                    <div class="masking-tape -top-3.5 left-6 rotate-[-2deg] hide-on-hifi">
+                    <div class="masking-tape -top-3.5 left-6 rotate-[-2deg] ">
                         Active Role
                     </div>
                     
@@ -838,7 +816,7 @@
 
                 <!-- Role 2 -->
                 <div class="wire-box p-6 sm:p-8 rounded-xl relative">
-                    <div class="masking-tape -top-3.5 left-6 rotate-[2deg] hide-on-hifi">
+                    <div class="masking-tape -top-3.5 left-6 rotate-[2deg] ">
                         Campus Network
                     </div>
 
@@ -878,7 +856,7 @@
 
     <!-- SECTION 5: CONTACT & CONNECT -->
     <section id="contact" class="py-20 sm:py-28 px-4 sm:px-6 max-w-4xl mx-auto text-center relative">
-        <div class="masking-tape -top-3 left-1/2 -translate-x-1/2 rotate-[-1deg] hide-on-hifi">
+        <div class="masking-tape -top-3 left-1/2 -translate-x-1/2 rotate-[-1deg] ">
             ✉️ "Let's build something scalable together"
         </div>
 
@@ -949,5 +927,308 @@
     </footer>
 
     <!-- JAVASCRIPT: HI-FI / LOW-FI INTERACTIVE ENGINE -->
+<!-- Project Details & Image Gallery Modal -->
+    <div id="project-modal"
+        class="modal-backdrop fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6 bg-slate-950/80 backdrop-blur-md overflow-y-auto"
+        onclick="handleBackdropClick(event)">
+        <div class="modal-content-box bg-white border border-slate-200/90 rounded-2xl sm:rounded-3xl shadow-2xl w-full max-w-5xl my-auto overflow-hidden flex flex-col max-h-[92vh] relative text-slate-900"
+            onclick="event.stopPropagation()">
+
+            <!-- macOS Window Mockup Chrome -->
+            <div
+                class="flex items-center justify-between px-5 py-2.5 bg-slate-900 text-slate-300 text-xs font-mono select-none border-b border-slate-800">
+                <div class="flex items-center gap-2">
+                    <button type="button" onclick="closeProjectModal()"
+                        class="w-3 h-3 rounded-full bg-[#ff5f56] inline-block hover:opacity-80 transition-opacity cursor-pointer"
+                        title="Close [ESC]"></button>
+                    <span class="w-3 h-3 rounded-full bg-[#ffbd2e] inline-block"></span>
+                    <span class="w-3 h-3 rounded-full bg-[#27c93f] inline-block"></span>
+                    <span class="ml-2 text-slate-400 text-[11px] hidden sm:inline">System Architecture & Console</span>
+                </div>
+                <div
+                    class="bg-slate-800/90 text-slate-300 px-3 py-0.5 rounded text-[11px] flex items-center gap-1.5 border border-slate-700 font-mono">
+                    <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                    <span id="modal-domain" class="text-slate-200">production.system</span>
+                </div>
+                <div class="text-[11px] font-mono text-slate-400 flex items-center gap-3">
+                    <span class="hidden md:inline text-slate-500">ESC to exit</span>
+                    <button type="button" onclick="closeProjectModal()"
+                        class="text-slate-400 hover:text-white transition-colors cursor-pointer text-sm leading-none"
+                        aria-label="Close">✕</button>
+                </div>
+            </div>
+
+            <!-- Top Gradient Accent Line -->
+            <div id="modal-accent-bar" class="h-1 w-full bg-gradient-to-r from-blue-500 via-purple-500 to-indigo-500">
+            </div>
+
+            <!-- Modal Header & Interactive Tab Navigation -->
+            <div
+                class="px-5 sm:px-8 py-3.5 border-b border-slate-200 bg-white flex flex-wrap justify-between items-center gap-3 sticky top-0 z-30">
+                <div class="flex items-center gap-3">
+                    <span id="modal-badge"
+                        class="px-2.5 py-1 rounded-full text-xs font-mono font-medium">Category</span>
+                    <h3 id="modal-title" class="text-lg sm:text-2xl font-extrabold text-slate-900 tracking-tight">
+                        Project Title</h3>
+                </div>
+
+                <!-- Navigation Tabs -->
+                <div
+                    class="flex items-center flex-wrap gap-1 bg-slate-100 p-1 rounded-xl border border-slate-200 text-xs font-mono w-full sm:w-auto">
+                    <button type="button" id="tab-btn-gallery" onclick="switchModalTab('gallery')"
+                        class="tab-btn active px-3 py-1.5 rounded-lg flex items-center gap-1.5 transition-all cursor-pointer font-medium flex-1 sm:flex-initial justify-center">
+                        <span>📸</span>
+                        <span>Screenshots</span>
+                        <span id="tab-gallery-count"
+                            class="text-[10px] bg-blue-100 text-blue-700 px-1.5 py-0.2 rounded-full font-bold">0</span>
+                    </button>
+                    <button type="button" id="tab-btn-arch" onclick="switchModalTab('arch')"
+                        class="tab-btn px-3 py-1.5 rounded-lg flex items-center gap-1.5 transition-all cursor-pointer text-slate-600 hover:text-slate-900 font-medium flex-1 sm:flex-initial justify-center">
+                        <span>⚡</span>
+                        <span class="hidden sm:inline">Architecture &amp; Data Flow</span>
+                        <span class="sm:hidden">Architecture</span>
+                    </button>
+                    <button type="button" id="tab-btn-specs" onclick="switchModalTab('specs')"
+                        class="tab-btn px-3 py-1.5 rounded-lg flex items-center gap-1.5 transition-all cursor-pointer text-slate-600 hover:text-slate-900 font-medium flex-1 sm:flex-initial justify-center">
+                        <span>📋</span>
+                        <span>Specs</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Modal Scrollable Body -->
+            <div class="p-5 sm:p-8 overflow-y-auto modal-scroll space-y-6">
+
+                <!-- TAB 1: Visual Gallery (Screenshots) -->
+                <div id="modal-tab-gallery" class="space-y-4">
+                    <div id="gallery-container" class="space-y-3">
+                        <div class="flex justify-between items-center">
+                            <div class="flex items-center gap-2">
+                                <span class="text-sm font-semibold text-slate-900 flex items-center gap-1.5 font-mono">
+                                    <span>📸</span> Production Viewport
+                                </span>
+                                <span id="gallery-counter"
+                                    class="text-xs font-mono text-purple-700 bg-purple-100 border border-purple-200 px-2 py-0.5 rounded-full font-semibold">1
+                                    / 8</span>
+                            </div>
+                            <span class="text-xs text-slate-500 hidden sm:inline font-mono">Click preview to enlarge •
+                                Arrow keys to navigate</span>
+                        </div>
+
+                        <!-- Main Image Preview Card -->
+                        <div
+                            class="relative w-full h-[360px] sm:h-[460px] md:h-[530px] bg-slate-950 rounded-xl sm:rounded-2xl border border-slate-300/80 overflow-hidden flex items-start justify-center group select-none shadow-md p-2 sm:p-4">
+                            <!-- Scrollable Image Viewport -->
+                            <div id="gallery-img-scroll-wrapper"
+                                class="w-full h-full overflow-y-auto overflow-x-hidden flex items-start justify-center modal-scrollable-preview">
+                                <img id="gallery-main-img" src="" alt="Project Screenshot"
+                                    class="max-w-full h-auto object-contain transition-opacity duration-200 cursor-zoom-in rounded-lg shadow-sm"
+                                    loading="lazy" decoding="async" onclick="openLightbox()">
+                            </div>
+
+                            <!-- Navigation Arrows -->
+                            <button type="button" onclick="prevGalleryImage()"
+                                class="gallery-nav-btn absolute left-3 top-1/2 -translate-y-1/2 w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-slate-900/85 text-white flex items-center justify-center border border-slate-700 backdrop-blur-md transition-all duration-200 hover:scale-110 shadow-lg cursor-pointer z-10"
+                                aria-label="Previous Image">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M15 19l-7-7 7-7"></path>
+                                </svg>
+                            </button>
+                            <button type="button" onclick="nextGalleryImage()"
+                                class="gallery-nav-btn absolute right-3 top-1/2 -translate-y-1/2 w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-slate-900/85 text-white flex items-center justify-center border border-slate-700 backdrop-blur-md transition-all duration-200 hover:scale-110 shadow-lg cursor-pointer z-10"
+                                aria-label="Next Image">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M9 5l7 7-7 7"></path>
+                                </svg>
+                            </button>
+
+                            <!-- Expand / Zoom Button -->
+                            <button type="button" onclick="openLightbox()"
+                                class="gallery-nav-btn absolute bottom-3 right-3 px-3 py-1.5 rounded-lg bg-slate-900/85 text-white text-xs font-mono border border-slate-700 backdrop-blur-md transition-all opacity-80 sm:opacity-0 sm:group-hover:opacity-100 flex items-center gap-1.5 shadow-lg cursor-pointer z-10">
+                                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7">
+                                    </path>
+                                </svg>
+                                <span>Enlarge</span>
+                            </button>
+                        </div>
+
+                        <!-- Caption & Description -->
+                        <div class="bg-slate-50 p-4 rounded-xl border border-slate-200">
+                            <h4 id="gallery-img-title" class="text-sm sm:text-base font-bold text-slate-900 mb-1">
+                                Screenshot Title</h4>
+                            <p id="gallery-img-desc" class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                                Screenshot description details...</p>
+                        </div>
+
+                        <!-- Thumbnails Strip -->
+                        <div id="gallery-thumbnails"
+                            class="flex gap-2.5 overflow-x-auto pb-2 pt-1 scroll-smooth no-scrollbar">
+                            <!-- Populated dynamically via JS -->
+                        </div>
+                    </div>
+
+                    <div id="no-gallery-message"
+                        class="hidden text-center py-12 bg-slate-50 rounded-2xl border border-slate-200">
+                        <span class="text-3xl mb-2 block">🌐</span>
+                        <p class="text-slate-800 font-semibold mb-1">Live Web Interface</p>
+                        <p class="text-xs text-slate-500 max-w-md mx-auto">This project is directly hosted on a
+                            production domain without a static gallery catalog. Inspect the Architecture and Specs tabs
+                            or open the live site below.</p>
+                    </div>
+                </div>
+
+                <!-- TAB 2: System Architecture & Data Flow -->
+                <div id="modal-tab-arch" class="hidden space-y-6">
+                    <!-- Top Architecture Banner -->
+                    <div
+                        class="bg-slate-900 text-white p-5 sm:p-6 rounded-2xl border border-slate-800 relative overflow-hidden">
+                        <div
+                            class="absolute -right-8 -bottom-8 w-48 h-48 bg-blue-500/10 rounded-full blur-2xl pointer-events-none">
+                        </div>
+                        <div
+                            class="flex items-center gap-2 font-mono text-xs text-blue-400 uppercase tracking-wider mb-2">
+                            <span class="w-2 h-2 rounded-full bg-blue-400"></span>
+                            <span>Architectural Blueprint</span>
+                        </div>
+                        <h4 id="arch-headline" class="text-lg sm:text-xl font-bold tracking-tight text-white mb-2">
+                            Decoupled Multi-Tier System Topology
+                        </h4>
+                        <p id="arch-subtext" class="text-xs sm:text-sm text-slate-300 leading-relaxed max-w-3xl">
+                            Request lifecycle model highlighting client interaction, token authentication middleware,
+                            transactional service boundaries, and relational persistence.
+                        </p>
+                    </div>
+
+                    <!-- Visual Data Flow Pipeline Diagram -->
+                    <div>
+                        <h5
+                            class="text-xs font-mono font-semibold uppercase tracking-wider text-slate-500 mb-3 flex items-center gap-1.5">
+                            <span class="text-blue-600">/</span> Request Lifecycle & Component Flow
+                        </h5>
+                        <div id="arch-pipeline-container" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-3.5">
+                            <!-- Pipeline cards dynamically populated via JS -->
+                        </div>
+                    </div>
+
+                    <!-- Technical Specifications Matrix -->
+                    <div>
+                        <h5
+                            class="text-xs font-mono font-semibold uppercase tracking-wider text-slate-500 mb-3 flex items-center gap-1.5">
+                            <span class="text-purple-600">/</span> Engineering Specifications & Security Controls
+                        </h5>
+                        <div class="bg-white border border-slate-200/90 rounded-2xl overflow-hidden shadow-xs">
+                            <table class="w-full text-left text-xs border-collapse">
+                                <thead>
+                                    <tr
+                                        class="bg-slate-50 border-b border-slate-200 text-slate-500 font-mono text-[11px]">
+                                        <th class="py-2.5 px-4 font-semibold w-1/3">Architectural Domain</th>
+                                        <th class="py-2.5 px-4 font-semibold">Implementation & Controls</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="arch-specs-tbody" class="divide-y divide-slate-100 text-slate-700">
+                                    <!-- Populated via JS -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- TAB 3: Specs & Technical Stack -->
+                <div id="modal-tab-specs" class="hidden space-y-6">
+                    <!-- Project Overview & Details -->
+                    <div>
+                        <h4
+                            class="text-sm sm:text-base font-bold text-slate-900 mb-2 flex items-center gap-2 font-mono">
+                            <span class="text-blue-600">/</span> Project Summary & Scope
+                        </h4>
+                        <p id="modal-description"
+                            class="text-sm text-slate-700 leading-relaxed bg-slate-50 p-4 rounded-xl border border-slate-200">
+                            Project summary...
+                        </p>
+                    </div>
+
+                    <!-- Key Features Grid -->
+                    <div>
+                        <h4
+                            class="text-sm sm:text-base font-bold text-slate-900 mb-3 flex items-center gap-2 font-mono">
+                            <span class="text-purple-600">/</span> Key Architectural Highlights
+                        </h4>
+                        <div id="modal-features" class="grid sm:grid-cols-2 gap-3">
+                            <!-- Feature cards populated via JS -->
+                        </div>
+                    </div>
+
+                    <!-- Tech Stack Tags -->
+                    <div>
+                        <h4
+                            class="text-sm sm:text-base font-bold text-slate-900 mb-2 flex items-center gap-2 font-mono">
+                            <span class="text-green-600">/</span> Complete Technical Stack
+                        </h4>
+                        <div id="modal-tech-stack" class="flex flex-wrap gap-2">
+                            <!-- Tech tags populated via JS -->
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Modal Footer -->
+            <div
+                class="px-6 py-4 border-t border-slate-200 bg-slate-50 flex flex-wrap justify-between items-center gap-3">
+                <div class="flex flex-wrap items-center gap-3">
+                    <a id="modal-live-btn" href="#" target="_blank" rel="noopener noreferrer"
+                        class="inline-flex items-center gap-1.5 bg-blue-600 hover:bg-blue-700 text-white font-mono text-xs px-4 py-2 rounded-full transition-all duration-200 hover:scale-105 shadow-xs font-medium">
+                        <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                        </svg>
+                        <span>Live</span>
+                    </a>
+                    <a id="modal-github-btn" href="#" target="_blank"
+                        class="inline-flex items-center gap-1.5 bg-white hover:bg-slate-100 text-slate-700 border border-slate-300 font-mono text-xs px-4 py-2 rounded-full transition-all duration-200 hover:scale-105 shadow-xs">
+                        💻 GitHub Repo
+                    </a>
+                </div>
+                <button type="button" onclick="closeProjectModal()"
+                    class="px-4 py-2 text-xs font-mono text-slate-600 hover:text-slate-900 bg-slate-200/80 hover:bg-slate-300 rounded-full transition-colors cursor-pointer">
+                    Close [ESC]
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Fullscreen Lightbox Overlay for Image Zoom with Scrollable Support -->
+    <div id="lightbox-overlay"
+        class="fixed inset-0 z-50 hidden bg-slate-950/95 backdrop-blur-xl flex items-center justify-center p-3 sm:p-6 select-none cursor-zoom-out"
+        onclick="closeLightbox()">
+        <button type="button" onclick="closeLightbox()"
+            class="absolute top-5 right-5 w-11 h-11 rounded-full bg-slate-800/80 hover:bg-slate-700 text-white flex items-center justify-center transition-all z-20 border border-slate-600 cursor-pointer"
+            aria-label="Close Lightbox">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+            </svg>
+        </button>
+        <div class="max-w-6xl w-full max-h-[94vh] flex flex-col items-center justify-center cursor-default"
+            onclick="event.stopPropagation()">
+            <div
+                class="w-full max-h-[82vh] overflow-y-auto overflow-x-hidden modal-scrollable-preview flex justify-center bg-slate-900/60 p-2 sm:p-4 rounded-2xl border border-slate-800 shadow-2xl">
+                <img id="lightbox-img" src="" alt="Zoomed Screenshot"
+                    class="max-w-full h-auto object-contain rounded-xl shadow-2xl" loading="lazy" decoding="async">
+            </div>
+            <p id="lightbox-caption"
+                class="text-center text-xs font-mono text-slate-300 mt-3 bg-slate-900/90 px-4 py-1.5 rounded-full border border-slate-700/80 max-w-2xl truncate">
+                Caption</p>
+        </div>
+    </div>
+
+    
+    <!-- Modular Application Logic & Project Catalog Data -->
+    <script src="js/projects-data.js"></script>
+    <script src="js/main.js"></script>
+
 </body>
 </html>
