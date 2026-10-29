@@ -46,43 +46,38 @@ const projectsData = {
         },
         images: [
             {
-                src: 'img/Screenshot 2026-09-14 134028.png',
+                src: 'img/sushi-store-mu.vercel.app_ (1).png',
                 title: '01. Storefront Landing & Brand Hero',
                 desc: 'Hero introduction featuring high-resolution photography, brand tagline "ALWAYS FRESH", quick navigation bar, and instant theme toggling.'
             },
             {
-                src: 'img/Screenshot 2026-09-14 134038.png',
+                src: 'img/sushi-store-mu.vercel.app_menu.png',
                 title: '02. Interactive Menu & Nigiri Catalog',
                 desc: 'Dynamic catalog with real-time search, category filter pills (Nigiri, Sashimi, Special Rolls, Appetizers), and one-click add-to-cart functionality.'
             },
             {
-                src: 'img/Screenshot 2026-09-14 134048.png',
+                src: 'img/sushi-store-mu.vercel.app_about.png',
                 title: '03. Brand Story & Executive Chef Showcase',
                 desc: 'Engaging "Experience the Soul of Japan" section highlighting 5-star Hotel Executive Chef Kenji Nakamura and verified customer satisfaction ratings.'
             },
             {
-                src: 'img/Screenshot 2026-09-14 134058.png',
+                src: 'img/sushi-store-mu.vercel.app_offers.png',
                 title: '04. Weekly Deals & Promotional Offers',
                 desc: 'Promotional marketing module showing "50% OFF Second Set" offers, hot deals, and automatic percentage discount tags.'
             },
             {
-                src: 'img/Screenshot 2026-09-14 134109.png',
+                src: 'img/sushi-store-mu.vercel.app_location.png',
                 title: '05. Multi-Branch Store Locator',
                 desc: 'Branch directory highlighting Murakami Central, Riverside, and BKK1 Flagship locations with real-time open/closed status and driving directions.'
             },
             {
-                src: 'img/Screenshot 2026-09-14 134122.png',
-                title: '06. Split Authentication & Google OAuth Portal',
-                desc: 'Dual-column login and registration experience featuring Google OAuth 2.0 single sign-on and credential recovery.'
-            },
-            {
                 src: 'img/Screenshot 2026-09-14 134145.png',
-                title: '07. Admin Operations & Analytics Dashboard',
-                desc: 'Real-time administrative control panel monitoring total revenue ($27.50), orders, registered user counts, and visual sales analytics.'
+                title: '06. Admin Operations & Analytics Dashboard',
+                desc: 'Real-time administrative control panel monitoring total revenue, orders, registered user counts, and visual sales analytics.'
             },
             {
                 src: 'img/Screenshot 2026-09-14 134155.png',
-                title: '08. Cashier & Staff POS Terminal',
+                title: '07. Cashier & Staff POS Terminal',
                 desc: 'High-speed Point-of-Sale interface designed for staff with operator identification, SKU/item search, dish cards, and ABA PayWay checkout.'
             }
         ]
