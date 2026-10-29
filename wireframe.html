@@ -1,0 +1,827 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth mode-lowfi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wireframe™ — Finished on Purpose | Low-Fi to Hi-Fi Portfolio Template</title>
+    <meta name="description" content="A finished product that looks intentionally unfinished on purpose. Low-fidelity UX wireframe mode that toggles smoothly into high-fidelity design.">
+
+    <!-- Fonts: Caveat (Handwritten), Plus Jakarta Sans, JetBrains Mono, Syne -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;600;700&family=JetBrains+Mono:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
+                        mono: ['"JetBrains Mono"', 'monospace'],
+                        hand: ['"Caveat"', 'cursive', 'sans-serif'],
+                        display: ['"Syne"', 'sans-serif']
+                    },
+                    colors: {
+                        wire: {
+                            50: '#fcfcfc',
+                            100: '#f4f4f5',
+                            200: '#e4e4e7',
+                            300: '#d4d4d8',
+                            400: '#a1a1aa',
+                            500: '#71717a',
+                            700: '#3f3f46',
+                            900: '#18181b',
+                            tape: '#fef08a',
+                            cyan: '#06b6d4',
+                            purple: '#a855f7'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Base Wireframe Mode (Low-Fi) Default */
+        :root {
+            --bg-grid-color: rgba(24, 24, 27, 0.08);
+            --border-wire: #18181b;
+            --box-bg: #ffffff;
+            --text-heading: #18181b;
+        }
+
+        body {
+            transition: background-color 0.4s ease, color 0.4s ease;
+        }
+
+        /* Blueprint / Graph Grid Paper Background */
+        .grid-paper {
+            background-color: #fafafa;
+            background-image: 
+                linear-gradient(to right, var(--bg-grid-color) 1px, transparent 1px),
+                linear-gradient(to bottom, var(--bg-grid-color) 1px, transparent 1px);
+            background-size: 24px 24px;
+            transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        /* Hand-drawn look border wiggle */
+        .wire-box {
+            border: 2px solid #18181b;
+            background: #ffffff;
+            box-shadow: 4px 4px 0px #18181b;
+            transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .wire-box:hover {
+            transform: translate(-2px, -2px);
+            box-shadow: 6px 6px 0px #18181b;
+        }
+
+        .wire-border-dashed {
+            border: 2px dashed #71717a;
+        }
+
+        /* Wireframe "X" Corner-to-Corner Diagonal Box */
+        .wire-cross-placeholder {
+            position: relative;
+            overflow: hidden;
+            background-color: #f4f4f5;
+        }
+        .wire-cross-placeholder::before,
+        .wire-cross-placeholder::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: -20%;
+            width: 140%;
+            height: 1.5px;
+            background: #71717a;
+            pointer-events: none;
+            transition: opacity 0.35s ease;
+        }
+        .wire-cross-placeholder::before {
+            transform: translateY(-50%) rotate(25deg);
+        }
+        .wire-cross-placeholder::after {
+            transform: translateY(-50%) rotate(-25deg);
+        }
+
+        /* Low-Fi Placeholder skeleton bars */
+        .wire-skeleton-bar {
+            height: 12px;
+            border-radius: 4px;
+            background-color: #d4d4d8;
+            display: block;
+        }
+
+        /* Handwritten Tape & Sticky Notes */
+        .masking-tape {
+            position: absolute;
+            background: rgba(254, 240, 138, 0.85);
+            border-left: 2px dashed rgba(202, 138, 4, 0.4);
+            border-right: 2px dashed rgba(202, 138, 4, 0.4);
+            color: #854d0e;
+            font-family: 'Caveat', cursive;
+            font-size: 16px;
+            padding: 2px 10px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+            z-index: 20;
+            pointer-events: none;
+        }
+
+        /* Figma Style Cursor Badge */
+        .figma-cursor {
+            position: absolute;
+            z-index: 40;
+            pointer-events: none;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            animation: cursorFloat 4s ease-in-out infinite alternate;
+        }
+        @keyframes cursorFloat {
+            0% { transform: translate(0, 0); }
+            100% { transform: translate(8px, 12px); }
+        }
+
+        /* Figma Comment Pin */
+        .figma-comment-pin {
+            cursor: pointer;
+            transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+            filter: drop-shadow(2px 4px 6px rgba(0,0,0,0.12));
+        }
+        .figma-comment-pin:hover {
+            transform: scale(1.1) translateY(-2px);
+        }
+
+        /* =========================================================
+           HIGH-FIDELITY (HI-FI) MODE TRANSITIONS & OVERRIDES
+           ========================================================= */
+        html.mode-hifi .grid-paper {
+            background-color: #0b0f19;
+            background-image: 
+                radial-gradient(circle at 50% 0%, rgba(59, 130, 246, 0.15) 0%, transparent 60%),
+                radial-gradient(circle at 100% 50%, rgba(168, 85, 247, 0.12) 0%, transparent 50%),
+                linear-gradient(to right, rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+            background-size: 100% 100%, 100% 100%, 32px 32px, 32px 32px;
+            color: #f1f5f9;
+        }
+
+        html.mode-hifi {
+            color-scheme: dark;
+        }
+
+        /* High-Fi Card transformation */
+        html.mode-hifi .wire-box {
+            background: rgba(17, 24, 39, 0.75);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.6), 0 0 20px rgba(59, 130, 246, 0.1);
+            color: #f8fafc;
+        }
+
+        html.mode-hifi .wire-box:hover {
+            border-color: rgba(96, 165, 250, 0.5);
+            box-shadow: 0 25px 50px -12px rgba(59, 130, 246, 0.25);
+            transform: translateY(-4px);
+        }
+
+        /* In Hi-Fi mode, remove low-fi crossed diagonals */
+        html.mode-hifi .wire-cross-placeholder::before,
+        html.mode-hifi .wire-cross-placeholder::after {
+            opacity: 0;
+        }
+        html.mode-hifi .wire-cross-placeholder {
+            background-color: transparent;
+        }
+
+        /* Show/Hide Elements based on Mode */
+        .show-on-hifi {
+            display: none !important;
+        }
+        html.mode-hifi .show-on-hifi {
+            display: block !important;
+        }
+        html.mode-hifi .show-on-hifi-flex {
+            display: flex !important;
+        }
+
+        html.mode-hifi .hide-on-hifi {
+            display: none !important;
+        }
+
+        /* Hi-Fi typography & color overrides */
+        html.mode-hifi .text-heading-primary {
+            color: #ffffff !important;
+            background: linear-gradient(135deg, #ffffff 0%, #cbd5e1 50%, #93c5fd 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        html.mode-hifi .text-body-primary {
+            color: #94a3b8 !important;
+        }
+
+        html.mode-hifi .tag-badge {
+            background: rgba(59, 130, 246, 0.15) !important;
+            color: #60a5fa !important;
+            border-color: rgba(59, 130, 246, 0.3) !important;
+        }
+
+        /* Hi-Fi CTA glow */
+        html.mode-hifi .cta-primary {
+            background: linear-gradient(135deg, #2563eb, #7c3aed) !important;
+            border-color: transparent !important;
+            color: #ffffff !important;
+            box-shadow: 0 10px 25px -5px rgba(79, 70, 229, 0.5);
+        }
+        html.mode-hifi .cta-primary:hover {
+            box-shadow: 0 15px 30px -5px rgba(79, 70, 229, 0.7);
+            transform: translateY(-2px);
+        }
+
+        /* Mode Switch Button Ripple & Pulse */
+        .toggle-glow {
+            box-shadow: 0 0 0 0 rgba(24, 24, 27, 0.4);
+            animation: pulseWire 2s infinite;
+        }
+        @keyframes pulseWire {
+            0% { box-shadow: 0 0 0 0 rgba(24, 24, 27, 0.4); }
+            70% { box-shadow: 0 0 0 10px rgba(24, 24, 27, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(24, 24, 27, 0); }
+        }
+        html.mode-hifi .toggle-glow {
+            animation: pulseHifi 2s infinite;
+        }
+        @keyframes pulseHifi {
+            0% { box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.6); }
+            70% { box-shadow: 0 0 0 12px rgba(59, 130, 246, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(59, 130, 246, 0); }
+        }
+    </style>
+</head>
+
+<body class="grid-paper min-h-screen text-wire-900 font-sans selection:bg-yellow-200 selection:text-black relative">
+
+    <!-- ========================================================
+         COLLABORATIVE FIGMA CURSORS & ANNOTATION LAYER
+         ======================================================== -->
+    <div id="collaborative-canvas" class="pointer-events-none fixed inset-0 z-30 overflow-hidden hide-on-hifi">
+        <!-- Figma Cursor 1: Product Lead / "Sarah (Lead)" -->
+        <div class="figma-cursor top-24 left-[12%] sm:left-[22%]">
+            <svg class="w-5 h-5 text-purple-600 drop-shadow-md" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M4 2l16 11-7 2-3 7L4 2z"/>
+            </svg>
+            <span class="bg-purple-600 text-white font-mono text-[11px] font-bold px-2 py-0.5 rounded shadow-sm">
+                Sarah (Product)
+            </span>
+        </div>
+
+        <!-- Figma Cursor 2: UI Designer / "Leo (Design)" -->
+        <div class="figma-cursor top-[55%] right-[10%] sm:right-[18%]">
+            <svg class="w-5 h-5 text-cyan-600 drop-shadow-md" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M4 2l16 11-7 2-3 7L4 2z"/>
+            </svg>
+            <span class="bg-cyan-600 text-white font-mono text-[11px] font-bold px-2 py-0.5 rounded shadow-sm">
+                Leo (UI/UX)
+            </span>
+        </div>
+    </div>
+
+    <!-- ========================================================
+         TOP NAVIGATION BAR
+         ======================================================== -->
+    <header class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b-2 border-wire-900 transition-colors duration-300" id="main-nav">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 h-18 flex items-center justify-between">
+            
+            <!-- Left: Brand / Logo -->
+            <div class="flex items-center gap-3">
+                <a href="#" class="flex items-center gap-2 group">
+                    <div class="w-8 h-8 border-2 border-wire-900 bg-wire-100 flex items-center justify-center font-mono font-black text-sm group-hover:bg-yellow-300 transition-colors shadow-[2px_2px_0px_#18181b]">
+                        W/
+                    </div>
+                    <span class="font-display font-extrabold text-xl tracking-tight text-heading-primary">
+                        Wireframe<span class="text-xs align-super font-mono text-zinc-500 font-normal">™</span>
+                    </span>
+                </a>
+
+                <div class="hidden sm:flex items-center gap-2 ml-4">
+                    <span class="tag-badge text-[10px] font-mono font-bold uppercase tracking-wider bg-zinc-100 text-zinc-700 px-2.5 py-1 rounded border border-zinc-900">
+                        ⚡ Hackathon Concept
+                    </span>
+                </div>
+            </div>
+
+            <!-- Center: Navigation Links -->
+            <nav class="hidden md:flex items-center gap-8 font-mono text-xs uppercase tracking-wider font-semibold">
+                <a href="#about" class="hover:text-blue-600 transition-colors py-1 border-b-2 border-transparent hover:border-wire-900 text-body-primary">01. Roots</a>
+                <a href="#why" class="hover:text-blue-600 transition-colors py-1 border-b-2 border-transparent hover:border-wire-900 text-body-primary">02. Meta Concept</a>
+                <a href="#templates" class="hover:text-blue-600 transition-colors py-1 border-b-2 border-transparent hover:border-wire-900 text-body-primary">03. Templates</a>
+                <a href="index.html" class="hover:text-blue-600 transition-colors py-1 text-zinc-500 flex items-center gap-1">
+                    <span>Main Portfolio ↗</span>
+                </a>
+            </nav>
+
+            <!-- Right: The HI-FI MODE TOGGLE BUTTON -->
+            <div class="flex items-center gap-3">
+                <button id="mode-toggle-btn" onclick="toggleFidelityMode()" 
+                    class="toggle-glow flex items-center gap-2.5 px-4 py-2 bg-wire-900 text-white font-mono text-xs sm:text-sm font-bold rounded-lg border-2 border-wire-900 hover:bg-zinc-800 transition-all duration-300 cursor-pointer shadow-[3px_3px_0px_rgba(0,0,0,0.25)]">
+                    
+                    <!-- Low-Fi Icon -->
+                    <span id="toggle-icon-lowfi" class="flex items-center gap-1.5">
+                        <svg class="w-4 h-4 text-yellow-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                        </svg>
+                        <span>Switch to <strong class="underline decoration-yellow-400">Hi-Fi Mode</strong></span>
+                    </span>
+
+                    <!-- Hi-Fi Icon (Shown when active) -->
+                    <span id="toggle-icon-hifi" class="hidden items-center gap-1.5">
+                        <svg class="w-4 h-4 text-cyan-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"/>
+                        </svg>
+                        <span>Return to <strong class="underline decoration-cyan-400">Wireframe Mode</strong></span>
+                    </span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- ========================================================
+         HERO SECTION: "ROOTS OF DESIGN"
+         ======================================================== -->
+    <section id="about" class="relative pt-12 pb-20 sm:pt-20 sm:pb-32 px-4 sm:px-6 max-w-7xl mx-auto">
+        
+        <!-- Masking Tape / Note on Hero -->
+        <div class="masking-tape -top-3 left-8 rotate-[-3deg] hide-on-hifi">
+            📌 Note: "Going back to low-fidelity to rediscover pure UX clarity"
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            
+            <!-- Left Hero Content (7 Cols) -->
+            <div class="lg:col-span-7 space-y-6 relative">
+                
+                <!-- Collaborative Comment Pin -->
+                <div class="figma-comment-pin absolute -left-8 -top-6 w-8 h-8 rounded-full bg-blue-600 text-white flex items-center justify-center font-mono text-xs font-bold shadow-lg pointer-events-auto hide-on-hifi" title="Comment by Alex">
+                    💬
+                </div>
+
+                <!-- Breadcrumb Tag -->
+                <div class="inline-flex items-center gap-2 px-3 py-1 bg-white border border-wire-900 shadow-[2px_2px_0px_#18181b] tag-badge">
+                    <span class="w-2 h-2 rounded-full bg-emerald-500 animate-ping"></span>
+                    <span class="font-mono text-xs font-bold uppercase tracking-wider">Experimental UX Template</span>
+                </div>
+
+                <!-- Main Bold Headline -->
+                <h1 class="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight leading-[1.08] text-heading-primary">
+                    Going back to the <span class="underline decoration-wavy decoration-yellow-400">roots</span> of digital design.
+                </h1>
+
+                <!-- Subheadline -->
+                <p class="text-lg sm:text-xl text-wire-700 text-body-primary font-normal leading-relaxed max-w-2xl">
+                    A finished product that looks <em class="font-semibold text-wire-900">intentionally unfinished on purpose</em>. 
+                    Exploring how rapid AI agent pipelines bring back the raw charm of UX sketches, collaborative Figma comments, and pure architectural layouts.
+                </p>
+
+                <!-- Low-Fi Skeleton Line Mockup (Replaces body copy in low-fi mode or gives skeletal vibe) -->
+                <div class="space-y-2 pt-2 pb-2 hide-on-hifi max-w-md opacity-80">
+                    <div class="wire-skeleton-bar w-full"></div>
+                    <div class="wire-skeleton-bar w-5/6"></div>
+                    <div class="wire-skeleton-bar w-3/4"></div>
+                </div>
+
+                <!-- CTA Actions -->
+                <div class="pt-4 flex flex-wrap items-center gap-4">
+                    <button onclick="toggleFidelityMode()" 
+                        class="cta-primary px-6 py-3.5 bg-wire-900 text-white font-mono text-sm font-bold border-2 border-wire-900 shadow-[4px_4px_0px_#18181b] hover:translate-x-[-2px] hover:translate-y-[-2px] hover:shadow-[6px_6px_0px_#18181b] transition-all cursor-pointer">
+                        ✨ Toggle Hi-Fi Transformation
+                    </button>
+
+                    <a href="#templates" 
+                        class="wire-box px-6 py-3.5 text-wire-900 font-mono text-sm font-bold transition-all flex items-center gap-2">
+                        <span>Explore Components</span>
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                        </svg>
+                    </a>
+                </div>
+
+                <!-- Live Meta Stats -->
+                <div class="pt-6 grid grid-cols-3 gap-4 border-t-2 border-wire-200">
+                    <div>
+                        <div class="font-mono text-2xl font-black text-heading-primary">02</div>
+                        <div class="font-mono text-xs text-zinc-500 uppercase tracking-wider">Fidelity Modes</div>
+                    </div>
+                    <div>
+                        <div class="font-mono text-2xl font-black text-heading-primary">&lt; 3 hrs</div>
+                        <div class="font-mono text-xs text-zinc-500 uppercase tracking-wider">AI Agent Build</div>
+                    </div>
+                    <div>
+                        <div class="font-mono text-2xl font-black text-heading-primary">100%</div>
+                        <div class="font-mono text-xs text-zinc-500 uppercase tracking-wider">Pure Semantic</div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Right Hero Visual Box (5 Cols): Interactive Wireframe / High-Fi Frame -->
+            <div class="lg:col-span-5 relative">
+                
+                <!-- Floating Sticky Annotation -->
+                <div class="masking-tape -top-5 right-4 rotate-[4deg] hide-on-hifi">
+                    ✍️ "Hero portrait / canvas slot"
+                </div>
+
+                <!-- Main Showcase Container -->
+                <div class="wire-box rounded-xl p-4 sm:p-6 relative group overflow-hidden">
+                    
+                    <!-- Frame Bar Header -->
+                    <div class="flex items-center justify-between pb-4 mb-4 border-b border-wire-200">
+                        <div class="flex items-center gap-1.5">
+                            <span class="w-3 h-3 rounded-full bg-red-400 border border-red-600"></span>
+                            <span class="w-3 h-3 rounded-full bg-yellow-400 border border-yellow-600"></span>
+                            <span class="w-3 h-3 rounded-full bg-green-400 border border-green-600"></span>
+                        </div>
+                        <span class="font-mono text-[11px] text-zinc-400 uppercase font-semibold">
+                            preview_canvas.artboard
+                        </span>
+                        <span class="font-mono text-[10px] bg-zinc-100 text-zinc-700 px-2 py-0.5 rounded border border-zinc-300">
+                            1440 × 900
+                        </span>
+                    </div>
+
+                    <!-- Low-Fi State: Classic Crossed-Diagonal Box -->
+                    <div class="wire-cross-placeholder h-72 sm:h-84 rounded-lg flex flex-col items-center justify-center p-6 border-2 border-dashed border-zinc-400 text-center relative hide-on-hifi">
+                        <div class="bg-white/95 px-4 py-2 border border-zinc-900 font-mono text-xs font-bold text-zinc-800 shadow-[2px_2px_0px_#18181b] z-10">
+                            [ 🖼️ HERO IMAGE PLACEHOLDER (X) ]
+                        </div>
+                        <span class="font-hand text-xl text-zinc-600 mt-2 z-10 rotate-[-2deg]">
+                            replace with high-res portrait or 3D render
+                        </span>
+                    </div>
+
+                    <!-- Hi-Fi State: Production Rich Media Showcase -->
+                    <div class="show-on-hifi h-72 sm:h-84 rounded-lg overflow-hidden relative shadow-inner">
+                        <img src="img/developer_photo.png" alt="High Fidelity Showcase" class="w-full h-full object-cover rounded-lg transform hover:scale-105 transition-transform duration-700">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex flex-col justify-end p-5 text-white">
+                            <span class="text-xs font-mono font-bold text-cyan-400 uppercase tracking-widest">Hi-Fi Render Active</span>
+                            <h3 class="text-lg font-bold">Production Visual System</h3>
+                            <p class="text-xs text-zinc-300">High-res photography, balanced contrast, and active depth layer.</p>
+                        </div>
+                    </div>
+
+                    <!-- Card Footer Detail -->
+                    <div class="mt-4 pt-3 flex items-center justify-between text-xs font-mono text-zinc-500">
+                        <span>Status: <strong class="text-emerald-600">Verified Layout</strong></span>
+                        <span class="font-hand text-base text-zinc-700 hide-on-hifi">"looks clean on mobile too!"</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ========================================================
+         "THE WHY & WHAT" GRID SECTION
+         ======================================================== -->
+    <section id="why" class="py-20 border-t-2 border-b-2 border-wire-900 bg-wire-100/60 transition-colors duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6">
+            
+            <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+                <div>
+                    <div class="tag-badge inline-block px-3 py-1 bg-white border border-wire-900 text-xs font-mono font-bold uppercase mb-3 shadow-[2px_2px_0px_#18181b]">
+                        Design Philosophy
+                    </div>
+                    <h2 class="text-3xl sm:text-5xl font-extrabold tracking-tight text-heading-primary">
+                        Why intentionally low-fi?
+                    </h2>
+                </div>
+                <p class="text-wire-700 text-body-primary text-sm sm:text-base max-w-md font-mono">
+                    Before colors and gradients distract stakeholders, structure and typography must do the heavy lifting.
+                </p>
+            </div>
+
+            <!-- 3 Column Cards -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                
+                <!-- Card 1 -->
+                <div class="wire-box p-6 rounded-xl relative">
+                    <div class="masking-tape -top-3 left-4 rotate-[-2deg] hide-on-hifi">
+                        01. Function First
+                    </div>
+                    
+                    <div class="w-12 h-12 border-2 border-wire-900 bg-yellow-200 flex items-center justify-center font-mono text-xl font-black mb-6 shadow-[2px_2px_0px_#18181b]">
+                        📐
+                    </div>
+
+                    <h3 class="text-xl font-bold mb-3 text-heading-primary">Pure UX Architecture</h3>
+                    
+                    <!-- Low-Fi wireframe bar preview -->
+                    <div class="space-y-2 mb-4 hide-on-hifi">
+                        <div class="wire-skeleton-bar w-full"></div>
+                        <div class="wire-skeleton-bar w-4/5"></div>
+                    </div>
+
+                    <p class="text-sm text-wire-700 text-body-primary leading-relaxed">
+                        Removes visual bias. Reviewers focus directly on information hierarchy, copy placement, and user flow instead of button shadows.
+                    </p>
+
+                    <div class="mt-6 pt-4 border-t border-wire-200 flex items-center justify-between font-mono text-xs text-zinc-500">
+                        <span>Wireframe Standard</span>
+                        <span>v1.0.4</span>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="wire-box p-6 rounded-xl relative">
+                    <div class="masking-tape -top-3 left-4 rotate-[3deg] hide-on-hifi">
+                        02. Velocity
+                    </div>
+
+                    <div class="w-12 h-12 border-2 border-wire-900 bg-cyan-200 flex items-center justify-center font-mono text-xl font-black mb-6 shadow-[2px_2px_0px_#18181b]">
+                        ⚡
+                    </div>
+
+                    <h3 class="text-xl font-bold mb-3 text-heading-primary">AI Agent Speedrun</h3>
+
+                    <!-- Low-Fi wireframe bar preview -->
+                    <div class="space-y-2 mb-4 hide-on-hifi">
+                        <div class="wire-skeleton-bar w-full"></div>
+                        <div class="wire-skeleton-bar w-3/4"></div>
+                    </div>
+
+                    <p class="text-sm text-wire-700 text-body-primary leading-relaxed">
+                        Built in hours using Antigravity AI agents. Instant semantic HTML scaffolding that transforms seamlessly between design states with a single click.
+                    </p>
+
+                    <div class="mt-6 pt-4 border-t border-wire-200 flex items-center justify-between font-mono text-xs text-zinc-500">
+                        <span>Agent Pipeline</span>
+                        <span>Zero bloat</span>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="wire-box p-6 rounded-xl relative">
+                    <div class="masking-tape -top-3 left-4 rotate-[-1deg] hide-on-hifi">
+                        03. Live Review
+                    </div>
+
+                    <div class="w-12 h-12 border-2 border-wire-900 bg-purple-200 flex items-center justify-center font-mono text-xl font-black mb-6 shadow-[2px_2px_0px_#18181b]">
+                        💬
+                    </div>
+
+                    <h3 class="text-xl font-bold mb-3 text-heading-primary">Figma Canvas Feel</h3>
+
+                    <!-- Low-Fi wireframe bar preview -->
+                    <div class="space-y-2 mb-4 hide-on-hifi">
+                        <div class="wire-skeleton-bar w-full"></div>
+                        <div class="wire-skeleton-bar w-5/6"></div>
+                    </div>
+
+                    <p class="text-sm text-wire-700 text-body-primary leading-relaxed">
+                        Sticky notes, cursor trails, and diagonal crossed placeholders emulate an active design review in progress right in the browser.
+                    </p>
+
+                    <div class="mt-6 pt-4 border-t border-wire-200 flex items-center justify-between font-mono text-xs text-zinc-500">
+                        <span>Interactive Feel</span>
+                        <span>Multiplayer vibe</span>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ========================================================
+         TEMPLATE SHOWCASE / GALLERY GRID
+         ======================================================== -->
+    <section id="templates" class="py-20 sm:py-28 px-4 sm:px-6 max-w-7xl mx-auto">
+        
+        <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+            <div>
+                <div class="tag-badge inline-block px-3 py-1 bg-white border border-wire-900 text-xs font-mono font-bold uppercase mb-3 shadow-[2px_2px_0px_#18181b]">
+                    Template Library
+                </div>
+                <h2 class="text-3xl sm:text-5xl font-extrabold tracking-tight text-heading-primary">
+                    Curated Component Modules
+                </h2>
+            </div>
+            
+            <!-- Quick View Filter Tag -->
+            <div class="flex items-center gap-2 font-mono text-xs">
+                <span class="px-3 py-1.5 bg-wire-900 text-white font-bold rounded">All Elements</span>
+                <span class="px-3 py-1.5 bg-white border border-wire-900 font-bold rounded hover:bg-zinc-100 cursor-pointer">Sections</span>
+                <span class="px-3 py-1.5 bg-white border border-wire-900 font-bold rounded hover:bg-zinc-100 cursor-pointer">Cards</span>
+            </div>
+        </div>
+
+        <!-- 4 Grid Showcase -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            
+            <!-- Item 1: Japanese Sushi Commerce -->
+            <div class="wire-box rounded-xl p-5 relative flex flex-col justify-between">
+                <div class="masking-tape -top-3.5 right-6 rotate-[2deg] hide-on-hifi">
+                    ✍️ "food card mockup"
+                </div>
+
+                <div>
+                    <!-- Low-Fi Crossed Diagonal Image Placeholder -->
+                    <div class="wire-cross-placeholder h-52 rounded-lg flex items-center justify-center border border-zinc-400 mb-4 hide-on-hifi">
+                        <span class="bg-white px-3 py-1 border border-zinc-900 font-mono text-xs font-bold shadow-xs">
+                            [ E-COMMERCE HERO (X) ]
+                        </span>
+                    </div>
+
+                    <!-- Hi-Fi Image -->
+                    <div class="show-on-hifi h-52 rounded-lg overflow-hidden mb-4 relative">
+                        <img src="img/sushi-store-mu.vercel.app_ (1).png" alt="Sushi Store" class="w-full h-full object-cover">
+                        <span class="absolute top-2 right-2 bg-emerald-500 text-white font-mono text-[10px] font-bold px-2 py-0.5 rounded">Live Demo</span>
+                    </div>
+
+                    <div class="flex items-center gap-2 mb-2">
+                        <span class="tag-badge text-[10px] font-mono font-bold px-2 py-0.5 bg-zinc-100 border border-zinc-400">Node.js</span>
+                        <span class="tag-badge text-[10px] font-mono font-bold px-2 py-0.5 bg-zinc-100 border border-zinc-400">React</span>
+                        <span class="tag-badge text-[10px] font-mono font-bold px-2 py-0.5 bg-zinc-100 border border-zinc-400">ABA PayWay</span>
+                    </div>
+
+                    <h3 class="text-xl font-bold mb-2 text-heading-primary">Murakami Sushi Store</h3>
+                    <p class="text-sm text-wire-700 text-body-primary">Full restaurant commerce and kitchen cashier terminal with instant QR banking checkout.</p>
+                </div>
+
+                <div class="mt-6 pt-4 border-t border-wire-200 flex items-center justify-between">
+                    <span class="font-mono text-xs text-zinc-500">Module #01</span>
+                    <a href="https://sushi-store-mu.vercel.app/" target="_blank" class="font-mono text-xs font-bold text-blue-600 hover:underline">Inspect ↗</a>
+                </div>
+            </div>
+
+            <!-- Item 2: HRMS Enterprise Platform -->
+            <div class="wire-box rounded-xl p-5 relative flex flex-col justify-between">
+                <div class="masking-tape -top-3.5 left-6 rotate-[-3deg] hide-on-hifi">
+                    ✍️ "table layout spacing ok?"
+                </div>
+
+                <div>
+                    <!-- Low-Fi Crossed Diagonal Image Placeholder -->
+                    <div class="wire-cross-placeholder h-52 rounded-lg flex items-center justify-center border border-zinc-400 mb-4 hide-on-hifi">
+                        <span class="bg-white px-3 py-1 border border-zinc-900 font-mono text-xs font-bold shadow-xs">
+                            [ DASHBOARD TABLE (X) ]
+                        </span>
+                    </div>
+
+                    <!-- Hi-Fi Image -->
+                    <div class="show-on-hifi h-52 rounded-lg overflow-hidden mb-4 relative">
+                        <img src="img/Screenshot 2026-09-14 134145.png" alt="HRMS Platform" class="w-full h-full object-cover">
+                        <span class="absolute top-2 right-2 bg-blue-500 text-white font-mono text-[10px] font-bold px-2 py-0.5 rounded">Enterprise</span>
+                    </div>
+
+                    <div class="flex items-center gap-2 mb-2">
+                        <span class="tag-badge text-[10px] font-mono font-bold px-2 py-0.5 bg-zinc-100 border border-zinc-400">Java 17</span>
+                        <span class="tag-badge text-[10px] font-mono font-bold px-2 py-0.5 bg-zinc-100 border border-zinc-400">Spring Boot 3</span>
+                        <span class="tag-badge text-[10px] font-mono font-bold px-2 py-0.5 bg-zinc-100 border border-zinc-400">PostgreSQL</span>
+                    </div>
+
+                    <h3 class="text-xl font-bold mb-2 text-heading-primary">Full-Stack HRMS Suite</h3>
+                    <p class="text-sm text-wire-700 text-body-primary">Enterprise payroll automation, employee timesheets, and role-based access management.</p>
+                </div>
+
+                <div class="mt-6 pt-4 border-t border-wire-200 flex items-center justify-between">
+                    <span class="font-mono text-xs text-zinc-500">Module #02</span>
+                    <a href="index.html#projects" class="font-mono text-xs font-bold text-blue-600 hover:underline">Inspect ↗</a>
+                </div>
+            </div>
+
+            <!-- Item 3: Silk Shop Inventory ERP -->
+            <div class="wire-box rounded-xl p-5 relative flex flex-col justify-between">
+                <div class="masking-tape -top-3.5 right-6 rotate-[1deg] hide-on-hifi">
+                    ✍️ "artisan yarn ledger"
+                </div>
+
+                <div>
+                    <!-- Low-Fi Crossed Diagonal Image Placeholder -->
+                    <div class="wire-cross-placeholder h-52 rounded-lg flex items-center justify-center border border-zinc-400 mb-4 hide-on-hifi">
+                        <span class="bg-white px-3 py-1 border border-zinc-900 font-mono text-xs font-bold shadow-xs">
+                            [ INVENTORY ERP (X) ]
+                        </span>
+                    </div>
+
+                    <!-- Hi-Fi Image -->
+                    <div class="show-on-hifi h-52 rounded-lg overflow-hidden mb-4 relative">
+                        <img src="img/photo_6275933297162523176_y.jpg" alt="Pidan Khmer Silk" class="w-full h-full object-cover">
+                        <span class="absolute top-2 right-2 bg-amber-500 text-white font-mono text-[10px] font-bold px-2 py-0.5 rounded">Active Dev</span>
+                    </div>
+
+                    <div class="flex items-center gap-2 mb-2">
+                        <span class="tag-badge text-[10px] font-mono font-bold px-2 py-0.5 bg-zinc-100 border border-zinc-400">Docker</span>
+                        <span class="tag-badge text-[10px] font-mono font-bold px-2 py-0.5 bg-zinc-100 border border-zinc-400">Nuxt 3</span>
+                        <span class="tag-badge text-[10px] font-mono font-bold px-2 py-0.5 bg-zinc-100 border border-zinc-400">NestJS</span>
+                    </div>
+
+                    <h3 class="text-xl font-bold mb-2 text-heading-primary">Pidan Silk Warehouse</h3>
+                    <p class="text-sm text-wire-700 text-body-primary">Artisan textile inventory tracking, dye formulations, and barcode scanning ledger.</p>
+                </div>
+
+                <div class="mt-6 pt-4 border-t border-wire-200 flex items-center justify-between">
+                    <span class="font-mono text-xs text-zinc-500">Module #03</span>
+                    <a href="index.html#projects" class="font-mono text-xs font-bold text-blue-600 hover:underline">Inspect ↗</a>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ========================================================
+         FOOTER
+         ======================================================== -->
+    <footer class="border-t-2 border-wire-900 bg-white py-12 px-4 sm:px-6 transition-colors duration-300">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
+            
+            <div class="flex items-center gap-3">
+                <div class="w-7 h-7 border-2 border-wire-900 bg-wire-100 flex items-center justify-center font-mono font-bold text-xs shadow-[2px_2px_0px_#18181b]">
+                    W/
+                </div>
+                <span class="font-mono text-xs font-semibold text-zinc-600">
+                    Wireframe™ Template • Built with AI Agent Assistance
+                </span>
+            </div>
+
+            <div class="flex items-center gap-6 font-mono text-xs font-semibold">
+                <a href="index.html" class="hover:underline text-blue-600">← Back to Main Portfolio</a>
+                <a href="https://github.com/SokThavireak" target="_blank" class="hover:underline">GitHub</a>
+                <a href="https://wireframee.framer.website/" target="_blank" class="hover:underline text-zinc-400">Inspiration Ref ↗</a>
+            </div>
+
+            <div class="font-mono text-xs text-zinc-500">
+                © 2026 Sok Thavireak. All rights reserved.
+            </div>
+
+        </div>
+    </footer>
+
+    <!-- ========================================================
+         JAVASCRIPT: HI-FI / LOW-FI INTERACTIVE ENGINE
+         ======================================================== -->
+    <script>
+        // Toggle Low-Fi vs Hi-Fi mode
+        function toggleFidelityMode() {
+            const html = document.documentElement;
+            const isHifi = html.classList.contains('mode-hifi');
+            
+            const lowfiIcon = document.getElementById('toggle-icon-lowfi');
+            const hifiIcon = document.getElementById('toggle-icon-hifi');
+            const nav = document.getElementById('main-nav');
+            const footer = document.querySelector('footer');
+
+            if (isHifi) {
+                // Return to Low-Fi Wireframe
+                html.classList.remove('mode-hifi');
+                html.classList.add('mode-lowfi');
+                lowfiIcon.classList.remove('hidden');
+                lowfiIcon.classList.add('flex');
+                hifiIcon.classList.add('hidden');
+                hifiIcon.classList.remove('flex');
+                if (nav) nav.classList.remove('bg-gray-900/90', 'border-zinc-800');
+                if (footer) footer.classList.remove('bg-gray-900', 'border-zinc-800');
+                localStorage.setItem('fidelity_preference', 'lowfi');
+            } else {
+                // Switch to High-Fidelity
+                html.classList.remove('mode-lowfi');
+                html.classList.add('mode-hifi');
+                lowfiIcon.classList.add('hidden');
+                lowfiIcon.classList.remove('flex');
+                hifiIcon.classList.remove('hidden');
+                hifiIcon.classList.add('flex');
+                if (nav) nav.classList.add('bg-gray-900/90', 'border-zinc-800');
+                if (footer) footer.classList.add('bg-gray-900', 'border-zinc-800');
+                localStorage.setItem('fidelity_preference', 'hifi');
+            }
+        }
+
+        // Initialize user preference or listen for keypress 'H'
+        document.addEventListener('DOMContentLoaded', () => {
+            const pref = localStorage.getItem('fidelity_preference');
+            if (pref === 'hifi') {
+                toggleFidelityMode();
+            }
+
+            // Keyboard shortcut 'H' to toggle Hi-Fi / Low-Fi
+            window.addEventListener('keydown', (e) => {
+                if (e.target.tagName !== 'INPUT' && e.target.tagName !== 'TEXTAREA') {
+                    if (e.key === 'h' || e.key === 'H') {
+                        toggleFidelityMode();
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
